@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './style.scss';
+
 const App = () => (
-  <div>
-    <h1>App Root</h1>
+  <div className="app">
+    <h1>Application Root</h1>
   </div>
 );
 

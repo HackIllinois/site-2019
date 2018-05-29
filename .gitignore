@@ -66,6 +66,9 @@ typings/
 # Serverless directories
 .serverless
 
+# Webpack Build Output
+build/
+
 # Editor Specific
 *.swp
 
