@@ -60,6 +60,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
+      favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
       template: path.resolve(__dirname, 'public', 'index.html'),
       minify: {
         removeComments: true,
