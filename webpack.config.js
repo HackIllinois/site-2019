@@ -13,9 +13,16 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: ['node_modules', APP_DIR],
   },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+      },
       {
         oneOf: [
           {
