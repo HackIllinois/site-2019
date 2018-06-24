@@ -1,0 +1,38 @@
+.home {
+    background: linear-gradient(45deg, #224D5B, #002D3E);
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .diver {
+        position: absolute;
+        width: 1300px;
+        left: 0;
+        bottom: 0;
+    }
+
+    .info-text {
+        position: absolute;
+        bottom: 120px;
+        left: 190px;
+        width: 315px;
+        color: white;
+        text-align: center;
+
+        .logo {
+            width: 200px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+}
