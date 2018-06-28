@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .home {
     background: linear-gradient(45deg, #224D5B, #002D3E);
     height: 100vh;
@@ -6,9 +8,30 @@
 
     .diver {
         position: absolute;
-        width: 1300px;
         left: 0;
         bottom: 0;
+    }
+
+    .diver-desktop {
+        width: 1300px;
+        display: none;
+
+        @media (min-width: $tablet-min) {
+            display: block;
+        }
+
+        @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+            width: 910px;
+        }
+    }
+
+    .diver-mobile {
+        max-height: 102vh;
+        display: none;
+
+        @media (max-width: $mobile-max) {
+            display: block;
+        }
     }
 
     .info-text {
@@ -18,6 +41,7 @@
         width: 315px;
         color: white;
         text-align: center;
+
 
         .logo {
             width: 200px;
@@ -33,6 +57,42 @@
             font-size: 30px;
             font-weight: 500;
             margin: 0;
+        }
+
+        @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+            left: 155px;
+            bottom: 100px;
+            width: 220px;
+
+            .logo {
+                width: 160px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: $mobile-max) {
+            left: 15px;
+            bottom: 20vh;
+            width: 200px;
+
+            .logo {
+                width: 160px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
         }
     }
 }
