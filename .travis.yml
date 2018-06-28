@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "10.4.0"
+cache:
+  yarn: true
+  directories:
+    - node_modules
+before_script:
+  - npm install
+script:
+  - yarn build
+deploy:
+ - provider: s3
+   access_key_id: $HACKILLINOIS_ACCESS_KEY
+   secret_access_key: $HACKILLINOIS_SECRET_KEY
+   bucket: $HACKILLINOIS_BUCKET_NAME
+   skip_cleanup: true
+   local_dir: build
+   on:
+    branch: master
+ - provider: s3
+   access_key_id: $HACKILLINOIS_ACCESS_KEY
+   secret_access_key: $HACKILLINOIS_SECRET_KEY
+   bucket: $HACKILLINOIS_TEST_BUCKET_NAME
+   skip_cleanup: true
+   local_dir: build
+   on:
+    branch: staging
