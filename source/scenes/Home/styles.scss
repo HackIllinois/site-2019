@@ -42,7 +42,6 @@
         color: white;
         text-align: center;
 
-
         .logo {
             width: 200px;
         }
@@ -61,7 +60,7 @@
 
         @media (min-width: $tablet-min) and (max-width: $tablet-max) {
             left: 155px;
-            bottom: 100px;
+            bottom: 92px;
             width: 220px;
 
             .logo {
