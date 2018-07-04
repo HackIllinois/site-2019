@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'build');
@@ -58,6 +59,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin([{ from: 'source/public_assets', to: 'assets' }]),
     new HtmlWebpackPlugin({
       inject: true,
       favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
