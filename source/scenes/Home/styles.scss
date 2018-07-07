@@ -20,13 +20,14 @@
             display: block;
         }
 
-        @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+        @media (max-width: $tablet-max) {
             width: 910px;
         }
     }
 
     .diver-mobile {
-        max-height: 102vh;
+        max-height: 700px;
+        bottom: -50px;
         display: none;
 
         @media (max-width: $mobile-max) {
@@ -92,6 +93,26 @@
             h3 {
                 font-size: 18px;
             }
+        }
+    }
+
+    @media (max-height: 500px), (min-width: $tablet-min) and (max-width: 675px) {
+        .info-text {
+            bottom: 40px;
+            left: 65px;
+        }
+
+        .diver {
+            left: -78px;
+            bottom: -46px;
+        }
+
+        .diver-desktop {
+            display: block;
+        }
+
+        .diver-mobile {
+            display: none;
         }
     }
 }
