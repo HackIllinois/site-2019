@@ -39,7 +39,7 @@
   .info-text {
     position: absolute;
     bottom: 120px;
-    left: 190px;
+    left: 210px;
     width: 315px;
     color: white;
     text-align: center;
@@ -61,7 +61,7 @@
     }
 
     @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-      left: 155px;
+      left: 165px;
       bottom: 92px;
       width: 220px;
 
@@ -100,7 +100,7 @@
   @media (max-height: 500px), (min-width: $tablet-min) and (max-width: 675px) {
     .info-text {
       bottom: 40px;
-      left: 65px;
+      left: 75px;
     }
 
     .diver {
