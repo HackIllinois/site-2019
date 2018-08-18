@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - "10.4.0"
+addons:
+  apt:
+    packages:
+      - python3-pip
 cache:
   yarn: true
   directories:
@@ -9,6 +13,8 @@ before_script:
   - npm install
 script:
   - yarn build
+before_deploy:
+  - pip install --upgrade --user awscli
 deploy:
  - provider: s3
    access_key_id: $HACKILLINOIS_ACCESS_KEY
@@ -26,3 +32,5 @@ deploy:
    local_dir: build
    on:
     branch: staging
+after_deploy:
+  - ./scripts/invalidate.sh
