@@ -4,8 +4,8 @@
   "description": "HackIllinois 2019 Website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack-dev-server --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.prod.js",
     "format": "prettier --write source/**/*.{js,jsx,scss}",
     "precommit": "lint-staged"
   },
@@ -33,6 +33,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "eslint": "^4.19.1",
@@ -52,7 +53,8 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.4"
   },
   "lint-staged": {
     "*.{js,jsx,json,css,scss,md}": [
