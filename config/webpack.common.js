@@ -1,4 +1,5 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -61,6 +62,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin([BUILD_DIR], { root: ROOT_DIR }),
     new CopyWebpackPlugin([{ from: 'source/public_assets', to: 'assets' }]),
     new HtmlWebpackPlugin({
       inject: true,
