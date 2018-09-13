@@ -25,12 +25,12 @@ img {
   padding: 15px;
 }
 
-
 .twitter2 {
   position: absolute;
   bottom: 15px;
   transform: translate(-50%, -50%);
   left: 50%;
+  z-index: 2;
 }
 
 .click {
@@ -43,35 +43,33 @@ img {
 
 .click::before {
   display: none;
-  content:"Too Slow!";
+  content: 'Too Slow!';
   text-align: center;
   width: 100px;
   height: 75px;
   position: absolute;
   bottom: 150px;
-  z-index: -1;
   left: 50%;
   transform: translate(-50%);
 }
 
 .click::after {
-  content:"Click Me!";
+  content: 'Click Me!';
   text-align: center;
   width: 100px;
   height: 75px;
   position: absolute;
   bottom: 0;
-  z-index: -1;
   left: 50%;
   transform: translate(-50%);
 }
 
-.bottom:hover .twitter2{
+.bottom:hover .twitter2 {
   bottom: 150px;
 }
-.bottom:hover .click::before{
+.bottom:hover .click::before {
   display: block;
 }
-.bottom:hover .click::after{
-  content:'';
+.bottom:hover .click::after {
+  content: '';
 }
