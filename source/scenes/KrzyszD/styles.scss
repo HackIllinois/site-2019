@@ -1,0 +1,77 @@
+@import '../../styles/variables.scss';
+@import '../../styles/theme.scss';
+
+.everything {
+  @include ocean-gradient;
+  height: 100vh;
+
+  color: white;
+  text-align: center;
+  padding: 20vh 10vw 0 10vw;
+}
+
+.text {
+  font-size: 25px;
+  line-height: 115%;
+}
+
+.mini {
+  font-size: 15px;
+  color: orange;
+}
+
+img {
+  height: 200px;
+  padding: 15px;
+}
+
+
+.twitter2 {
+  position: absolute;
+  bottom: 15px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.click {
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.click::before {
+  display: none;
+  content:"Too Slow!";
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  position: absolute;
+  bottom: 150px;
+  z-index: -1;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.click::after {
+  content:"Click Me!";
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.bottom:hover .twitter2{
+  bottom: 150px;
+}
+.bottom:hover .click::before{
+  display: block;
+}
+.bottom:hover .click::after{
+  content:'';
+}
