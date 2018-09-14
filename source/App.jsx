@@ -13,8 +13,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/sponsor" component={Sponsor} />
-        <Route path="/krzyszd" component={KrzyszD} />
-        <Route component={() => <Error message="404 Not Found" />} />
+      <Route path="/krzyszd" component={KrzyszD} />
+      <Route component={() => <Error message="404 Not Found" />} />
     </Switch>
   </BrowserRouter>
 );

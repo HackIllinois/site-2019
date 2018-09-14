@@ -20,7 +20,7 @@
   color: orange;
 }
 
-img {
+.img {
   height: 200px;
   padding: 15px;
 }
@@ -46,11 +46,11 @@ img {
   content: 'Too Slow!';
   text-align: center;
   width: 100px;
-  height: 75px;
+  height: 225px;
   position: absolute;
-  bottom: 150px;
+  bottom: 0px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -0%);
 }
 
 .click::after {

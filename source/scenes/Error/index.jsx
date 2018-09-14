@@ -15,9 +15,7 @@ const ErrorPage = props => {
         <div className="contents">
           <img src={Logo} alt="HackIllinois Logo" />
           <h1>{message}</h1>
-          <a href="/krzyszd">To Krzysztof's Page!</a>
         </div>
-
         <Footer />
       </div>
     </div>
