@@ -11,7 +11,7 @@ const Brian = () => (
     <div className="content-wrapper">
       <div className="contents">
         <img src={Logo} alt="HackIllinois Logo" />
-        <h1>{Brian}</h1>
+        <h1>Brian</h1>
       </div>
       <Footer />
     </div>
