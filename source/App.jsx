@@ -4,8 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Error from 'scenes/Error';
 import Home from 'scenes/Home';
 import Sponsor from 'scenes/Sponsor';
-import InternalBrian from 'scenes/InternalBrian';
-
+import Josh from 'scenes/Josh';
 
 import './styles.scss';
 
@@ -14,7 +13,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/sponsor" component={Sponsor} />
-      <Route path="/404" component={InternalBrian} />
+      <Route path="/Josh" component={Josh} />
       <Route component={() => <Error message="404 Not Found" />} />
     </Switch>
   </BrowserRouter>
