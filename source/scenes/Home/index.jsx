@@ -15,7 +15,6 @@ const Home = () => (
       <img className="logo" src={logo} alt="HackIllinois Logo" />
       <h1>Make Waves</h1>
       <h3>Feb. 22-24, 2019</h3>
-      <p> {30 / 2} </p>
     </div>
   </div>
 );
