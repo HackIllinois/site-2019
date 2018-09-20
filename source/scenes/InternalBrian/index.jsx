@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import Logo from 'assets/Logo.svg';
@@ -7,7 +6,7 @@ import Footer from 'components/Footer';
 
 import './styles.scss';
 
-const Internal_Brian = props => {
+const InternalBrian = () => {
   return (
     <div className="error">
       <div className="content-wrapper">
@@ -21,4 +20,4 @@ const Internal_Brian = props => {
   );
 };
 
-export default Internal_Brian;
+export default InternalBrian;
