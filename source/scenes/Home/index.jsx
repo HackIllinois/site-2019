@@ -1,5 +1,8 @@
 import React from 'react';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-46010489-4'); //imports and initializes react packages for GA
+
 import logo from 'assets/Logo.svg';
 import diver from 'assets/diver.png';
 import diverMobile from 'assets/diver_mobile.png';
@@ -18,5 +21,10 @@ const Home = () => (
     </div>
   </div>
 );
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-46010489-4'); //initializes Google Analytics to correct code
+  ReactGA.pageview('Home'); //pageview data from goes under 'Home' on GA
+}
 
 export default Home;

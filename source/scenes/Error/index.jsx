@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-46010489-4'); //imports and initializes react packages for GA
+
 import Logo from 'assets/Logo.svg';
 
 import Footer from 'components/Footer';
@@ -25,5 +28,10 @@ const ErrorPage = props => {
 ErrorPage.propTypes = {
   message: PropTypes.string.isRequired,
 };
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-46010489-4'); //initializes Google Analytics to correct code
+  ReactGA.pageview('ErrorPage'); //pageview data from goes under 'ErrorPage' on GA
+}
 
 export default ErrorPage;
