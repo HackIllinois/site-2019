@@ -1,0 +1,20 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.jsx
+module.file_ext=.scss
+module.name_mapper='^assets' ->'<PROJECT_ROOT>/source/assets'
+module.name_mapper='^components' ->'<PROJECT_ROOT>/source/components'
+module.name_mapper='^scenes' ->'<PROJECT_ROOT>/source/scenes'
+module.name_mapper='^styles' ->'<PROJECT_ROOT>/source/styles'
+module.name_mapper.extension='scss' -> 'empty/object'
+
+[strict]
