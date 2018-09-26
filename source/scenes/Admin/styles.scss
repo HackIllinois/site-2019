@@ -1,0 +1,44 @@
+@import '../../styles/theme.scss';
+
+.admin {
+  @include ocean-gradient;
+  height: 100vh;
+  position: relative;
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .contents {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    > h1 {
+      font-size: 40px;
+      font-weight: 400;
+    }
+
+    > img {
+      max-height: 130px;
+    }
+  }
+
+  .content-wrapper {
+    > .Footer > a > i {
+      color: white;
+    }
+  }
+
+  .diver {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 170px;
+  }
+}
