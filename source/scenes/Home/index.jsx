@@ -13,7 +13,7 @@ const Home = () => (
 
     <div className="info-text">
       <img className="logo" src={logo} alt="HackIllinois Logo" />
-      <h1>Make Waves</h1>
+      <h1>Masdjfsajdfla</h1>
       <h3>Feb. 22-24, 2019</h3>
     </div>
   </div>
