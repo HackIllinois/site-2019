@@ -7,7 +7,7 @@ import Error from 'scenes/Error';
 import Home from 'scenes/Home';
 import Sponsor from 'scenes/Sponsor';
 
-import { RouteTracker } from './utils/GoogleAnalytics';
+import { RouteTracker } from './services/GoogleAnalytics';
 import './styles.scss';
 
 ReactGA.initialize('UA-46010489-4');

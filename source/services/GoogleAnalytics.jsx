@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import { Route } from 'react-router-dom';
+
+type props = {
+  location: {
+    pathname: string,
+    search: string,
+  },
+};
 
 const logPageChange = (pathname, search = '') => {
   const page = pathname + search;
@@ -13,7 +19,7 @@ const logPageChange = (pathname, search = '') => {
   ReactGA.pageview(page);
 };
 
-class GoogleAnalytics extends Component {
+class GoogleAnalytics extends Component<props> {
   componentDidMount() {
     const { location } = this.props;
     const { pathname, search } = location;
@@ -36,13 +42,6 @@ class GoogleAnalytics extends Component {
     return null;
   }
 }
-
-GoogleAnalytics.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string,
-    search: PropTypes.string,
-  }).isRequired,
-};
 
 const RouteTracker = () => <Route component={GoogleAnalytics} />;
 
