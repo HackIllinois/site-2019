@@ -8,6 +8,9 @@ const Footer = () => (
     <a href="https://www.github.com/hackillinois/" target="_blank" rel="noopener noreferrer">
       <Icon name="github" size="big" />
     </a>
+    <a href="https://blog.hackillinois.org" target="_blank" rel="noopener noreferrer">
+      <Icon name="globe" size="big" />
+    </a>
     <a href="https://www.facebook.com/hackillinois/" target="_blank" rel="noopener noreferrer">
       <Icon name="facebook f" size="big" />
     </a>

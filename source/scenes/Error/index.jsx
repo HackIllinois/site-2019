@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 
 import Logo from 'assets/Logo.svg';
@@ -7,7 +7,11 @@ import Footer from 'components/Footer';
 
 import './styles.scss';
 
-const ErrorPage = props => {
+type Props = {
+  message: string,
+};
+
+const ErrorPage = (props: Props) => {
   const { message } = props;
   return (
     <div className="error">
@@ -20,10 +24,6 @@ const ErrorPage = props => {
       </div>
     </div>
   );
-};
-
-ErrorPage.propTypes = {
-  message: PropTypes.string.isRequired,
 };
 
 export default ErrorPage;

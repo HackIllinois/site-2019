@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
@@ -35,7 +36,7 @@ module.exports = {
             include: APP_DIR,
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'react'],
+              presets: ['env', 'react', 'flow'],
             },
           },
           {
@@ -64,6 +65,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([BUILD_DIR], { root: ROOT_DIR }),
     new CopyWebpackPlugin([{ from: 'source/public_assets', to: 'assets' }]),
+    new FlowWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       favicon: path.resolve(PUBLIC_DIR, 'favicon.ico'),
