@@ -5,6 +5,16 @@ $cloud-width: 1300px;
 $sky-height: 520px;
 $wave-offset: 70px;
 
+$asset-width: 1600px;
+
+$mid-rock-color: #00252c;
+
+@mixin fix-center($width) {
+  width: $width;
+  margin-left: -($width / 2);
+  left: 50%;
+}
+
 .home {
   .sky {
     position: relative;
@@ -19,10 +29,8 @@ $wave-offset: 70px;
       .clouds {
         position: relative;
         display: block;
-        width: $cloud-width;
         margin-top: 20px;
-        margin-left: -($cloud-width / 2);
-        left: 50%;
+        @include fix-center($cloud-width);
       }
     }
 
@@ -58,43 +66,243 @@ $wave-offset: 70px;
       }
     }
 
+    @media (max-width: $mobile-max) {
+      height: 445px;
+
+      .sun-wrapper {
+        .sun {
+          height: $mobile-sun-width;
+          width: $mobile-sun-width;
+
+          > img {
+            width: 70px;
+          }
+          h1 {
+            font-size: 32px;
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .rocks-top-wrapper {
+    position: relative;
+
     .rocks-top {
       position: absolute;
-      bottom: $wave-offset - 19px;
+      top: -130px;
       left: 0;
       width: 420px;
+
+      @media (max-width: $tablet-max) {
+        width: 260px;
+        top: -107px;
+      }
+
+      @media (max-width: $mobile-max) {
+        width: 180px;
+        top: -90px;
+      }
     }
   }
 
   .water {
     margin-top: -$wave-offset;
+    padding-bottom: $wave-offset;
     position: relative;
     width: 100%;
+    overflow: hidden;
 
-    > img {
+    > img.wave {
       position: absolute;
       z-index: 1;
+      width: 110%;
+      min-width: 1050px;
+      left: -5%;
+      animation: wave-move-lr 9s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      @media (max-width: 775px) {
+        animation: wave-move-lr-small 9s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
     }
 
-    .wave-mid {
-      top: 35px;
+    > img.wave-mid {
+      top: 30px;
+      animation-delay: -6s;
     }
 
-    .wave-front {
-      top: 55px;
+    > img.wave-front {
+      top: 45px;
+      z-index: 2;
+      animation-delay: -3s;
     }
 
     .rocks {
       position: relative;
       top: $wave-offset;
-      background-image: linear-gradient(rgba($upper-sea, 0), rgba($upper-sea, 1) 20%);
-      // height: calc(100vh - #{$sky-height - $wave-offset});
-      // z-index: 0;
+      @media (max-width: $mobile-max) {
+        padding-top: 45px;
+      }
+      background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1) 20%);
 
-      .rocks-bottom {
+      .mid-top-half {
+        position: relative;
         margin-top: 100px;
-        width: 100%;
+        width: 102%;
+        z-index: 1;
+      }
+
+      .mid-content {
+        margin-top: -10px;
+        background-color: $mid-rock-color;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .content-column {
+          width: 22%;
+
+          p {
+            margin: 10px 0;
+            padding: 20px;
+          }
+
+          @media (max-width: 1250px) {
+            width: 44%;
+          }
+          @media (max-width: 650px) {
+            width: 88%;
+          }
+        }
+
+        .column-header {
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+
+          h3 {
+            text-align: center;
+            font-size: 26px;
+            line-height: 58px;
+            font-weight: 400;
+          }
+        }
+
+        #header-1 {
+          position: relative;
+          background-image: url('../../assets/Home/rock-1.svg');
+
+          #starfish {
+            position: absolute;
+            left: calc(50% - 92px);
+            top: -15px;
+            height: 45px;
+          }
+        }
+        #header-2 {
+          background-image: url('../../assets/Home/rock-2.svg');
+        }
+        #header-3 {
+          background-image: url('../../assets/Home/rock-3.svg');
+        }
+        #header-4 {
+          background-image: url('../../assets/Home/rock-4.svg');
+        }
+      }
+
+      .mid-bottom-half {
+        position: relative;
+        width: 102%;
+        z-index: 1;
+      }
+
+      #rocks-mid-bottom-grouping {
+        position: relative;
+
+        #fish {
+          position: absolute;
+          top: 36%;
+          right: 25%;
+          width: 270px;
+
+          @media (max-width: 1250px) {
+            width: 200px;
+          }
+          @media (max-width: 600px) {
+            width: 100px;
+          }
+        }
+      }
+
+      .floor {
+        margin-top: -80px;
+        position: relative;
+
+        .ocean-arch {
+          display: block;
+          position: relative;
+          @include fix-center(105%);
+          z-index: 0;
+          padding-bottom: 80px;
+        }
+
+        .ocean-floor {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          @include fix-center(105%);
+          z-index: 1;
+        }
+
+        @media (max-width: $tablet-max) {
+          .ocean-arch {
+            @include fix-center(1000px);
+            padding-bottom: 30px;
+          }
+          .ocean-floor {
+            @include fix-center(1000px);
+          }
+        }
+
+        @media (max-width: $mobile-max) {
+          .ocean-arch {
+            @include fix-center(600px);
+          }
+          .ocean-floor {
+            @include fix-center(600px);
+          }
+        }
       }
     }
+  }
+}
+
+@keyframes wave-move-lr {
+  0% {
+    left: -9%;
+  }
+  50% {
+    left: -1%;
+  }
+  100% {
+    left: -9%;
+  }
+}
+
+@keyframes wave-move-lr-small {
+  0% {
+    left: -70px;
+  }
+  50% {
+    left: -7px;
+  }
+  100% {
+    left: -70px;
   }
 }
