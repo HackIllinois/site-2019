@@ -1,12 +1,16 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'build');
-const APP_DIR = path.resolve(__dirname, 'source');
+const ROOT_DIR = path.resolve(__dirname, '..');
+
+const BUILD_DIR = path.resolve(ROOT_DIR, 'build');
+const APP_DIR = path.resolve(ROOT_DIR, 'source');
+const PUBLIC_DIR = path.resolve(ROOT_DIR, 'public');
 
 module.exports = {
-  mode: 'development',
   entry: path.join(APP_DIR, 'index.jsx'),
   output: {
     path: BUILD_DIR,
@@ -32,7 +36,7 @@ module.exports = {
             include: APP_DIR,
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'react'],
+              presets: ['env', 'react', 'flow'],
             },
           },
           {
@@ -59,11 +63,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin([BUILD_DIR], { root: ROOT_DIR }),
     new CopyWebpackPlugin([{ from: 'source/public_assets', to: 'assets' }]),
+    new FlowWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
-      template: path.resolve(__dirname, 'public', 'index.html'),
+      favicon: path.resolve(PUBLIC_DIR, 'favicon.ico'),
+      template: path.resolve(PUBLIC_DIR, 'index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -78,7 +84,4 @@ module.exports = {
       },
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-  },
 };
