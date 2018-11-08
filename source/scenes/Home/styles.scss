@@ -1,119 +1,317 @@
 @import '../../styles/variables.scss';
 @import '../../styles/theme.scss';
 
+$cloud-width: 1300px;
+$sky-height: 520px;
+$wave-offset: 70px;
+
+$asset-width: 1600px;
+
+$mid-rock-color: #00252c;
+
+@mixin fix-center($width) {
+  width: $width;
+  margin-left: -($width / 2);
+  left: 50%;
+}
+
 .home {
-  @include ocean-gradient;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+  .sky {
+    position: relative;
+    height: $sky-height;
+    background-image: linear-gradient(180deg, $upper-sky, $lower-sky);
 
-  .diver {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
+    .cloud-wrapper {
+      position: absolute;
+      width: 100%;
+      overflow: hidden;
 
-  .diver-desktop {
-    width: 1300px;
-    display: none;
-
-    @media (min-width: $tablet-min) {
-      display: block;
-    }
-
-    @media (max-width: $tablet-max) {
-      width: 910px;
-    }
-  }
-
-  .diver-mobile {
-    max-height: 700px;
-    bottom: -50px;
-    display: none;
-
-    @media (max-width: $mobile-max) {
-      display: block;
-    }
-  }
-
-  .info-text {
-    position: absolute;
-    bottom: 120px;
-    left: 210px;
-    width: 315px;
-    color: white;
-    text-align: center;
-
-    .logo {
-      width: 200px;
-    }
-
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    h3 {
-      font-size: 30px;
-      font-weight: 500;
-      margin: 0;
-    }
-
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-      left: 165px;
-      bottom: 92px;
-      width: 220px;
-
-      .logo {
-        width: 160px;
+      .clouds {
+        position: relative;
+        display: block;
+        margin-top: 20px;
+        @include fix-center($cloud-width);
       }
+    }
 
-      h1 {
-        font-size: 24px;
-      }
+    .sun-wrapper {
+      padding-top: 130px;
+      .sun {
+        height: $sun-width;
+        width: $sun-width;
+        border-radius: 50%;
+        margin: auto;
+        background-image: linear-gradient(180deg, rgba(233, 224, 147, 1), rgba(233, 224, 147, 0));
 
-      h3 {
-        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 45px;
+
+        color: white;
+
+        > img {
+          width: 120px;
+        }
+
+        h1 {
+          text-transform: uppercase;
+          font-size: 44px;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 22px;
+        }
       }
     }
 
     @media (max-width: $mobile-max) {
-      left: 15px;
-      bottom: 20vh;
-      width: 200px;
+      height: 445px;
 
-      .logo {
-        width: 160px;
-      }
+      .sun-wrapper {
+        .sun {
+          height: $mobile-sun-width;
+          width: $mobile-sun-width;
 
-      h1 {
-        font-size: 24px;
-      }
-
-      h3 {
-        font-size: 18px;
+          > img {
+            width: 70px;
+          }
+          h1 {
+            font-size: 32px;
+          }
+          p {
+            font-size: 20px;
+          }
+        }
       }
     }
   }
 
-  @media (max-height: 500px), (min-width: $tablet-min) and (max-width: 675px) {
-    .info-text {
-      bottom: 40px;
-      left: 75px;
+  .rocks-top-wrapper {
+    position: relative;
+
+    .rocks-top {
+      position: absolute;
+      top: -130px;
+      left: 0;
+      width: 420px;
+
+      @media (max-width: $tablet-max) {
+        width: 260px;
+        top: -107px;
+      }
+
+      @media (max-width: $mobile-max) {
+        width: 180px;
+        top: -90px;
+      }
+    }
+  }
+
+  .water {
+    margin-top: -$wave-offset;
+    padding-bottom: $wave-offset;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    > img.wave {
+      position: absolute;
+      z-index: 1;
+      width: 110%;
+      min-width: 1050px;
+      left: -5%;
+      animation: wave-move-lr 9s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      @media (max-width: 775px) {
+        animation: wave-move-lr-small 9s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
     }
 
-    .diver {
-      left: -78px;
-      bottom: -46px;
+    > img.wave-mid {
+      top: 30px;
+      animation-delay: -6s;
     }
 
-    .diver-desktop {
-      display: block;
+    > img.wave-front {
+      top: 45px;
+      z-index: 2;
+      animation-delay: -3s;
     }
 
-    .diver-mobile {
-      display: none;
+    .rocks {
+      position: relative;
+      top: $wave-offset;
+      @media (max-width: $mobile-max) {
+        padding-top: 45px;
+      }
+      background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1) 20%);
+
+      .mid-top-half {
+        position: relative;
+        margin-top: 100px;
+        width: 102%;
+        z-index: 1;
+      }
+
+      .mid-content {
+        margin-top: -10px;
+        background-color: $mid-rock-color;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-bottom: 30px;
+
+        .content-column {
+          width: 22%;
+
+          p {
+            margin: 10px 0;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 20px;
+
+            a {
+              color: white;
+              font-weight: bold;
+            }
+          }
+
+          @media (max-width: 1250px) {
+            width: 44%;
+          }
+          @media (max-width: 650px) {
+            width: 88%;
+          }
+        }
+
+        .column-header {
+          margin-top: 30px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+
+          h3 {
+            text-align: center;
+            font-size: 26px;
+            line-height: 58px;
+            font-weight: 400;
+          }
+        }
+
+        #header-1 {
+          position: relative;
+          background-image: url('../../assets/Home/rock-1.svg');
+
+          #starfish {
+            position: absolute;
+            left: calc(50% - 92px);
+            top: -15px;
+            height: 45px;
+          }
+        }
+        #header-2 {
+          background-image: url('../../assets/Home/rock-2.svg');
+        }
+        #header-3 {
+          background-image: url('../../assets/Home/rock-3.svg');
+        }
+        #header-4 {
+          background-image: url('../../assets/Home/rock-4.svg');
+        }
+      }
+
+      .mid-bottom-half {
+        position: relative;
+        width: 102%;
+        z-index: 1;
+      }
+
+      #rocks-mid-bottom-grouping {
+        position: relative;
+
+        #fish {
+          position: absolute;
+          top: 36%;
+          right: 25%;
+          width: 270px;
+
+          @media (max-width: 1250px) {
+            width: 200px;
+          }
+          @media (max-width: 600px) {
+            width: 100px;
+          }
+        }
+      }
+
+      .floor {
+        margin-top: -80px;
+        position: relative;
+
+        .ocean-arch {
+          display: block;
+          position: relative;
+          @include fix-center(105%);
+          z-index: 0;
+          padding-bottom: 80px;
+        }
+
+        .ocean-floor {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          @include fix-center(105%);
+          z-index: 1;
+        }
+
+        @media (max-width: $tablet-max) {
+          .ocean-arch {
+            @include fix-center(1000px);
+            padding-bottom: 30px;
+          }
+          .ocean-floor {
+            @include fix-center(1000px);
+          }
+        }
+
+        @media (max-width: $mobile-max) {
+          .ocean-arch {
+            @include fix-center(600px);
+          }
+          .ocean-floor {
+            @include fix-center(600px);
+          }
+        }
+      }
     }
+  }
+}
+
+@keyframes wave-move-lr {
+  0% {
+    left: -9%;
+  }
+  50% {
+    left: -1%;
+  }
+  100% {
+    left: -9%;
+  }
+}
+
+@keyframes wave-move-lr-small {
+  0% {
+    left: -70px;
+  }
+  50% {
+    left: -7px;
+  }
+  100% {
+    left: -70px;
   }
 }
