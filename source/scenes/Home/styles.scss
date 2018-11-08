@@ -161,9 +161,10 @@ $mid-rock-color: #00252c;
         color: white;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         flex-wrap: wrap;
+        padding-bottom: 30px;
 
         .content-column {
           width: 22%;
@@ -171,6 +172,13 @@ $mid-rock-color: #00252c;
           p {
             margin: 10px 0;
             padding: 20px;
+            font-size: 14px;
+            line-height: 20px;
+
+            a {
+              color: white;
+              font-weight: bold;
+            }
           }
 
           @media (max-width: 1250px) {
@@ -182,6 +190,7 @@ $mid-rock-color: #00252c;
         }
 
         .column-header {
+          margin-top: 30px;
           background-repeat: no-repeat;
           background-position: center center;
           background-size: contain;

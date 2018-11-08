@@ -50,12 +50,11 @@ const Home = () => (
               <h3>General</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum nulla vel diam
-              laoreet tincidunt. Sed eros sem, lobortis eget venenatis id, consequat varius leo. Ut
-              lorem eros, semper a odio ac, laoreet egestas metus. Nullam interdum fermentum varius.
-              Maecenas viverra nisl et velit blandit, nec iaculis lorem fermentum. Vivamus lobortis
-              tincidunt dolor aliquam hendrerit. Ut luctus porta quam et mollis. Sed quam nisl,
-              congue gravida vulputate quis, tempor a urna.
+              HackIllinois is a 36-hour event where college students from across the country work on
+              Free and Open Source Software projects ranging from websites and mobile apps to Wi-Fi
+              connected microwaves. You will work with our mentors on exciting projects, have the
+              opportunity to learn new skills or languages, and have tons of fun with our social
+              events!
             </p>
           </div>
 
@@ -64,12 +63,12 @@ const Home = () => (
               <h3>Before</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum nulla vel diam
-              laoreet tincidunt. Sed eros sem, lobortis eget venenatis id, consequat varius leo. Ut
-              lorem eros, semper a odio ac, laoreet egestas metus. Nullam interdum fermentum varius.
-              Maecenas viverra nisl et velit blandit, nec iaculis lorem fermentum. Vivamus lobortis
-              tincidunt dolor aliquam hendrerit. Ut luctus porta quam et mollis. Sed quam nisl,
-              congue gravida vulputate quis, tempor a urna.
+              Registration will open up in early December of 2018, and RSVP information will be
+              collected in early february. Any student enrolled in university that is at least 18
+              years old is eligible to apply, so keep an eye out for our announcements and timeline.
+              If you’re interested in getting involved early in Free and Open Source Software
+              development, we’ll be providing an opportunity for guaranteed admission for merged
+              PR’s on select projects. More info on this to come soon.
             </p>
           </div>
 
@@ -78,12 +77,12 @@ const Home = () => (
               <h3>During</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum nulla vel diam
-              laoreet tincidunt. Sed eros sem, lobortis eget venenatis id, consequat varius leo. Ut
-              lorem eros, semper a odio ac, laoreet egestas metus. Nullam interdum fermentum varius.
-              Maecenas viverra nisl et velit blandit, nec iaculis lorem fermentum. Vivamus lobortis
-              tincidunt dolor aliquam hendrerit. Ut luctus porta quam et mollis. Sed quam nisl,
-              congue gravida vulputate quis, tempor a urna.
+              HackIllinois will take place in February of 2019. Our excellent FOSS mentors will be a
+              major part of the event and literally a part of your team! They will be prepared with
+              projects and teaching tools, but they will act as your peers for the weekend. Bus
+              transportation will be provided to UIUC on Friday, Feb 22nd and back to select schools
+              on Sunday, Feb 24th. The venue is fully featured with working, sleeping, and lounge
+              rooms available, as well as dedicated space for social events and meals.
             </p>
           </div>
 
@@ -92,12 +91,14 @@ const Home = () => (
               <h3>After</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum nulla vel diam
-              laoreet tincidunt. Sed eros sem, lobortis eget venenatis id, consequat varius leo. Ut
-              lorem eros, semper a odio ac, laoreet egestas metus. Nullam interdum fermentum varius.
-              Maecenas viverra nisl et velit blandit, nec iaculis lorem fermentum. Vivamus lobortis
-              tincidunt dolor aliquam hendrerit. Ut luctus porta quam et mollis. Sed quam nisl,
-              congue gravida vulputate quis, tempor a urna.
+              Our event is far more than the 36 hours you will spend in Urbana this February. We
+              hope that you have the opportunity to network with, collaborate with, and befriend
+              many new people in your time here, and the projects produced should be maintained just
+              the same as these social circles. IlliniHackers works closely with UIUC OSS (our
+              university Open Source Software group) to put on HackNights and encourage general
+              participation in the FOSS community. If you’re a student here or elsewhere and want to
+              join the movement, please reach out to
+              <a href="mailto:opensource@hackillinois.org"> opensource@hackillinois.org</a>.
             </p>
           </div>
         </div>
