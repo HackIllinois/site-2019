@@ -29,13 +29,15 @@ class FAQ extends Component {
       const { section } = this.state;
 
       const offset = newSection < section ? 60 : -60;
-      anime({
-        targets: '#starfish',
-        translateY: [
-          { value: offset, duration: 300, easing: 'easeOutQuad' },
-          { value: 0, duration: 300, easing: 'easeInQuad' },
-        ],
-      });
+      if (newSection !== section) {
+        anime({
+          targets: '#starfish',
+          translateY: [
+            { value: offset, duration: 300, easing: 'easeOutQuad' },
+            { value: 0, duration: 300, easing: 'easeInQuad' },
+          ],
+        });
+      }
       this.setState({ section: newSection });
     };
   }

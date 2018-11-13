@@ -137,6 +137,10 @@
         display: inline-block;
         box-sizing: border-box;
         padding: 10px 40px;
+
+        @media (max-width: 900px) {
+          padding: 10px 10px;
+        }
       }
     }
   }
