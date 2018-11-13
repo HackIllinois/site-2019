@@ -8,7 +8,8 @@ import Home from 'scenes/Home';
 import PDFView from 'scenes/PDFView';
 
 import { RouteTracker } from './services/GoogleAnalytics';
-import './styles.scss';
+import './styles/reset.css';
+import './styles/base.scss';
 
 ReactGA.initialize('UA-46010489-4');
 
