@@ -36,6 +36,11 @@ class FAQ extends Component {
             { value: offset, duration: 300, easing: 'easeOutQuad' },
             { value: 0, duration: 300, easing: 'easeInQuad' },
           ],
+          rotate: {
+            duration: 600,
+            value: [0, 360],
+            easing: 'linear',
+          },
         });
       }
       this.setState({ section: newSection });
