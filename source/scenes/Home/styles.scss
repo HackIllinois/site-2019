@@ -44,11 +44,11 @@ $asset-width: 1600px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 45px;
 
         color: white;
 
         > img {
+          padding-top: 45px;
           width: 100px;
         }
 
