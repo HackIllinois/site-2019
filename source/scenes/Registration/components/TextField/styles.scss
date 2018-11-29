@@ -1,0 +1,32 @@
+$faded-white: rgba(255, 255, 255, 0.6);
+
+.form-textfield {
+  width: 100%;
+
+  label p {
+    color: white;
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid $faded-white;
+    color: white;
+    font-size: 19px;
+    margin-top: 6px;
+    padding: 4px;
+    transition: border-bottom-color 0.2s;
+    width: 100%;
+
+    &::placeholder {
+      color: $faded-white;
+    }
+
+    &:focus {
+      border-bottom-color: white;
+      outline: none;
+    }
+  }
+}
