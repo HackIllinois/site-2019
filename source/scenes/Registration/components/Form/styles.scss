@@ -1,0 +1,18 @@
+.scrollable-form {
+  flex-grow: 1;
+  background-color: #358b94;
+
+  h1 {
+    padding-top: 62px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 44px;
+  }
+
+  .form-view {
+    margin: auto;
+    padding-top: 80px;
+    width: 500px;
+  }
+}
