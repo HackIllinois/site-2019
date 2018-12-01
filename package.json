@@ -24,11 +24,17 @@
   "homepage": "https://github.com/HackIllinois/site-2019#readme",
   "dependencies": {
     "animejs": "^2.2.0",
+    "jwt-decode": "^2.2.0",
     "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-ga": "^2.5.3",
-    "react-router-dom": "^4.3.1"
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.2",
