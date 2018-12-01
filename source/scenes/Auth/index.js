@@ -39,5 +39,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   undefined,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Auth);
