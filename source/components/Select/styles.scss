@@ -1,0 +1,103 @@
+.select-cont {
+  width: 100%;
+  position: relative;
+}
+
+.select-label {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.select-input-cont {
+  width: 100%;
+  margin-top: 3px;
+  border-bottom: 2px solid #95c6c9;
+  transition: background-color 0.3s, border-bottom 0.3s ease-in;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+
+.select-input-cont:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.select-input-cont:focus-within {
+  border-bottom: 2px solid #ffffff;
+}
+
+.select-input {
+  width: calc(100% - 24px);
+  border: none;
+  font-weight: 200;
+  color: #74b5bb;
+  font-size: 16px;
+  padding: 3px 0;
+  outline: none;
+  cursor: default;
+  transition: background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0);
+
+  color: transparent;
+  text-shadow: 0 0 0 #74b5bb;
+  &:focus {
+    outline: none;
+  }
+}
+
+.select-input::selection {
+  background: #c3dfe1;
+}
+
+.select-input::-moz-selection {
+  background: #c3dfe1;
+}
+
+.select-dark-text {
+  text-shadow: 0 0 0 #c3dfe1;
+}
+
+.select-drop-down-arrow {
+  height: 16px;
+  width: 16px;
+  margin: 0 4px;
+  transition: 0.2s ease-in-out;
+}
+
+.select-rotated {
+  transform: rotate(180deg);
+}
+
+.select-menu {
+  position: absolute;
+  width: 100%;
+  transition: all 0.2s ease-out;
+  overflow: scroll;
+  border-bottom: 2px solid #95c6c9;
+  z-index: 100;
+}
+
+.select-menu-el {
+  transition: background-color 0.3s;
+  background-color: #eaf4f5;
+  width: 100%;
+  border-bottom: 1px solid #95c6c9;
+  padding: 10px 0;
+  cursor: default;
+  color: #08282b;
+  z-index: 105;
+  position: relative;
+}
+
+.select-menu-el:hover {
+  background-color: #c7e3e6;
+}
+
+.select-selected {
+  background-color: #64b0b7;
+}
+
+.select-selected:hover {
+  background-color: #539ea5;
+}
