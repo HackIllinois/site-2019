@@ -1,17 +1,28 @@
+// @Flow
 /* eslint no-lonely-if: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+// disabled due to prettierrc:
+/* eslint operator-linebreak: 0 */
+/* eslint object-curly-newline: 0 */
+
+import * as React from 'react';
 
 import dropDownArrow from 'assets/drop_down_arrow.svg';
 import './styles.scss';
 
+type Props = {
+  label: string,
+  tip: string,
+  items: Array<{ text: string }>,
+  onSelect: string => void,
+};
+
 // static count var to give each instance a unique id
 let id = 0;
 
-class Select extends React.Component {
+class Select extends React.Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,6 +41,14 @@ class Select extends React.Component {
     this.id = `select-menu-${id}`;
     id += 1;
   }
+
+  // Function open up isOpen to the parent component, not implemented
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (nextProps.isOpen === prevState.isOpen) {
+  //     return prevState;
+  //   }
+  //   return Object.assign({}, { prevState, isOpen: nextProps.isOpen });
+  // }
 
   toggleMenu() {
     const { isOpen } = this.state;
@@ -139,12 +158,10 @@ class Select extends React.Component {
     const menuHeight = items.length * 37 < 185 ? items.length * 37 : 185;
     const openedStyling = {
       height: menuHeight,
-      borderBottom: '4px solid #1e5b5f',
     };
     const closedStyling = {
       height: 0,
       visibility: 'hidden',
-      borderBottom: '2px solid #95c6c9',
     };
 
     return (
@@ -166,7 +183,6 @@ class Select extends React.Component {
         </div>
         <div className="select-menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
           {items.map((item, index) => (
-            /* eslint-disable jsx-a11y */
             <div
               key={item.text}
               onClick={() => this.selectItem(index)}
@@ -180,16 +196,5 @@ class Select extends React.Component {
     );
   }
 }
-
-Select.propTypes = {
-  label: PropTypes.string.isRequired,
-  tip: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  onSelect: PropTypes.func.isRequired,
-};
 
 export default Select;
