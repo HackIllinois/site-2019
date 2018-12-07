@@ -25,7 +25,7 @@ const Before = () => (
           We will be providing buses for students this year to a number of universities! We will be
           announcing where they will be and finding bus coordinators from those schools periodically
           until February. If you are an industry mentor, we provide travel reimbursements. Inquire
-          at opensource@hackillinois.org.
+          at <a href="mailto:opensource@hackillinois.org">opensource@hackillinois.org</a>.
         </p>
       </section>
       <section className="faq-column">
