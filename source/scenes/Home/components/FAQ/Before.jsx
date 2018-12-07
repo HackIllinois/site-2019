@@ -22,18 +22,19 @@ const Before = () => (
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
-          We will be providing buses for students this year to a number of universities!
-          We'll be announcing where they will be and finding bus coordinators from those schools
-          periodically until February. If you are an industry mentor, we provide travel reimbursements.
-          Please inquire at opensource@hackillinois.org.
+          We will be providing buses for students this year to a number of universities! We will be
+          announcing where they will be and finding bus coordinators from those schools periodically
+          until February. If you are an industry mentor, we provide travel reimbursements. Inquire
+          at opensource@hackillinois.org.
         </p>
       </section>
       <section className="faq-column">
         <h4>Do I need a team?</h4>
         <p>
-          You can work with as many people as you want! Single person and pair teams are allowed,
-          but we encourage you to work in a group. If you wish to form a team at HackIllinois, there
-          will be events to pair potential team members.
+          Single person and pair teams are allowed, but we encourage you to work in a group. You can
+          work with as many people as you want, and if you wish to form a team at HackIllinois,
+          there will be events to pair potential team members. Additionally this year, mentors will
+          be on every team in order to qualify for prizes.
         </p>
       </section>
     </div>
