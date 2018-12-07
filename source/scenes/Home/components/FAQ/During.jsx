@@ -30,8 +30,8 @@ const During = () => (
       <section className="faq-column">
         <h4>Is there anything to do other than code?</h4>
         <p>
-          ABSOLUTELY! We’ll be running a variety of mini-events this year, ranging from our historic
-          Nerf battles to some brand new ideas we’ll be piloting this year. We’ll have a few
+          ABSOLUTELY! We’ll be running a variety of mini-events ranging from our historic
+          Nerf battles to some brand new ideas we will be piloting this year. We’ll have a few
           keynotes and engaging workshops as well, so definitely familiarize yourself with our
           schedule before beginning work on your projects.
         </p>
