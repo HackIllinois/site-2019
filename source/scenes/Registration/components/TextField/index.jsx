@@ -4,9 +4,9 @@ import React from 'react';
 import './styles.scss';
 
 type Props = {
-  label: String,
-  name: String,
-  placeholder: String,
+  label: string,
+  name: string,
+  placeholder: string,
 };
 
 const TextField = (props: Props) => {

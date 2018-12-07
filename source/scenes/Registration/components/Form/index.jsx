@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TextField from '../TextField';
+import StudentInfo from '../../scenes/StudentInfo';
 import './styles.scss';
 
 const ScrollableForm = () => (
@@ -8,7 +8,7 @@ const ScrollableForm = () => (
     <h1>Registration</h1>
 
     <div className="form-view">
-      <TextField label="Preferred Name" name="name" placeholder="Type in your preferred name" />
+      <StudentInfo />
     </div>
   </section>
 );
