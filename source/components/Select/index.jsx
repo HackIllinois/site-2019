@@ -131,6 +131,7 @@ class Select extends React.Component<Props> {
   }
 
   handleFocus(e) {
+    console.log('hi');
     e.preventDefault();
     this.toggleMenu();
     this.inputRef.current.focus();
@@ -169,18 +170,18 @@ class Select extends React.Component<Props> {
               alt="Drop down arrow"
             />
           </div>
-          <div className="menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
-            {items.map((item, index) => (
-              <div
-                key={item.text}
-                onClick={() => this.selectItem(index)}
-                className={index === matchIndex ? 'menu-el selected' : 'menu-el'}
-              >
-                <p>{item.text}</p>
-              </div>
-            ))}
-          </div>
         </label>
+        <div className="menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
+          {items.map((item, index) => (
+            <div
+              key={item.text}
+              onClick={() => this.selectItem(index)}
+              className={index === matchIndex ? 'menu-el selected' : 'menu-el'}
+            >
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
