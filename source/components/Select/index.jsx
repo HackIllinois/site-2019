@@ -14,7 +14,7 @@ import './styles.scss';
 
 type Props = {
   label: string,
-  tip: string,
+  placeholder: string,
   items: Array<{ text: string }>,
   onSelect: string => void,
 };
@@ -26,9 +26,8 @@ class Select extends React.Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      curIndex: -1,
       isOpen: false,
-      inputValue: props.tip,
+      inputValue: '',
       matchIndex: 0,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -42,23 +41,11 @@ class Select extends React.Component<Props> {
     id += 1;
   }
 
-  // Function open up isOpen to the parent component, not implemented
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   if (nextProps.isOpen === prevState.isOpen) {
-  //     return prevState;
-  //   }
-  //   return Object.assign({}, { prevState, isOpen: nextProps.isOpen });
-  // }
-
   toggleMenu() {
     const { isOpen } = this.state;
     if (!isOpen) {
       this.inputRef.current.select();
-      let { inputValue } = this.state;
-      const { tip } = this.props;
-      if (inputValue === tip) {
-        inputValue = '';
-      }
+      const { inputValue } = this.state;
       this.setState({ isOpen: true, inputValue });
     } else {
       this.setState({ isOpen: false });
@@ -68,7 +55,6 @@ class Select extends React.Component<Props> {
   selectItem(newIndex) {
     const { items, onSelect } = this.props;
     this.setState({
-      curIndex: newIndex,
       matchIndex: newIndex,
       inputValue: items[newIndex].text,
       isOpen: false,
@@ -131,7 +117,6 @@ class Select extends React.Component<Props> {
         const { items, onSelect } = this.props;
         const { matchIndex } = this.state;
         this.setState({
-          curIndex: matchIndex,
           inputValue: items[matchIndex].text,
           isOpen: false,
         });
@@ -152,8 +137,8 @@ class Select extends React.Component<Props> {
   }
 
   render() {
-    const { items, label } = this.props;
-    const { curIndex, isOpen, inputValue, matchIndex } = this.state;
+    const { items, label, placeholder } = this.props;
+    const { isOpen, inputValue, matchIndex } = this.state;
 
     const menuHeight = items.length * 37 < 185 ? items.length * 37 : 185;
     const openedStyling = {
@@ -165,33 +150,37 @@ class Select extends React.Component<Props> {
     };
 
     return (
-      <div className="select-cont">
-        <div className="select-label">{label}</div>
-        <div className="select-input-cont" onClick={this.handleFocus}>
-          <input
-            className={curIndex === -1 ? 'select-input' : 'select-input select-dark-text'}
-            value={inputValue}
-            onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown}
-            ref={this.inputRef}
-          />
-          <img
-            className={isOpen ? 'select-drop-down-arrow select-rotated' : 'select-drop-down-arrow'}
-            src={dropDownArrow}
-            alt="Drop down arrow"
-          />
-        </div>
-        <div className="select-menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
-          {items.map((item, index) => (
-            <div
-              key={item.text}
-              onClick={() => this.selectItem(index)}
-              className={index === matchIndex ? 'select-menu-el select-selected' : 'select-menu-el'}
-            >
-              {item.text}
-            </div>
-          ))}
-        </div>
+      <div className="select">
+        <label className="label" htmlFor={`${this.id}-input`}>
+          {label}
+          <div className="input-cont" onClick={this.handleFocus}>
+            <input
+              className="input"
+              value={inputValue}
+              onChange={this.handleChange}
+              onKeyDown={this.handleKeyDown}
+              ref={this.inputRef}
+              placeholder={placeholder}
+              id={`${this.id}-input`}
+            />
+            <img
+              className={isOpen ? 'drop-down-arrow rotated' : 'drop-down-arrow'}
+              src={dropDownArrow}
+              alt="Drop down arrow"
+            />
+          </div>
+          <div className="menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
+            {items.map((item, index) => (
+              <div
+                key={item.text}
+                onClick={() => this.selectItem(index)}
+                className={index === matchIndex ? 'menu-el selected' : 'menu-el'}
+              >
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </label>
       </div>
     );
   }
