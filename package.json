@@ -24,21 +24,27 @@
   "homepage": "https://github.com/HackIllinois/site-2019#readme",
   "dependencies": {
     "animejs": "^2.2.0",
+    "jwt-decode": "^2.2.0",
     "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-ga": "^2.5.3",
-    "react-router-dom": "^4.3.1"
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.2",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.24.1",
+    "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
@@ -62,7 +68,7 @@
     "style-loader": "^0.22.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
+    "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
   },
   "lint-staged": {

@@ -37,7 +37,7 @@ module.exports = {
             include: APP_DIR,
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'react', 'flow'],
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-flow'],
             },
           },
           {
