@@ -1,42 +1,9 @@
 // @flow
 import React from 'react';
-import Transition from 'react-transition-group/Transition';
 
 import Select from 'components/Select';
 import TextField from 'components/TextField';
-
-type Props = {
-  visible: boolean,
-};
-
-const defaultStyle = {
-  transition: 'opacity 300ms ease-in-out',
-  opacity: 0,
-};
-
-const transitionStyles = {
-  entering: { opacity: 0 },
-  entered: { opacity: 1 },
-};
-
-const StudentInfo = (props: Props) => {
-  const { visible } = props;
-  return (
-    <Transition in={visible} timeout={300}>
-      {state => (
-        <div
-          style={{
-            ...defaultStyle,
-            ...transitionStyles[state],
-          }}
-        >
-          <Form />
-        </div>
-      )}
-      <Form />
-    </Transition>
-  );
-};
+import FormTransition from './FormTransition';
 
 const schools = [
   { text: 'Georgia Tech' },
@@ -48,7 +15,7 @@ const Form = () => (
   <div className="scrolled-form">
     <Select
       label="School"
-      tip="Select your school"
+      placeholder="Select your school"
       items={schools}
       onSelect={s => console.log(s)}
     />
@@ -60,5 +27,18 @@ const Form = () => (
     />
   </div>
 );
+
+type Props = {
+  visible: boolean,
+};
+
+const StudentInfo = (props: Props) => {
+  const { visible } = props;
+  return (
+    <FormTransition visible={visible} uid="student-info">
+      <Form />
+    </FormTransition>
+  );
+};
 
 export default StudentInfo;

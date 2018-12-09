@@ -12,7 +12,7 @@ type Props = {
 const TextField = (props: Props) => {
   const { label, name, placeholder } = props;
   return (
-    <div className="form-textfield">
+    <div className="form-field">
       <label htmlFor={name}>
         <p>{label}</p>
         <input type="text" name={name} placeholder={placeholder} />

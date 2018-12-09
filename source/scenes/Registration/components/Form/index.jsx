@@ -1,4 +1,6 @@
+// @flow
 import React, { Component } from 'react';
+import anime from 'animejs';
 
 import PersonalInfo from './PersonalInfo';
 import StudentInfo from './StudentInfo';
@@ -6,7 +8,12 @@ import './styles.scss';
 
 const NUM_PANES = 2;
 
-class ScrollableForm extends Component {
+type Props = {};
+type State = {
+  pane: number,
+};
+
+class ScrollableForm extends Component<Props, State> {
   constructor() {
     super();
     this.state = {
@@ -17,12 +24,47 @@ class ScrollableForm extends Component {
     this.nextPane = this.nextPane.bind(this);
   }
 
+  componentDidMount() {
+    const formView = document.getElementById('form-view-container');
+    if (formView) {
+      setTimeout(() => {
+        anime({
+          targets: '.nav-buttons',
+          opacity: 1,
+          top: [formView.clientHeight + 50, formView.clientHeight + 70],
+          duration: 200,
+          easing: 'easeOutQuad',
+        });
+      }, 10);
+    }
+  }
+
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    const { pane } = this.state;
+    if (pane !== prevState.pane) {
+      // Animate button location
+      const formView = document.getElementById('form-view-container');
+      if (formView) {
+        setTimeout(() => {
+          anime({
+            targets: '.nav-buttons',
+            top: formView.clientHeight + 70,
+            duration: 200,
+            easing: 'easeOutQuad',
+          });
+        }, 200);
+      }
+    }
+  }
+
+  prevPane: () => void;
   prevPane() {
     this.setState(prevState => ({
       pane: prevState.pane - 1,
     }));
   }
 
+  nextPane: () => void;
   nextPane() {
     this.setState(prevState => ({
       pane: prevState.pane + 1,
@@ -37,18 +79,22 @@ class ScrollableForm extends Component {
         <h1>Registration</h1>
 
         <div className="form-view">
-          <StudentInfo visible={pane === 0} />
-          <PersonalInfo visible={pane === 1} />
-        </div>
+          <div id="form-view-container">
+            <StudentInfo visible={pane === 0} />
+            <PersonalInfo visible={pane === 1} />
+          </div>
 
-        <div className="nav-buttons">
-          <button type="button" onClick={this.prevPane} disabled={pane === 0}>
-            Back
-          </button>
+          <div className="nav-buttons">
+            <button type="button" onClick={this.prevPane} disabled={pane === 0}>
+              Back
+            </button>
 
-          <button type="button" onClick={this.nextPane} disabled={pane === NUM_PANES - 1}>
-            Next
-          </button>
+            <div className="spacing" />
+
+            <button type="button" onClick={this.nextPane} disabled={pane === NUM_PANES - 1}>
+              Next
+            </button>
+          </div>
         </div>
       </section>
     );

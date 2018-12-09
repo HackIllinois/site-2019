@@ -1,6 +1,10 @@
+@import '../../../../styles/variables.scss';
+
+$form-width: 500px;
+
 .scrollable-form {
-  flex-grow: 1;
   background-color: #358b94;
+  flex-grow: 1;
 
   h1 {
     padding-top: 62px;
@@ -13,7 +17,48 @@
   .form-view {
     margin: auto;
     padding-top: 80px;
-    width: 500px;
-    transition: height 1s linear;
+    position: relative;
+    width: $form-width;
+
+    .form-transition {
+      position: relative;
+      opacity: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    opacity: 0;
+    padding-top: 20px;
+    position: absolute;
+    top: 100px;
+    width: $form-width;
+
+    button {
+      border: 2px solid white;
+      border-radius: 100px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 6px 18px;
+      transition: color 0.2s, border-color 0.2s;
+
+      &:disabled {
+        border-color: $white-greyed;
+        color: $white-greyed;
+        cursor: unset;
+      }
+    }
+
+    .spacing {
+      flex-grow: 1;
+    }
   }
 }

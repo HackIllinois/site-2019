@@ -1,6 +1,6 @@
-$faded-white: rgba(255, 255, 255, 0.6);
+@import '../../styles/variables.scss';
 
-.form-textfield {
+.form-field {
   padding: 17px 0;
   width: 100%;
 
@@ -14,6 +14,7 @@ $faded-white: rgba(255, 255, 255, 0.6);
     background: none;
     border: none;
     border-bottom: 2px solid $faded-white;
+    box-sizing: border-box;
     color: white;
     font-size: 19px;
     margin-top: 6px;

@@ -4,6 +4,8 @@ import React from 'react';
 import Select from 'components/Select';
 import TextField from 'components/TextField';
 
+import FormTransition from './FormTransition';
+
 const shirtSizes = [
   { text: 'Small' },
   { text: 'Medium' },
@@ -11,16 +13,25 @@ const shirtSizes = [
   { text: 'Extra-Large' },
 ];
 
-const PersonalInfo = () => (
-  <div className="scrolled-form">
-    <Select
-      label="Shirt Size"
-      tip="Select a size"
-      items={shirtSizes}
-      onSelect={s => console.log(s)}
-    />
-    <TextField label="Phone" name="phone" placeholder="123 456 7890" />
-  </div>
-);
+type Props = {
+  visible: boolean,
+};
+
+const PersonalInfo = (props: Props) => {
+  const { visible } = props;
+  return (
+    <FormTransition visible={visible} uid="personal-info">
+      <div className="scrolled-form">
+        <Select
+          label="Shirt Size"
+          placeholder="Select a size"
+          items={shirtSizes}
+          onSelect={s => console.log(s)}
+        />
+        <TextField label="Phone" name="phone" placeholder="123 456 7890" />
+      </div>
+    </FormTransition>
+  );
+};
 
 export default PersonalInfo;

@@ -176,9 +176,9 @@ class Select extends React.Component<Props, State> {
     };
 
     return (
-      <div className="select">
+      <div className="select form-field">
         <label className="label" htmlFor={`${this.id}-input`}>
-          {label}
+          <p>{label}</p>
           <div className="input-cont" onClick={this.handleFocus}>
             <input
               className="input"
