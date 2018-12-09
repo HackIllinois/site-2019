@@ -1,4 +1,4 @@
-// @Flow
+// @flow
 /* eslint no-lonely-if: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
@@ -12,23 +12,30 @@ import * as React from 'react';
 import dropDownArrow from 'assets/drop_down_arrow.svg';
 import './styles.scss';
 
+import type { ElementRef } from 'react';
+
 type Props = {
   label: string,
-  tip: string,
+  placeholder: string,
   items: Array<{ text: string }>,
   onSelect: string => void,
+};
+
+type State = {
+  isOpen: boolean,
+  inputValue: string,
+  matchIndex: number,
 };
 
 // static count var to give each instance a unique id
 let id = 0;
 
-class Select extends React.Component<Props> {
-  constructor(props) {
+class Select extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
-      curIndex: -1,
       isOpen: false,
-      inputValue: props.tip,
+      inputValue: '',
       matchIndex: 0,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -42,45 +49,41 @@ class Select extends React.Component<Props> {
     id += 1;
   }
 
-  // Function open up isOpen to the parent component, not implemented
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   if (nextProps.isOpen === prevState.isOpen) {
-  //     return prevState;
-  //   }
-  //   return Object.assign({}, { prevState, isOpen: nextProps.isOpen });
-  // }
+  id: string;
+  inputRef: ElementRef<*>;
 
+  toggleMenu: () => void;
   toggleMenu() {
     const { isOpen } = this.state;
     if (!isOpen) {
       this.inputRef.current.select();
-      let { inputValue } = this.state;
-      const { tip } = this.props;
-      if (inputValue === tip) {
-        inputValue = '';
-      }
+      const { inputValue } = this.state;
       this.setState({ isOpen: true, inputValue });
     } else {
       this.setState({ isOpen: false });
     }
   }
 
-  selectItem(newIndex) {
+  selectItem: number => void;
+  selectItem(newIndex: number) {
     const { items, onSelect } = this.props;
     this.setState({
-      curIndex: newIndex,
       matchIndex: newIndex,
       inputValue: items[newIndex].text,
       isOpen: false,
     });
-    onSelect(newIndex);
+    onSelect(items[newIndex].text);
   }
 
-  handleChange(e) {
-    const newValue = e.target.value;
+  handleChange: (SyntheticEvent<HTMLInputElement>) => void;
+  handleChange(e: SyntheticEvent<HTMLInputElement>) {
+    const newValue = e.currentTarget.value;
     if (newValue === '') {
       this.setState({ inputValue: newValue, matchIndex: 0 });
-      document.getElementById(this.id).scrollTop = 0;
+      const dropdown = document.getElementById(this.id);
+      if (dropdown) {
+        dropdown.scrollTop = 0;
+      }
     } else {
       let { matchIndex } = this.state;
       const { inputValue } = this.state;
@@ -98,13 +101,17 @@ class Select extends React.Component<Props> {
         matchIndex += 1;
       }
 
-      document.getElementById(this.id).scrollTop = 37 * matchIndex;
+      const dropdown = document.getElementById(this.id);
+      if (dropdown) {
+        dropdown.scrollTop = 37 * matchIndex;
+      }
 
       this.setState({ inputValue: newValue, matchIndex });
     }
   }
 
-  handleKeyDown(e) {
+  handleKeyDown: (SyntheticKeyboardEvent<HTMLInputElement>) => void;
+  handleKeyDown(e: SyntheticKeyboardEvent<HTMLInputElement>) {
     const { isOpen } = this.state;
     if (isOpen) {
       if (e.key === 'ArrowUp') {
@@ -112,8 +119,10 @@ class Select extends React.Component<Props> {
         const { items } = this.props;
         if (matchIndex !== 0) {
           matchIndex -= 1;
-          if (document.getElementById(this.id).scrollTop >= 37 * (matchIndex + 1)) {
-            document.getElementById(this.id).scrollTop -= 37;
+
+          const dropdown = document.getElementById(this.id);
+          if (dropdown && dropdown.scrollTop >= 37 * (matchIndex + 1)) {
+            dropdown.scrollTop -= 37;
           }
           this.setState({ matchIndex, inputValue: items[matchIndex].text });
         }
@@ -122,8 +131,10 @@ class Select extends React.Component<Props> {
         const { items } = this.props;
         if (matchIndex !== items.length - 1) {
           matchIndex += 1;
-          if (document.getElementById(this.id).scrollTop <= 37 * (matchIndex - 5)) {
-            document.getElementById(this.id).scrollTop += 37;
+
+          const dropdown = document.getElementById(this.id);
+          if (dropdown && dropdown.scrollTop <= 37 * (matchIndex - 5)) {
+            dropdown.scrollTop += 37;
           }
           this.setState({ matchIndex, inputValue: items[matchIndex].text });
         }
@@ -131,29 +142,29 @@ class Select extends React.Component<Props> {
         const { items, onSelect } = this.props;
         const { matchIndex } = this.state;
         this.setState({
-          curIndex: matchIndex,
           inputValue: items[matchIndex].text,
           isOpen: false,
         });
-        onSelect(matchIndex);
+        onSelect(items[matchIndex].text);
       }
     } else {
       if (e.key === 'Enter') {
-        e.target.select();
+        e.currentTarget.select();
         this.setState({ isOpen: true });
       }
     }
   }
 
-  handleFocus(e) {
+  handleFocus: (SyntheticEvent<HTMLDivElement>) => void;
+  handleFocus(e: SyntheticEvent<HTMLDivElement>) {
     e.preventDefault();
     this.toggleMenu();
     this.inputRef.current.focus();
   }
 
   render() {
-    const { items, label } = this.props;
-    const { curIndex, isOpen, inputValue, matchIndex } = this.state;
+    const { items, label, placeholder } = this.props;
+    const { isOpen, inputValue, matchIndex } = this.state;
 
     const menuHeight = items.length * 37 < 185 ? items.length * 37 : 185;
     const openedStyling = {
@@ -165,30 +176,34 @@ class Select extends React.Component<Props> {
     };
 
     return (
-      <div className="select-cont">
-        <div className="select-label">{label}</div>
-        <div className="select-input-cont" onClick={this.handleFocus}>
-          <input
-            className={curIndex === -1 ? 'select-input' : 'select-input select-dark-text'}
-            value={inputValue}
-            onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown}
-            ref={this.inputRef}
-          />
-          <img
-            className={isOpen ? 'select-drop-down-arrow select-rotated' : 'select-drop-down-arrow'}
-            src={dropDownArrow}
-            alt="Drop down arrow"
-          />
-        </div>
-        <div className="select-menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
+      <div className="select">
+        <label className="label" htmlFor={`${this.id}-input`}>
+          {label}
+          <div className="input-cont" onClick={this.handleFocus}>
+            <input
+              className="input"
+              value={inputValue}
+              onChange={this.handleChange}
+              onKeyDown={this.handleKeyDown}
+              ref={this.inputRef}
+              placeholder={placeholder}
+              id={`${this.id}-input`}
+            />
+            <img
+              className={isOpen ? 'drop-down-arrow rotated' : 'drop-down-arrow'}
+              src={dropDownArrow}
+              alt="Drop down arrow"
+            />
+          </div>
+        </label>
+        <div className="menu" style={isOpen ? openedStyling : closedStyling} id={this.id}>
           {items.map((item, index) => (
             <div
               key={item.text}
               onClick={() => this.selectItem(index)}
-              className={index === matchIndex ? 'select-menu-el select-selected' : 'select-menu-el'}
+              className={index === matchIndex ? 'menu-el selected' : 'menu-el'}
             >
-              {item.text}
+              <p>{item.text}</p>
             </div>
           ))}
         </div>
