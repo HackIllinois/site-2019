@@ -2,6 +2,7 @@
 /* eslint no-lonely-if: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
+/* eslint react/require-default-props: 0 */
 
 // disabled due to prettierrc:
 /* eslint operator-linebreak: 0 */
@@ -19,6 +20,7 @@ type Props = {
   placeholder: string,
   items: Array<{ text: string }>,
   onSelect: string => void,
+  disableInput?: boolean,
 };
 
 type State = {
@@ -77,6 +79,11 @@ class Select extends React.Component<Props, State> {
 
   handleChange: (SyntheticEvent<HTMLInputElement>) => void;
   handleChange(e: SyntheticEvent<HTMLInputElement>) {
+    const { disableInput } = this.props;
+    if (disableInput) {
+      return;
+    }
+
     const newValue = e.currentTarget.value;
     if (newValue === '') {
       this.setState({ inputValue: newValue, matchIndex: 0 });
