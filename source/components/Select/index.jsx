@@ -21,6 +21,7 @@ type Props = {
   items: Array<{ text: string }>,
   onSelect: string => void,
   disableInput?: boolean,
+  index: number,
 };
 
 type State = {
@@ -36,11 +37,12 @@ let id = 0;
 class Select extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    const initialValue = props.index === -1 ? '' : props.items[props.index].text;
     this.state = {
       isOpen: false,
-      inputValue: '',
-      matchIndex: 0,
-      valueSelected: false,
+      inputValue: initialValue,
+      matchIndex: props.index,
+      valueSelected: initialValue !== -1,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.selectItem = this.selectItem.bind(this);
@@ -183,7 +185,7 @@ class Select extends React.Component<Props, State> {
     const { items, label, placeholder } = this.props;
     const { isOpen, inputValue, matchIndex, valueSelected } = this.state;
 
-    const menuHeight = items.length * 40 < 185 ? items.length * 40 : 185;
+    const menuHeight = items.length * 40 < 200 ? items.length * 40 : 200;
     const openedStyling = {
       height: menuHeight,
     };
