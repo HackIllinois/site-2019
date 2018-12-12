@@ -1,6 +1,6 @@
 import store from '../store';
 
-export default function registerUser(data) {
+export default function register(data) {
   return fetch('/registration/attendee', {
     method: 'POST',
     headers: {
