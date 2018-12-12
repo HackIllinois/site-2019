@@ -7,29 +7,58 @@ import './styles.scss';
 
 type SideBarLinkProps = {
   children: Node,
+  index: number,
+  pane: number,
+  onClick: () => void,
 };
 
 const SideBarLink = (props: SideBarLinkProps) => {
-  const { children } = props;
+  const { children, index, pane, onClick } = props;
+  let s = 'unvisited';
+  if (index === pane) {
+    s = 'current';
+  } else if (index < pane) {
+    s = 'visited';
+  }
+
   return (
-    <li className="sidebar-link">
-      <div className="bubble" />
-      <p>{children}</p>
+    <li>
+      <button className={`sidebar-link ${s}`} type="button" onClick={onClick}>
+        <div className="bubble" />
+        <p>{children}</p>
+      </button>
     </li>
   );
 };
 
-const SideBar = () => (
-  <section className="sidebar">
-    <ul>
-      <SideBarLink>Sign Up</SideBarLink>
-      <SideBarLink>Student Info</SideBarLink>
-      <SideBarLink>Personal Info</SideBarLink>
-      <SideBarLink>Professional Info</SideBarLink>
-      <SideBarLink>Other</SideBarLink>
-      <SideBarLink>Team</SideBarLink>
-    </ul>
-  </section>
-);
+type SideBarProps = {
+  pane: number,
+  setPane: number => void,
+};
+
+const SideBar = (props: SideBarProps) => {
+  const { pane, setPane } = props;
+  return (
+    <section className="sidebar">
+      <ul>
+        <SideBarLink index={0} pane={pane} onClick={() => setPane(0)}>
+          Student Info
+        </SideBarLink>
+        <SideBarLink index={1} pane={pane} onClick={() => setPane(1)}>
+          Personal Info
+        </SideBarLink>
+        <SideBarLink index={2} pane={pane} onClick={() => setPane(2)}>
+          Professional Info
+        </SideBarLink>
+        <SideBarLink index={3} pane={pane} onClick={() => setPane(3)}>
+          Other
+        </SideBarLink>
+        <SideBarLink index={4} pane={pane} onClick={() => setPane(4)}>
+          Team
+        </SideBarLink>
+      </ul>
+    </section>
+  );
+};
 
 export default SideBar;
