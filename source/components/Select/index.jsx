@@ -27,6 +27,7 @@ type State = {
   isOpen: boolean,
   inputValue: string,
   matchIndex: number,
+  valueSelected: boolean,
 };
 
 // static count var to give each instance a unique id
@@ -39,6 +40,7 @@ class Select extends React.Component<Props, State> {
       isOpen: false,
       inputValue: '',
       matchIndex: 0,
+      valueSelected: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.selectItem = this.selectItem.bind(this);
@@ -57,8 +59,11 @@ class Select extends React.Component<Props, State> {
   toggleMenu: () => void;
   toggleMenu() {
     const { isOpen } = this.state;
+    const { disableInput } = this.props;
     if (!isOpen) {
-      this.inputRef.current.select();
+      if (!disableInput) {
+        this.inputRef.current.select();
+      }
       const { inputValue } = this.state;
       this.setState({ isOpen: true, inputValue });
     } else {
@@ -73,6 +78,7 @@ class Select extends React.Component<Props, State> {
       matchIndex: newIndex,
       inputValue: items[newIndex].text,
       isOpen: false,
+      valueSelected: true,
     });
     onSelect(items[newIndex].text);
   }
@@ -86,7 +92,7 @@ class Select extends React.Component<Props, State> {
 
     const newValue = e.currentTarget.value;
     if (newValue === '') {
-      this.setState({ inputValue: newValue, matchIndex: 0 });
+      this.setState({ inputValue: newValue, matchIndex: 0, valueSelected: false });
       const dropdown = document.getElementById(this.id);
       if (dropdown) {
         dropdown.scrollTop = 0;
@@ -120,6 +126,7 @@ class Select extends React.Component<Props, State> {
   handleKeyDown: (SyntheticKeyboardEvent<HTMLInputElement>) => void;
   handleKeyDown(e: SyntheticKeyboardEvent<HTMLInputElement>) {
     const { isOpen } = this.state;
+    const { disableInput } = this.props;
     if (isOpen) {
       if (e.key === 'ArrowUp') {
         let { matchIndex } = this.state;
@@ -151,12 +158,15 @@ class Select extends React.Component<Props, State> {
         this.setState({
           inputValue: items[matchIndex].text,
           isOpen: false,
+          valueSelected: true,
         });
         onSelect(items[matchIndex].text);
       }
     } else {
       if (e.key === 'Enter') {
-        e.currentTarget.select();
+        if (!disableInput) {
+          e.currentTarget.select();
+        }
         this.setState({ isOpen: true });
       }
     }
@@ -171,9 +181,9 @@ class Select extends React.Component<Props, State> {
 
   render() {
     const { items, label, placeholder } = this.props;
-    const { isOpen, inputValue, matchIndex } = this.state;
+    const { isOpen, inputValue, matchIndex, valueSelected } = this.state;
 
-    const menuHeight = items.length * 37 < 185 ? items.length * 37 : 185;
+    const menuHeight = items.length * 40 < 185 ? items.length * 40 : 185;
     const openedStyling = {
       height: menuHeight,
     };
@@ -189,6 +199,7 @@ class Select extends React.Component<Props, State> {
           <div className="input-cont" onClick={this.handleFocus}>
             <input
               className="input"
+              style={valueSelected ? { color: 'white' } : null}
               value={inputValue}
               onChange={this.handleChange}
               onKeyDown={this.handleKeyDown}
