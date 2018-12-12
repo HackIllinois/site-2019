@@ -49,6 +49,7 @@ class Registration extends Component<Props, State> {
     };
   }
 
+  handleSubmit: void => void;
   handleSubmit() {
     const { data } = this.state;
     register(data);
