@@ -8,17 +8,15 @@ import './styles.scss';
 
 const NUM_PANES = 2;
 
-type Props = {};
-type State = {
+type Props = {
   pane: number,
+  setPane: number => void,
+  registerField: string => string => void,
 };
 
-class ScrollableForm extends Component<Props, State> {
+class ScrollableForm extends Component<Props> {
   constructor() {
     super();
-    this.state = {
-      pane: 0,
-    };
 
     this.prevPane = this.prevPane.bind(this);
     this.nextPane = this.nextPane.bind(this);
@@ -39,9 +37,9 @@ class ScrollableForm extends Component<Props, State> {
     }
   }
 
-  componentDidUpdate(prevProps: Props, prevState: State) {
-    const { pane } = this.state;
-    if (pane !== prevState.pane) {
+  componentDidUpdate(prevProps: Props) {
+    const { pane } = this.props;
+    if (pane !== prevProps.pane) {
       // Animate button location
       const formView = document.getElementById('form-view-container');
       if (formView) {
@@ -59,20 +57,18 @@ class ScrollableForm extends Component<Props, State> {
 
   prevPane: () => void;
   prevPane() {
-    this.setState(prevState => ({
-      pane: prevState.pane - 1,
-    }));
+    const { pane, setPane } = this.props;
+    setPane(pane - 1);
   }
 
   nextPane: () => void;
   nextPane() {
-    this.setState(prevState => ({
-      pane: prevState.pane + 1,
-    }));
+    const { pane, setPane } = this.props;
+    setPane(pane + 1);
   }
 
   render() {
-    const { pane } = this.state;
+    const { pane, registerField } = this.props;
 
     return (
       <section className="scrollable-form">
@@ -80,8 +76,8 @@ class ScrollableForm extends Component<Props, State> {
 
         <div className="form-view">
           <div id="form-view-container">
-            <StudentInfo visible={pane === 0} />
-            <PersonalInfo visible={pane === 1} />
+            <StudentInfo visible={pane === 0} registerField={registerField} />
+            <PersonalInfo visible={pane === 1} registerField={registerField} />
           </div>
 
           <div className="nav-buttons">

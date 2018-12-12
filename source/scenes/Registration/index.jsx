@@ -1,15 +1,62 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
 import './styles.scss';
 
-const Registration = () => (
-  <div className="registration">
-    <SideBar />
-    <ScrollableForm />
-  </div>
-);
+type Props = {};
+
+type RegistrationData = {};
+
+type State = {
+  pane: number,
+  data: RegistrationData,
+};
+
+class Registration extends Component<Props, State> {
+  constructor() {
+    super();
+
+    this.state = {
+      pane: 0,
+      data: {},
+    };
+
+    this.setPane = this.setPane.bind(this);
+    this.registerField = this.registerField.bind(this);
+  }
+
+  setPane: number => void;
+  setPane(pane: number) {
+    this.setState({
+      pane,
+    });
+  }
+
+  registerField: string => string => void;
+  registerField(field: string) {
+    return (value: string) => {
+      this.setState(prevState => {
+        const d = {};
+        d[field] = value;
+        return {
+          data: Object.assign({}, prevState.data, d),
+        };
+      });
+    };
+  }
+
+  render() {
+    const { pane } = this.state;
+
+    return (
+      <div className="registration">
+        <SideBar pane={pane} setPane={this.setPane} />
+        <ScrollableForm pane={pane} setPane={this.setPane} registerField={this.registerField} />
+      </div>
+    );
+  }
+}
 
 export default Registration;

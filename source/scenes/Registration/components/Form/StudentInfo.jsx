@@ -30,6 +30,7 @@ const Form = () => (
 
 type Props = {
   visible: boolean,
+  // registerField: (string) => (string) => void,
 };
 
 const StudentInfo = (props: Props) => {
