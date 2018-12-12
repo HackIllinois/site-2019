@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 
+import register from 'services/api/registration';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
 import './styles.scss';
@@ -25,6 +26,7 @@ class Registration extends Component<Props, State> {
 
     this.setPane = this.setPane.bind(this);
     this.registerField = this.registerField.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   setPane: number => void;
@@ -45,6 +47,11 @@ class Registration extends Component<Props, State> {
         };
       });
     };
+  }
+
+  handleSubmit() {
+    const { data } = this.state;
+    register(data);
   }
 
   render() {
