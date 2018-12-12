@@ -1,13 +1,14 @@
 // @flow
 import React, { Component } from 'react';
 
+import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
 import './styles.scss';
 
-type Props = {};
+import type { RegistrationData } from './FormContext';
 
-type RegistrationData = {};
+type Props = {};
 
 type State = {
   pane: number,
@@ -20,7 +21,11 @@ class Registration extends Component<Props, State> {
 
     this.state = {
       pane: 0,
-      data: {},
+      data: {
+        major: '',
+        graduationYear: '',
+        phoneNumber: '',
+      },
     };
 
     this.setPane = this.setPane.bind(this);
@@ -37,6 +42,10 @@ class Registration extends Component<Props, State> {
   registerField: string => string => void;
   registerField(field: string) {
     return (value: string) => {
+      const { data } = this.state;
+      if (!(field in data)) {
+        throw new Error(`${field} missing from Form state`);
+      }
       this.setState(prevState => {
         const d = {};
         d[field] = value;
@@ -48,12 +57,14 @@ class Registration extends Component<Props, State> {
   }
 
   render() {
-    const { pane } = this.state;
+    const { pane, data } = this.state;
 
     return (
       <div className="registration">
         <SideBar pane={pane} setPane={this.setPane} />
-        <ScrollableForm pane={pane} setPane={this.setPane} registerField={this.registerField} />
+        <FormContext.Provider value={{ data, registerField: this.registerField }}>
+          <ScrollableForm pane={pane} setPane={this.setPane} registerField={this.registerField} />
+        </FormContext.Provider>
       </div>
     );
   }

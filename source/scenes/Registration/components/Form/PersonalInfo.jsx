@@ -5,6 +5,7 @@ import Select from 'components/Select';
 import TextField from 'components/TextField';
 
 import FormTransition from './FormTransition';
+import FormContext from '../../FormContext';
 
 const shirtSizes = [
   { text: 'Small' },
@@ -21,15 +22,25 @@ const PersonalInfo = (props: Props) => {
   const { visible } = props;
   return (
     <FormTransition visible={visible} uid="personal-info">
-      <div className="scrolled-form">
-        <Select
-          label="Shirt Size"
-          placeholder="Select a size"
-          items={shirtSizes}
-          onSelect={s => console.log(s)}
-        />
-        <TextField label="Phone" name="phone" placeholder="123 456 7890" />
-      </div>
+      <FormContext.Consumer>
+        {({ data, registerField }) => (
+          <div className="scrolled-form">
+            <Select
+              label="Shirt Size"
+              placeholder="Select a size"
+              items={shirtSizes}
+              onSelect={registerField('shirtSize')}
+            />
+            <TextField
+              label="Phone"
+              name="phone"
+              placeholder="123 456 7890"
+              value={data.phoneNumber}
+              onChange={registerField('phoneNumber')}
+            />
+          </div>
+        )}
+      </FormContext.Consumer>
     </FormTransition>
   );
 };
