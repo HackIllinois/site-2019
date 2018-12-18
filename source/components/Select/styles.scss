@@ -71,12 +71,13 @@
     position: absolute;
     width: 100%;
     transition: all 0.2s ease-out;
-    overflow: scroll;
+    overflow-y: scroll;
     z-index: 100;
   }
 
   .menu-el {
     transition: background-color 0.3s;
+    box-sizing: border-box;
     background-color: #10666d;
     width: 100%;
     border-bottom: 1px solid #95c6c9;
@@ -86,7 +87,7 @@
     z-index: 105;
     position: relative;
     padding-left: 4px;
-    font-size: 16px;
+    font-size: 19px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

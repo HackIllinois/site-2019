@@ -30,6 +30,8 @@ const PersonalInfo = (props: Props) => {
               placeholder="Select a size"
               items={shirtSizes}
               onSelect={registerField('shirtSize')}
+              disableInput
+              index={2}
             />
             <TextField
               label="Phone"
