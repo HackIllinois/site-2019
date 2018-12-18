@@ -27,6 +27,8 @@ const PersonalInfo = (props: Props) => {
           placeholder="Select a size"
           items={shirtSizes}
           onSelect={s => console.log(s)}
+          disableInput
+          index={2}
         />
         <TextField label="Phone" name="phone" placeholder="123 456 7890" />
       </div>
