@@ -8,6 +8,11 @@ import FormTransition from './FormTransition';
 const schools = [
   { text: 'Georgia Tech' },
   { text: 'Purdue' },
+  { text: 'Purdue' },
+  { text: 'Purdue' },
+  { text: 'Purdue' },
+  { text: 'Purdue' },
+  { text: 'Purdue' },
   { text: 'University of Illinois at Urbana-Champaign' },
 ];
 
@@ -18,6 +23,7 @@ const Form = () => (
       placeholder="Select your school"
       items={schools}
       onSelect={s => console.log(s)}
+      index={-1}
     />
     <TextField label="Major" name="major" placeholder="Type in your major" />
     <TextField
