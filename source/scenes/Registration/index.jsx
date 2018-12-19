@@ -1,8 +1,8 @@
 // @flow
 import React, { Component } from 'react';
 
-import FormContext from './FormContext';
 import register from 'services/api/registration';
+import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
 import './styles.scss';
@@ -23,9 +23,19 @@ class Registration extends Component<Props, State> {
     this.state = {
       pane: 0,
       data: {
+        school: -1,
         major: '',
         graduationYear: '',
+        shirtSize: -1,
+        transportation: -1,
+        diet: -1,
         phoneNumber: '',
+        age: '',
+        gender: -1,
+        isNovice: -1,
+        linkedin: '',
+        professionalInterest: '',
+        // Skills
       },
     };
 

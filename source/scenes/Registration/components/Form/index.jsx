@@ -4,9 +4,13 @@ import anime from 'animejs';
 
 import PersonalInfo from './PersonalInfo';
 import StudentInfo from './StudentInfo';
+import ProfessionalInfo from './ProfessionalInfo';
+import BeginnerInfo from './BeginnerInfo';
+import OtherInfo from './OtherInfo';
+import TeamInfo from './TeamInfo';
 import './styles.scss';
 
-const NUM_PANES = 2;
+const NUM_PANES = 6;
 
 type Props = {
   pane: number,
@@ -78,6 +82,10 @@ class ScrollableForm extends Component<Props> {
           <div id="form-view-container">
             <StudentInfo visible={pane === 0} registerField={registerField} />
             <PersonalInfo visible={pane === 1} registerField={registerField} />
+            <ProfessionalInfo visible={pane === 2} registerField={registerField} />
+            <BeginnerInfo visible={pane === 3} registerField={registerField} />
+            <OtherInfo visible={pane === 4} registerField={registerField} />
+            <TeamInfo visible={pane === 5} registerField={registerField} />
           </div>
 
           <div className="nav-buttons">

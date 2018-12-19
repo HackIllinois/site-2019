@@ -16,7 +16,7 @@ $form-width: 500px;
 
   .form-view {
     margin: auto;
-    padding-top: 80px;
+    padding-top: 60px;
     position: relative;
     width: $form-width;
 
@@ -27,6 +27,19 @@ $form-width: 500px;
 
     .hidden {
       display: none;
+    }
+
+    .split {
+      display: flex;
+      flex-direction: row;
+
+      > *:first-child {
+        padding-right: 20px;
+      }
+
+      > *:last-child {
+        padding-left: 20px;
+      }
     }
   }
 

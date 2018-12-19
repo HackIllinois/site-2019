@@ -14,6 +14,12 @@ const shirtSizes = [
   { text: 'Extra-Large' },
 ];
 
+const transportation = [{ text: 'Driving' }, { text: 'Bus' }, { text: 'Plane' }, { text: 'Canoe' }];
+
+const diet = [{ text: 'None' }, { text: 'Vegetarian' }, { text: 'Pescepescetarian' }];
+
+const genderOptions = [{ text: 'Male' }, { text: 'Female' }, { text: 'Other' }, { text: '' }];
+
 type Props = {
   visible: boolean,
 };
@@ -31,7 +37,23 @@ const PersonalInfo = (props: Props) => {
               items={shirtSizes}
               onSelect={registerField('shirtSize')}
               disableInput
-              index={2}
+              index={data.shirtSize}
+            />
+            <Select
+              label="Transportation"
+              placeholder="Select a way to get here"
+              items={transportation}
+              onSelect={registerField('transportation')}
+              disableInput
+              index={data.transportation}
+            />
+            <Select
+              label="Diet"
+              placeholder="Any dietary restrictions we should know about?"
+              items={diet}
+              onSelect={registerField('diet')}
+              disableInput
+              index={data.diet}
             />
             <TextField
               label="Phone"
@@ -40,6 +62,23 @@ const PersonalInfo = (props: Props) => {
               value={data.phoneNumber}
               onChange={registerField('phoneNumber')}
             />
+            <div className="split">
+              <TextField
+                label="Age"
+                name="age"
+                placeholder="How old are you?"
+                value={data.age}
+                onChange={registerField('age')}
+              />
+              <Select
+                label="Gender"
+                placeholder="Your gender?"
+                items={genderOptions}
+                onSelect={registerField('gender')}
+                disableInput
+                index={data.gender}
+              />
+            </div>
           </div>
         )}
       </FormContext.Consumer>

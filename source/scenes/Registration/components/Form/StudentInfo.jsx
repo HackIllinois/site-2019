@@ -9,11 +9,6 @@ import FormContext from '../../FormContext';
 const schools = [
   { text: 'Georgia Tech' },
   { text: 'Purdue' },
-  { text: 'Purdue' },
-  { text: 'Purdue' },
-  { text: 'Purdue' },
-  { text: 'Purdue' },
-  { text: 'Purdue' },
   { text: 'University of Illinois at Urbana-Champaign' },
 ];
 
@@ -32,8 +27,8 @@ const StudentInfo = (props: Props) => {
               label="School"
               placeholder="Select your school"
               items={schools}
-              onSelect={s => console.log(s)}
-              index={-1}
+              onSelect={registerField('school')}
+              index={data.school}
             />
             <TextField
               label="Major"

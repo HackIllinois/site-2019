@@ -19,7 +19,7 @@ type Props = {
   label: string,
   placeholder: string,
   items: Array<{ text: string }>,
-  onSelect: string => void,
+  onSelect: number => void,
   disableInput?: boolean,
   index: number,
 };
@@ -82,7 +82,7 @@ class Select extends React.Component<Props, State> {
       isOpen: false,
       valueSelected: true,
     });
-    onSelect(items[newIndex].text);
+    onSelect(newIndex);
   }
 
   handleChange: (SyntheticEvent<HTMLInputElement>) => void;
@@ -162,7 +162,7 @@ class Select extends React.Component<Props, State> {
           isOpen: false,
           valueSelected: true,
         });
-        onSelect(items[matchIndex].text);
+        onSelect(matchIndex);
       }
     } else {
       if (e.key === 'Enter') {
