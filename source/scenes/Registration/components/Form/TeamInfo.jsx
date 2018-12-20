@@ -17,18 +17,11 @@ const TeamInfo = (props: Props) => {
         {({ data, registerField }) => (
           <div className="scrolled-form">
             <TextField
-              label="Names of team members"
-              name="teamMemberNames"
-              placeholder="Type in names, separate with commas"
-              value={data.teamMemberNames}
-              onChange={registerField('teamMemberNames')}
-            />
-            <TextField
               label="GitHub usernames of team members"
-              name="teamMemberGithubs"
+              name="teamMembers"
               placeholder="Type in usernames, separate with commas"
-              value={data.teamMemberGithubs}
-              onChange={registerField('teamMemberGithubs')}
+              value={data.teamMembers}
+              onChange={registerField('teamMembers')}
             />
           </div>
         )}

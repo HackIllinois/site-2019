@@ -19,20 +19,20 @@ const OtherInfo = (props: Props) => {
       <FormContext.Consumer>
         {({ data, registerField }) => (
           <div className="scrolled-form">
-            <TextField
-              label="Preferred Name"
-              name="preferredName"
-              placeholder="Type in your preferred name"
-              value={data.preferredName}
-              onChange={registerField('preferredName')}
-            />
             <Select
               label="Have you attended HackIllinois in the past?"
               placeholder="Yes or No"
               items={yn}
-              onSelect={registerField('previousAttendee')}
+              onSelect={registerField('priorAttendance')}
               disableInput
-              index={-1}
+              index={data.priorAttendance}
+            />
+            <TextField
+              label="Anything else you’d like us to know?"
+              name="extraInfo"
+              placeholder="Type in any other considerations"
+              value={data.extraInfo}
+              onChange={registerField('extraInfo')}
             />
           </div>
         )}

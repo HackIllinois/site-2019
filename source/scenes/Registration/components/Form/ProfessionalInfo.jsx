@@ -23,9 +23,9 @@ const ProfessionalInfo = (props: Props) => {
               label="Are you a beginner?"
               placeholder="Are you though?"
               items={yn}
-              onSelect={registerField('isNovice')}
+              onSelect={registerField('isBeginner')}
               disableInput
-              index={data.isNovice}
+              index={data.isBeginner}
             />
             <TextField
               label="LinkedIn Profile"
@@ -36,10 +36,10 @@ const ProfessionalInfo = (props: Props) => {
             />
             <TextField
               label="Career Interests"
-              name="professionalInterest"
+              name="interests"
               placeholder="What do you want to be after you graduate?"
-              value={data.professionalInterest}
-              onChange={registerField('professionalInterest')}
+              value={data.interests}
+              onChange={registerField('interests')}
             />
             <TextField
               label="Skills"

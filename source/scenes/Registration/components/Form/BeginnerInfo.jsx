@@ -31,7 +31,7 @@ const BeginnerInfo = (props: Props) => {
               label="Understanding of making pull requests"
               placeholder="From 1-5 (1 = low, 5 = high)"
               items={range}
-              onSelect={registerField('prUnderstanding')}
+              onSelect={registerField('pullRequest')}
               disableInput
               index={-1}
             />
@@ -40,14 +40,14 @@ const BeginnerInfo = (props: Props) => {
               name="programmingExperience"
               placeholder="Type in a number"
               value={data.programmingExperience}
-              onChange={registerField('programmingExperience')}
+              onChange={registerField('yearsExperience')}
             />
             <TextField
               label="What programming languages/technical skills do you know?"
-              name="otherConsiderations"
-              placeholder="Type in any other considerations"
-              value={data.otherConsiderations}
-              onChange={registerField('otherConsiderations')}
+              name="technicalSkills"
+              placeholder="JavaScript, Python, ..."
+              value={data.technicalSkills}
+              onChange={registerField('technicalSkills')}
             />
           </div>
         )}

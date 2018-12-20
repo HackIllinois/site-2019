@@ -1,4 +1,6 @@
 // @flow
+/* eslint react/require-default-props: 0 */
+
 import React, { Component } from 'react';
 
 import './styles.scss';
@@ -9,6 +11,8 @@ type Props = {
   placeholder: string,
   value: string,
   onChange: string => void,
+  error?: boolean,
+  errorMessage?: string,
 };
 
 class TextField extends Component<Props> {
@@ -24,7 +28,7 @@ class TextField extends Component<Props> {
   }
 
   render() {
-    const { label, name, placeholder, value } = this.props;
+    const { label, name, placeholder, value, error, errorMessage } = this.props;
     return (
       <div className="form-field">
         <label htmlFor={name}>
@@ -37,6 +41,7 @@ class TextField extends Component<Props> {
             onChange={this.handleKeyPress}
           />
         </label>
+        {error && <p className="error-message">{errorMessage}</p>}
       </div>
     );
   }

@@ -15,7 +15,6 @@ const NUM_PANES = 6;
 type Props = {
   pane: number,
   setPane: number => void,
-  registerField: string => string => void,
 };
 
 class ScrollableForm extends Component<Props> {
@@ -72,7 +71,7 @@ class ScrollableForm extends Component<Props> {
   }
 
   render() {
-    const { pane, registerField } = this.props;
+    const { pane } = this.props;
 
     return (
       <section className="scrollable-form">
@@ -80,12 +79,12 @@ class ScrollableForm extends Component<Props> {
 
         <div className="form-view">
           <div id="form-view-container">
-            <StudentInfo visible={pane === 0} registerField={registerField} />
-            <PersonalInfo visible={pane === 1} registerField={registerField} />
-            <ProfessionalInfo visible={pane === 2} registerField={registerField} />
-            <BeginnerInfo visible={pane === 3} registerField={registerField} />
-            <OtherInfo visible={pane === 4} registerField={registerField} />
-            <TeamInfo visible={pane === 5} registerField={registerField} />
+            <StudentInfo visible={pane === 0} />
+            <PersonalInfo visible={pane === 1} />
+            <ProfessionalInfo visible={pane === 2} />
+            <BeginnerInfo visible={pane === 3} />
+            <OtherInfo visible={pane === 4} />
+            <TeamInfo visible={pane === 5} />
           </div>
 
           <div className="nav-buttons">

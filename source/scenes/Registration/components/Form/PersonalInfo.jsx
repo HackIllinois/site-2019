@@ -13,12 +13,14 @@ const shirtSizes = [
   { text: 'Large' },
   { text: 'Extra-Large' },
 ];
-
 const transportation = [{ text: 'Driving' }, { text: 'Bus' }, { text: 'Plane' }, { text: 'Canoe' }];
-
 const diet = [{ text: 'None' }, { text: 'Vegetarian' }, { text: 'Pescepescetarian' }];
-
-const genderOptions = [{ text: 'Male' }, { text: 'Female' }, { text: 'Other' }, { text: '' }];
+const genderOptions = [
+  { text: 'Male' },
+  { text: 'Female' },
+  { text: 'Other' },
+  { text: 'Prefer not to answer' },
+];
 
 type Props = {
   visible: boolean,
@@ -59,8 +61,8 @@ const PersonalInfo = (props: Props) => {
               label="Phone"
               name="phone"
               placeholder="123 456 7890"
-              value={data.phoneNumber}
-              onChange={registerField('phoneNumber')}
+              value={data.phone}
+              onChange={registerField('phone')}
             />
             <div className="split">
               <TextField

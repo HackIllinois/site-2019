@@ -14,6 +14,7 @@ type Props = {};
 type State = {
   pane: number,
   data: RegistrationData,
+  errors: { [string]: boolean },
 };
 
 class Registration extends Component<Props, State> {
@@ -29,14 +30,22 @@ class Registration extends Component<Props, State> {
         shirtSize: -1,
         transportation: -1,
         diet: -1,
-        phoneNumber: '',
+        phone: '',
         age: '',
         gender: -1,
-        isNovice: -1,
+        isBeginner: -1,
         linkedin: '',
-        professionalInterest: '',
-        // Skills
+        interests: '',
+        skills: '',
+        priorAttendance: -1,
+        extraInfo: '',
+        teamMembers: '',
+        versionControl: -1,
+        pullRequest: -1,
+        yearsExperience: '',
+        technicalSkills: '',
       },
+      errors: {},
     };
 
     this.setPane = this.setPane.bind(this);
@@ -51,8 +60,8 @@ class Registration extends Component<Props, State> {
     });
   }
 
-  registerField: string => string => void;
-  registerField(field: string) {
+  registerField: (string, ?(string) => boolean) => string => void;
+  registerField(field: string, validator?: string => boolean) {
     return (value: string) => {
       const { data } = this.state;
       if (!(field in data)) {
@@ -61,8 +70,15 @@ class Registration extends Component<Props, State> {
       this.setState(prevState => {
         const d = {};
         d[field] = value;
+        const e = {};
+        if (validator === undefined) {
+          e[field] = false;
+        } else {
+          e[field] = !validator(value);
+        }
         return {
           data: Object.assign({}, prevState.data, d),
+          errors: Object.assign({}, prevState.errors, e),
         };
       });
     };
@@ -75,13 +91,13 @@ class Registration extends Component<Props, State> {
   }
 
   render() {
-    const { pane, data } = this.state;
+    const { pane, data, errors } = this.state;
 
     return (
       <div className="registration">
         <SideBar pane={pane} setPane={this.setPane} />
-        <FormContext.Provider value={{ data, registerField: this.registerField }}>
-          <ScrollableForm pane={pane} setPane={this.setPane} registerField={this.registerField} />
+        <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
+          <ScrollableForm pane={pane} setPane={this.setPane} />
         </FormContext.Provider>
       </div>
     );

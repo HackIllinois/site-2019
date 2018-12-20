@@ -5,11 +5,20 @@ import Select from 'components/Select';
 import TextField from 'components/TextField';
 import FormTransition from './FormTransition';
 import FormContext from '../../FormContext';
+import { checkGraduationYear } from './inputValidators';
 
 const schools = [
   { text: 'Georgia Tech' },
+  { text: 'Michigan State University' },
+  { text: 'Northwestern' },
+  { text: 'Other' },
   { text: 'Purdue' },
+  { text: 'University of Chicago' },
+  { text: 'University of Florida' },
+  { text: 'University of Michigan' },
+  { text: 'University of Illinois at Chicago' },
   { text: 'University of Illinois at Urbana-Champaign' },
+  { text: 'University of Wisconsin-Madison' },
 ];
 
 type Props = {
@@ -21,7 +30,7 @@ const StudentInfo = (props: Props) => {
   return (
     <FormTransition visible={visible} uid="student-info">
       <FormContext.Consumer>
-        {({ data, registerField }) => (
+        {({ data, errors, registerField }) => (
           <div className="scrolled-form">
             <Select
               label="School"
@@ -39,10 +48,12 @@ const StudentInfo = (props: Props) => {
             />
             <TextField
               label="Graduation Year"
-              name="grad_year"
+              name="graduationYear"
               placeholder="Which year are you graduating?"
               value={data.graduationYear}
-              onChange={registerField('graduationYear')}
+              onChange={registerField('graduationYear', checkGraduationYear)}
+              error={errors.graduationYear}
+              errorMessage="Must be a valid graduation year"
             />
           </div>
         )}
