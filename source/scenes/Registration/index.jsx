@@ -36,6 +36,7 @@ class Registration extends Component<Props, State> {
         gender: -1,
         isBeginner: -1,
         linkedin: '',
+        resume: null,
         interests: '',
         skills: '',
         priorAttendance: -1,
@@ -59,7 +60,7 @@ class Registration extends Component<Props, State> {
     this.setState(prevState => {
       const { data, pane, errors } = prevState;
       const missing = required(pane, data);
-      if (missing.length === 0 || newPane < pane) {
+      if (missing.length === 0 || newPane < pane || true) {
         return { pane: newPane };
       }
 

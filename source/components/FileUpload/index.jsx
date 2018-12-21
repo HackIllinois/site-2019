@@ -1,8 +1,14 @@
+// @flow
+/* eslint react/require-default-props: 0 */
 import React from 'react';
 import './styles.scss';
 
+import type { ElementRef } from 'react';
+
 type Props = {
-  handleUpload: number => void,
+  onChange: number => void,
+  error?: boolean,
+  errorMessage?: string,
 };
 
 type State = {
@@ -10,7 +16,7 @@ type State = {
 };
 
 class FileUpload extends React.Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.fileInput = React.createRef();
     this.handleChange = this.handleChange.bind(this);
@@ -18,16 +24,19 @@ class FileUpload extends React.Component<Props, State> {
       fileName: '',
     };
   }
+  fileInput: ElementRef<*>;
 
+  handleChange: void => void;
   handleChange() {
-    const { handleUpload } = this.props;
+    const { onChange } = this.props;
     const file = this.fileInput.current.files[0];
     this.setState({ fileName: file.name });
-    handleUpload(file);
+    onChange(file);
   }
 
   render() {
     const { fileName } = this.state;
+    const { error, errorMessage } = this.props;
     return (
       <div className="form-field">
         <label htmlFor="file-upload">
@@ -46,6 +55,7 @@ class FileUpload extends React.Component<Props, State> {
             <p>{fileName}</p>
           </div>
         </label>
+        {error && <p className="error-message">{errorMessage}</p>}
       </div>
     );
   }
