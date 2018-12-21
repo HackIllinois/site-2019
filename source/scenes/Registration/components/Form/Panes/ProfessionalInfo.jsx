@@ -38,8 +38,9 @@ const ProfessionalInfo = (props: Props) => {
             />
             <FileUpload
               onChange={registerField('resume', checkResumeExt)}
+              file={data.resume}
               error={errors.resume}
-              errorMessage="Must be a PDF or Docx"
+              errorMessage="Resume file should be in PDF or Docx format"
             />
             <TextField
               label="Career Interests"

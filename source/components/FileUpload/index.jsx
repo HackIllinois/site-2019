@@ -6,23 +6,17 @@ import './styles.scss';
 import type { ElementRef } from 'react';
 
 type Props = {
-  onChange: number => void,
+  onChange: File => void,
+  file: File,
   error?: boolean,
   errorMessage?: string,
 };
 
-type State = {
-  fileName: string,
-};
-
-class FileUpload extends React.Component<Props, State> {
+class FileUpload extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.fileInput = React.createRef();
     this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      fileName: '',
-    };
   }
   fileInput: ElementRef<*>;
 
@@ -30,13 +24,15 @@ class FileUpload extends React.Component<Props, State> {
   handleChange() {
     const { onChange } = this.props;
     const file = this.fileInput.current.files[0];
-    this.setState({ fileName: file.name });
     onChange(file);
   }
 
   render() {
-    const { fileName } = this.state;
     const { error, errorMessage } = this.props;
+    let { file } = this.props;
+    if (file === null) {
+      file = { name: '' };
+    }
     return (
       <div className="form-field">
         <label htmlFor="file-upload">
@@ -52,7 +48,7 @@ class FileUpload extends React.Component<Props, State> {
               id="file-upload"
               accept=".pdf,.docx"
             />
-            <p>{fileName}</p>
+            <p>{file.name}</p>
           </div>
         </label>
         {error && <p className="error-message">{errorMessage}</p>}
