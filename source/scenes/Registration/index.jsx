@@ -1,17 +1,20 @@
 // @flow
 import React, { Component } from 'react';
 
+import register from 'services/api/registration';
+import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
 import './styles.scss';
 
-type Props = {};
+import type { RegistrationData } from './FormContext';
 
-type RegistrationData = {};
+type Props = {};
 
 type State = {
   pane: number,
   data: RegistrationData,
+  errors: { [string]: boolean },
 };
 
 class Registration extends Component<Props, State> {
@@ -20,11 +23,34 @@ class Registration extends Component<Props, State> {
 
     this.state = {
       pane: 0,
-      data: {},
+      data: {
+        school: -1,
+        major: '',
+        graduationYear: '',
+        shirtSize: -1,
+        transportation: -1,
+        diet: -1,
+        phone: '',
+        age: '',
+        gender: -1,
+        isBeginner: -1,
+        linkedin: '',
+        interests: '',
+        skills: '',
+        priorAttendance: -1,
+        extraInfo: '',
+        teamMembers: '',
+        versionControl: -1,
+        pullRequest: -1,
+        yearsExperience: '',
+        technicalSkills: '',
+      },
+      errors: {},
     };
 
     this.setPane = this.setPane.bind(this);
     this.registerField = this.registerField.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   setPane: number => void;
@@ -34,26 +60,45 @@ class Registration extends Component<Props, State> {
     });
   }
 
-  registerField: string => string => void;
-  registerField(field: string) {
+  registerField: (string, ?(string) => boolean) => string => void;
+  registerField(field: string, validator?: string => boolean) {
     return (value: string) => {
+      const { data } = this.state;
+      if (!(field in data)) {
+        throw new Error(`${field} missing from Form state`);
+      }
       this.setState(prevState => {
         const d = {};
         d[field] = value;
+        const e = {};
+        if (validator === undefined) {
+          e[field] = false;
+        } else {
+          e[field] = !validator(value);
+        }
         return {
           data: Object.assign({}, prevState.data, d),
+          errors: Object.assign({}, prevState.errors, e),
         };
       });
     };
   }
 
+  handleSubmit: void => void;
+  handleSubmit() {
+    const { data } = this.state;
+    register(data);
+  }
+
   render() {
-    const { pane } = this.state;
+    const { pane, data, errors } = this.state;
 
     return (
       <div className="registration">
         <SideBar pane={pane} setPane={this.setPane} />
-        <ScrollableForm pane={pane} setPane={this.setPane} registerField={this.registerField} />
+        <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
+          <ScrollableForm pane={pane} setPane={this.setPane} />
+        </FormContext.Provider>
       </div>
     );
   }

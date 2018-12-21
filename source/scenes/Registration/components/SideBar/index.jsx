@@ -51,9 +51,12 @@ const SideBar = (props: SideBarProps) => {
           Professional Info
         </SideBarLink>
         <SideBarLink index={3} pane={pane} onClick={() => setPane(3)}>
-          Other
+          Beginner Info
         </SideBarLink>
         <SideBarLink index={4} pane={pane} onClick={() => setPane(4)}>
+          Other
+        </SideBarLink>
+        <SideBarLink index={5} pane={pane} onClick={() => setPane(5)}>
           Team
         </SideBarLink>
       </ul>

@@ -8,6 +8,7 @@
     color: white;
     font-weight: 700;
     font-size: 19px;
+    line-height: 23px;
   }
 
   input {
@@ -30,5 +31,12 @@
       border-bottom-color: white;
       outline: none;
     }
+  }
+
+  .error-message {
+    padding-top: 2px;
+    font-size: 12px;
+    position: absolute;
+    color: white;
   }
 }

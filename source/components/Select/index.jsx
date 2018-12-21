@@ -2,6 +2,7 @@
 /* eslint no-lonely-if: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
+/* eslint react/require-default-props: 0 */
 
 // disabled due to prettierrc:
 /* eslint operator-linebreak: 0 */
@@ -18,13 +19,16 @@ type Props = {
   label: string,
   placeholder: string,
   items: Array<{ text: string }>,
-  onSelect: string => void,
+  onSelect: number => void,
+  disableInput?: boolean,
+  index: number,
 };
 
 type State = {
   isOpen: boolean,
   inputValue: string,
   matchIndex: number,
+  valueSelected: boolean,
 };
 
 // static count var to give each instance a unique id
@@ -33,10 +37,12 @@ let id = 0;
 class Select extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    const initialValue = props.index === -1 ? '' : props.items[props.index].text;
     this.state = {
       isOpen: false,
-      inputValue: '',
-      matchIndex: 0,
+      inputValue: initialValue,
+      matchIndex: props.index,
+      valueSelected: initialValue !== -1,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.selectItem = this.selectItem.bind(this);
@@ -55,8 +61,11 @@ class Select extends React.Component<Props, State> {
   toggleMenu: () => void;
   toggleMenu() {
     const { isOpen } = this.state;
+    const { disableInput } = this.props;
     if (!isOpen) {
-      this.inputRef.current.select();
+      if (!disableInput) {
+        this.inputRef.current.select();
+      }
       const { inputValue } = this.state;
       this.setState({ isOpen: true, inputValue });
     } else {
@@ -71,15 +80,21 @@ class Select extends React.Component<Props, State> {
       matchIndex: newIndex,
       inputValue: items[newIndex].text,
       isOpen: false,
+      valueSelected: true,
     });
-    onSelect(items[newIndex].text);
+    onSelect(newIndex);
   }
 
   handleChange: (SyntheticEvent<HTMLInputElement>) => void;
   handleChange(e: SyntheticEvent<HTMLInputElement>) {
+    const { disableInput } = this.props;
+    if (disableInput) {
+      return;
+    }
+
     const newValue = e.currentTarget.value;
     if (newValue === '') {
-      this.setState({ inputValue: newValue, matchIndex: 0 });
+      this.setState({ inputValue: newValue, matchIndex: 0, valueSelected: false });
       const dropdown = document.getElementById(this.id);
       if (dropdown) {
         dropdown.scrollTop = 0;
@@ -113,6 +128,7 @@ class Select extends React.Component<Props, State> {
   handleKeyDown: (SyntheticKeyboardEvent<HTMLInputElement>) => void;
   handleKeyDown(e: SyntheticKeyboardEvent<HTMLInputElement>) {
     const { isOpen } = this.state;
+    const { disableInput } = this.props;
     if (isOpen) {
       if (e.key === 'ArrowUp') {
         let { matchIndex } = this.state;
@@ -144,12 +160,15 @@ class Select extends React.Component<Props, State> {
         this.setState({
           inputValue: items[matchIndex].text,
           isOpen: false,
+          valueSelected: true,
         });
-        onSelect(items[matchIndex].text);
+        onSelect(matchIndex);
       }
     } else {
       if (e.key === 'Enter') {
-        e.currentTarget.select();
+        if (!disableInput) {
+          e.currentTarget.select();
+        }
         this.setState({ isOpen: true });
       }
     }
@@ -164,9 +183,9 @@ class Select extends React.Component<Props, State> {
 
   render() {
     const { items, label, placeholder } = this.props;
-    const { isOpen, inputValue, matchIndex } = this.state;
+    const { isOpen, inputValue, matchIndex, valueSelected } = this.state;
 
-    const menuHeight = items.length * 37 < 185 ? items.length * 37 : 185;
+    const menuHeight = items.length * 40 < 200 ? items.length * 40 : 200;
     const openedStyling = {
       height: menuHeight,
     };
@@ -182,6 +201,7 @@ class Select extends React.Component<Props, State> {
           <div className="input-cont" onClick={this.handleFocus}>
             <input
               className="input"
+              style={valueSelected ? { color: 'white' } : null}
               value={inputValue}
               onChange={this.handleChange}
               onKeyDown={this.handleKeyDown}
