@@ -6,20 +6,7 @@ import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { checkGraduationYear } from '../inputValidators';
-
-const schools = [
-  { text: 'Georgia Tech' },
-  { text: 'Michigan State University' },
-  { text: 'Northwestern' },
-  { text: 'Other' },
-  { text: 'Purdue' },
-  { text: 'University of Chicago' },
-  { text: 'University of Florida' },
-  { text: 'University of Michigan' },
-  { text: 'University of Illinois at Chicago' },
-  { text: 'University of Illinois at Urbana-Champaign' },
-  { text: 'University of Wisconsin-Madison' },
-];
+import { schools } from './selectOptions';
 
 type Props = {
   visible: boolean,
