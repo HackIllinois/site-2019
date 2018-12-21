@@ -1,0 +1,35 @@
+.form-field {
+  .file-upload {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+
+    .btn {
+      border: 2px solid white;
+      color: white;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 8px;
+      font-size: 20px;
+      border-radius: 100px;
+      padding: 6px 18px;
+    }
+
+    input[type='file'] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    p {
+      padding-left: 10px;
+      color: black;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+}
