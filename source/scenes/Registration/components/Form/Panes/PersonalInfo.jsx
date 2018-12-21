@@ -7,20 +7,7 @@ import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 
-const shirtSizes = [
-  { text: 'Small' },
-  { text: 'Medium' },
-  { text: 'Large' },
-  { text: 'Extra-Large' },
-];
-const transportation = [{ text: 'Driving' }, { text: 'Bus' }, { text: 'Plane' }, { text: 'Canoe' }];
-const diet = [{ text: 'None' }, { text: 'Vegetarian' }, { text: 'Pescepescetarian' }];
-const genderOptions = [
-  { text: 'Male' },
-  { text: 'Female' },
-  { text: 'Other' },
-  { text: 'Prefer not to answer' },
-];
+import { shirtSizes, transportation, diet, genderOptions } from './selectOptions';
 
 type Props = {
   visible: boolean,

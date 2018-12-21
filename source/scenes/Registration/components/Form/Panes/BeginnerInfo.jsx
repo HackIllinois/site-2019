@@ -5,8 +5,7 @@ import Select from 'components/Select';
 import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
-
-const range = [{ text: '1' }, { text: '2' }, { text: '3' }, { text: '4' }, { text: '5' }];
+import { range } from './selectOptions';
 
 type Props = {
   visible: boolean,

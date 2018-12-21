@@ -5,8 +5,7 @@ import Select from 'components/Select';
 import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
-
-const yn = [{ text: 'Yes' }, { text: 'No' }];
+import { yn } from './selectOptions';
 
 type Props = {
   visible: boolean,

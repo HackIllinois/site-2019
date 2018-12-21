@@ -5,12 +5,11 @@ import Select from 'components/Select';
 import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
+import { yn } from './selectOptions';
 
 type Props = {
   visible: boolean,
 };
-
-const yn = [{ text: 'Yes' }, { text: 'No' }];
 
 const ProfessionalInfo = (props: Props) => {
   const { visible } = props;
