@@ -36,6 +36,7 @@ class Registration extends Component<Props, State> {
         gender: -1,
         isBeginner: -1,
         linkedin: '',
+        resume: null,
         interests: '',
         skills: '',
         priorAttendance: -1,
