@@ -42,7 +42,7 @@ const ProfessionalInfo = (props: Props) => {
               onChange={registerField('interests')}
             />
             <TextField
-              label="Skills"
+              label="Professional Skills"
               name="skills"
               placeholder="Separate your skills with commas"
               value={data.skills}
