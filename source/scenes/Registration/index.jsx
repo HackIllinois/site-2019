@@ -5,6 +5,7 @@ import register from 'services/api/registration';
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
+import required from './components/Form/required';
 import './styles.scss';
 
 import type { RegistrationData } from './FormContext';
@@ -54,9 +55,19 @@ class Registration extends Component<Props, State> {
   }
 
   setPane: number => void;
-  setPane(pane: number) {
-    this.setState({
-      pane,
+  setPane(newPane: number) {
+    this.setState(prevState => {
+      const { data, pane, errors } = prevState;
+      const missing = required(pane, data);
+      if (missing.length === 0 || newPane < pane) {
+        return { pane: newPane };
+      }
+
+      const e = {};
+      missing.forEach(field => {
+        e[field] = true;
+      });
+      return { errors: Object.assign({}, errors, e) };
     });
   }
 

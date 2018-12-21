@@ -3,9 +3,9 @@ import React from 'react';
 
 import Select from 'components/Select';
 import TextField from 'components/TextField';
-import FormTransition from './FormTransition';
-import FormContext from '../../FormContext';
-import { checkGraduationYear } from './inputValidators';
+import FormTransition from '../FormTransition';
+import FormContext from '../../../FormContext';
+import { checkGraduationYear } from '../inputValidators';
 
 const schools = [
   { text: 'Georgia Tech' },
@@ -45,6 +45,8 @@ const StudentInfo = (props: Props) => {
               placeholder="Type in your major"
               value={data.major}
               onChange={registerField('major')}
+              error={errors.major}
+              errorMessage="Major is required"
             />
             <TextField
               label="Graduation Year"

@@ -7,6 +7,7 @@ module.exports = {
   },
   rules: {
     'arrow-parens': 0,
+    'implicit-arrow-linebreak': 0,
     'lines-between-class-members': 0, // For grouping related flow types
     'object-curly-newline': 0,
     'flowtype/define-flow-type': 1,

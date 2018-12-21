@@ -4,8 +4,8 @@ import React from 'react';
 import Select from 'components/Select';
 import TextField from 'components/TextField';
 
-import FormTransition from './FormTransition';
-import FormContext from '../../FormContext';
+import FormTransition from '../FormTransition';
+import FormContext from '../../../FormContext';
 
 const shirtSizes = [
   { text: 'Small' },
