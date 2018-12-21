@@ -72,6 +72,7 @@
     transition: all 0.2s ease-out;
     overflow-y: scroll;
     z-index: 100;
+    box-sizing: border-box;
   }
 
   .menu-el {

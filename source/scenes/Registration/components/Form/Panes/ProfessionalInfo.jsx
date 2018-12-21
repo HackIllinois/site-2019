@@ -7,12 +7,11 @@ import FileUpload from 'components/FileUpload';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { checkResumeExt } from '../inputValidators';
+import { yn } from './selectOptions';
 
 type Props = {
   visible: boolean,
 };
-
-const yn = [{ text: 'Yes' }, { text: 'No' }];
 
 const ProfessionalInfo = (props: Props) => {
   const { visible } = props;
@@ -50,7 +49,7 @@ const ProfessionalInfo = (props: Props) => {
               onChange={registerField('interests')}
             />
             <TextField
-              label="Skills"
+              label="Professional Skills"
               name="skills"
               placeholder="Separate your skills with commas"
               value={data.skills}
