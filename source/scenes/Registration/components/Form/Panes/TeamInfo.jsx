@@ -2,8 +2,8 @@
 import React from 'react';
 
 import TextField from 'components/TextField';
-import FormTransition from './FormTransition';
-import FormContext from '../../FormContext';
+import FormTransition from '../FormTransition';
+import FormContext from '../../../FormContext';
 
 type Props = {
   visible: boolean,
