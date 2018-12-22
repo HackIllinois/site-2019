@@ -3,21 +3,22 @@ import React from 'react';
 
 import Select from 'components/Select';
 import TextField from 'components/TextField';
+import FileUpload from 'components/FileUpload';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
+import { checkResumeExt } from '../inputValidators';
+import { yn } from './selectOptions';
 
 type Props = {
   visible: boolean,
 };
-
-const yn = [{ text: 'Yes' }, { text: 'No' }];
 
 const ProfessionalInfo = (props: Props) => {
   const { visible } = props;
   return (
     <FormTransition visible={visible} uid="professional-info">
       <FormContext.Consumer>
-        {({ data, registerField }) => (
+        {({ data, errors, registerField }) => (
           <div className="scrolled-form">
             <Select
               label="Are you a beginner?"
@@ -33,6 +34,12 @@ const ProfessionalInfo = (props: Props) => {
               placeholder="Paste your profile url here"
               value={data.linkedin}
               onChange={registerField('linkedin')}
+            />
+            <FileUpload
+              onChange={registerField('resume', checkResumeExt)}
+              file={data.resume}
+              error={errors.resume}
+              errorMessage="Resume file should be in PDF or Docx format"
             />
             <TextField
               label="Career Interests"

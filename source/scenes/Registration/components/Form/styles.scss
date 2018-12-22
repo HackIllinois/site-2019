@@ -47,11 +47,11 @@ $form-width: 500px;
       flex-direction: row;
 
       > *:first-child {
-        padding-right: 20px;
+        margin-right: 20px;
       }
 
       > *:last-child {
-        padding-left: 20px;
+        margin-left: 20px;
       }
     }
   }

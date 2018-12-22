@@ -105,7 +105,7 @@ class Select extends React.Component<Props, State> {
       const { items } = this.props;
 
       // If change is a backspace, set matchIndex back to 0
-      if (inputValue.length > newValue.length) {
+      if (inputValue.length > newValue.length || matchIndex === -1) {
         matchIndex = 0;
       }
       // Find index of closest item to search value
@@ -185,7 +185,7 @@ class Select extends React.Component<Props, State> {
     const { items, label, placeholder } = this.props;
     const { isOpen, inputValue, matchIndex, valueSelected } = this.state;
 
-    const menuHeight = items.length * 40 < 200 ? items.length * 40 : 200;
+    const menuHeight = items.length * 40 <= 200 ? items.length * 40 : 210;
     const openedStyling = {
       height: menuHeight,
     };
