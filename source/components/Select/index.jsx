@@ -22,6 +22,8 @@ type Props = {
   onSelect: number => void,
   disableInput?: boolean,
   index: number,
+  error?: boolean,
+  errorMessage?: string,
 };
 
 type State = {
@@ -182,7 +184,7 @@ class Select extends React.Component<Props, State> {
   }
 
   render() {
-    const { items, label, placeholder } = this.props;
+    const { items, label, placeholder, error, errorMessage } = this.props;
     const { isOpen, inputValue, matchIndex, valueSelected } = this.state;
 
     const menuHeight = items.length * 40 <= 200 ? items.length * 40 : 210;
@@ -208,6 +210,7 @@ class Select extends React.Component<Props, State> {
               ref={this.inputRef}
               placeholder={placeholder}
               id={`${this.id}-input`}
+              autoComplete="off"
             />
             <img
               className={isOpen ? 'drop-down-arrow rotated' : 'drop-down-arrow'}
@@ -227,6 +230,7 @@ class Select extends React.Component<Props, State> {
             </div>
           ))}
         </div>
+        {error && <p className="error-message">{errorMessage}</p>}
       </div>
     );
   }
