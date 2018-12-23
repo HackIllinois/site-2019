@@ -24,13 +24,15 @@ class FileUpload extends React.Component<Props> {
   handleChange() {
     const { onChange } = this.props;
     const file = this.fileInput.current.files[0];
-    onChange(file);
+    if (file) {
+      onChange(file);
+    }
   }
 
   render() {
     const { error, errorMessage } = this.props;
     let { file } = this.props;
-    if (file === null) {
+    if (file === null || file === undefined) {
       file = { name: '' };
     }
     return (
