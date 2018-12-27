@@ -16,10 +16,4 @@ module.exports = merge(common, {
       },
     },
   },
-  plugins: [
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
-      API_ENDPOINT: '/api',
-    }),
-  ],
 });

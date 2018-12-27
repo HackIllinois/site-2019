@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -67,6 +68,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([BUILD_DIR], { root: ROOT_DIR }),
     new CopyWebpackPlugin([{ from: 'source/public_assets', to: 'assets' }]),
+    new Dotenv(),
     new FlowWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
