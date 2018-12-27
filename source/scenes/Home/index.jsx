@@ -43,7 +43,7 @@ const Home = () => (
       <img className="wave wave-front" src={waveFront} alt="Wave Front" />
 
       <div className="buttons">
-        <Link className="registration-link" to="/register">
+        <Link className="button-blue" to="/register">
           Registration
         </Link>
       </div>

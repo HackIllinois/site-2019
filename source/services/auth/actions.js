@@ -26,6 +26,16 @@ function receiveAuth(err, data) {
   };
 }
 
+export function setJWT(jwt) {
+  if (process.env.NODE_ENV !== 'development') {
+    throw new Error('Attempting to manually set JWT outside of dev');
+  }
+  return {
+    type: AUTH_CODE_SUCCESS,
+    jwt,
+  };
+}
+
 export function authCode(code) {
   return dispatch => {
     dispatch(requestAuth());

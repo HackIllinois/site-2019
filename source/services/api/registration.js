@@ -1,22 +1,28 @@
 import * as selectOptions from 'scenes/Registration/components/Form/Panes/selectOptions';
 import store from '../store';
 
+const registrationRoute = `${process.env.API_ENDPOINT}/registration`;
+
 const serialize = data => {
   const serialized = {};
   serialized.school = selectOptions.schools[data.school].text;
   serialized.major = data.major;
   serialized.graduationYear = Number.parseInt(data.graduationYear, 10);
-  serialized.shirtSize = selectOptions.shirtSizes[data.shirtSize].text;
-  serialized.transportation = selectOptions.transportation[data.transportation].text;
-  serialized.diet = selectOptions.diet[data.diet].text;
+  serialized.shirtSize = selectOptions.shirtSizes[data.shirtSize].value;
+  serialized.transportation = selectOptions.transportation[data.transportation].value;
+  serialized.diet = selectOptions.diet[data.diet].value;
   serialized.phone = data.phone;
   serialized.age = Number.parseInt(data.age, 10);
-  serialized.gender = selectOptions.genderOptions[data.gender].text;
+  serialized.gender = selectOptions.genderOptions[data.gender].value;
   serialized.isBeginner = selectOptions.yn[data.isBeginner].value;
   serialized.linkedin = data.linkedin;
-  serialized.interests = data.interests.split(',');
+  if (data.interests === -1) {
+    serialized.interests = [];
+  } else {
+    serialized.interests = [selectOptions.careerInterests[data.interests].value];
+  }
   serialized.skills = data.skills.split(',');
-  serialized.priorAttendance = selectOptions.yn[data.priorattendance].value;
+  serialized.priorAttendance = selectOptions.yn[data.priorAttendance].value;
   serialized.extraInfo = data.extraInfo;
   serialized.teamMembers = data.teamMembers.split(',');
   serialized.beginnerInfo = {
@@ -30,7 +36,7 @@ const serialize = data => {
 
 export default function register(data) {
   const serializedData = serialize(data);
-  return fetch('/registration/attendee', {
+  return fetch(`${registrationRoute}/attendee/`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

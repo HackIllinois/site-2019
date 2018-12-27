@@ -25,6 +25,8 @@ const StudentInfo = (props: Props) => {
               items={schools}
               onSelect={registerField('school')}
               index={data.school}
+              error={errors.school}
+              errorMessage="Please select your school"
             />
             <TextField
               label="Major"
@@ -33,7 +35,7 @@ const StudentInfo = (props: Props) => {
               value={data.major}
               onChange={registerField('major')}
               error={errors.major}
-              errorMessage="Major is required"
+              errorMessage="Please enter your major"
             />
             <TextField
               label="Graduation Year"

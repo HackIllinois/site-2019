@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .form-field {
-  padding: 17px 0;
+  padding: 7px 0 17px 0;
   width: 100%;
 
   label p {
@@ -18,7 +18,7 @@
     box-sizing: border-box;
     color: white;
     font-size: 19px;
-    margin-top: 6px;
+    margin-top: 4px;
     padding: 4px;
     transition: border-bottom-color 0.2s;
     width: 100%;
@@ -36,7 +36,8 @@
   .error-message {
     padding-top: 2px;
     font-size: 12px;
+    font-weight: 600;
     position: absolute;
-    color: white;
+    color: #fdcb89;
   }
 }

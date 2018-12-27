@@ -14,9 +14,10 @@ import ProfessionalInfo from './Panes/ProfessionalInfo';
 import BeginnerInfo from './Panes/BeginnerInfo';
 import OtherInfo from './Panes/OtherInfo';
 import TeamInfo from './Panes/TeamInfo';
+import Submit from './Panes/Submit';
 import './styles.scss';
 
-const NUM_PANES = 6;
+const NUM_PANES = 7;
 
 type Props = {
   pane: number,
@@ -32,13 +33,13 @@ class ScrollableForm extends Component<Props> {
   }
 
   componentDidMount() {
-    const formView = document.getElementById('form-view-container');
+    const formView = document.getElementById('form-view');
     if (formView) {
       setTimeout(() => {
         anime({
           targets: '.nav-buttons',
           opacity: 1,
-          top: [formView.clientHeight + 50, formView.clientHeight + 70],
+          top: [formView.clientHeight, formView.clientHeight + 15],
           duration: 200,
           easing: 'easeOutQuad',
         });
@@ -50,12 +51,12 @@ class ScrollableForm extends Component<Props> {
     const { pane } = this.props;
     if (pane !== prevProps.pane) {
       // Animate button location
-      const formView = document.getElementById('form-view-container');
+      const formView = document.getElementById('form-view');
       if (formView) {
         setTimeout(() => {
           anime({
             targets: '.nav-buttons',
-            top: formView.clientHeight + 70,
+            top: formView.clientHeight + 15,
             duration: 200,
             easing: 'easeOutQuad',
           });
@@ -83,7 +84,7 @@ class ScrollableForm extends Component<Props> {
       <section className="scrollable-form">
         <h1>Registration</h1>
 
-        <div className="form-view">
+        <div id="form-view">
           <div id="form-view-container">
             <StudentInfo visible={pane === 0} />
             <PersonalInfo visible={pane === 1} />
@@ -91,6 +92,7 @@ class ScrollableForm extends Component<Props> {
             <BeginnerInfo visible={pane === 3} />
             <OtherInfo visible={pane === 4} />
             <TeamInfo visible={pane === 5} />
+            <Submit visible={pane === 6} />
           </div>
 
           <div className="nav-buttons">

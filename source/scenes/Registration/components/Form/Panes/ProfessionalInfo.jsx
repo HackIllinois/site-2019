@@ -7,7 +7,7 @@ import FileUpload from 'components/FileUpload';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { checkResumeExt } from '../inputValidators';
-import { yn } from './selectOptions';
+import { yn, careerInterests } from './selectOptions';
 
 type Props = {
   visible: boolean,
@@ -27,6 +27,8 @@ const ProfessionalInfo = (props: Props) => {
               onSelect={registerField('isBeginner')}
               disableInput
               index={data.isBeginner}
+              error={errors.isBeginner}
+              errorMessage="Please select an option"
             />
             <TextField
               label="LinkedIn Profile"
@@ -41,12 +43,13 @@ const ProfessionalInfo = (props: Props) => {
               error={errors.resume}
               errorMessage="Resume file should be in PDF or Docx format"
             />
-            <TextField
+            <Select
               label="Career Interests"
-              name="interests"
               placeholder="What do you want to be after you graduate?"
-              value={data.interests}
-              onChange={registerField('interests')}
+              items={careerInterests}
+              onSelect={registerField('interests')}
+              disableInput
+              index={data.interests}
             />
             <TextField
               label="Professional Skills"

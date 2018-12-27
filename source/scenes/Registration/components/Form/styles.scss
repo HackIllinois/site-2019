@@ -14,6 +14,7 @@ $form-width: 500px;
     #017680 82%
   );
   flex-grow: 1;
+  overflow: hidden;
   position: relative;
 
   h1 {
@@ -26,12 +27,12 @@ $form-width: 500px;
     z-index: 5;
   }
 
-  .form-view {
+  #form-view {
     margin: auto;
-    padding-top: 60px;
+    padding: 60px 40px 0 40px;
     position: relative;
-    width: $form-width;
     z-index: 5;
+    max-width: $form-width;
 
     .form-transition {
       position: relative;
@@ -64,7 +65,7 @@ $form-width: 500px;
     padding-top: 20px;
     position: absolute;
     top: 100px;
-    width: $form-width;
+    width: calc(100% - 80px);
 
     button {
       border: 2px solid white;
@@ -90,9 +91,9 @@ $form-width: 500px;
 
   .rocks {
     position: absolute;
-    top: 0;
+    top: -2vh;
     z-index: 2;
-    height: 100vh;
+    height: 104vh;
   }
 
   .left-rocks {
@@ -121,5 +122,33 @@ $form-width: 500px;
     top: 30px;
     left: 0;
     width: 250px;
+  }
+
+  @media (max-height: 760px) {
+    h1 {
+      padding-top: 50px;
+    }
+
+    #form-view {
+      padding-top: 15px;
+    }
+  }
+
+  @media (max-height: 680px) {
+    h1 {
+      padding-top: 35px;
+    }
+
+    .form-field {
+      padding-bottom: 10px;
+
+      input {
+        padding-top: 0px;
+      }
+    }
+  }
+
+  .right-rocks {
+    right: -12px;
   }
 }

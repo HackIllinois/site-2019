@@ -6,7 +6,7 @@ import TextField from 'components/TextField';
 
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
-
+import { checkAge } from '../inputValidators';
 import { shirtSizes, transportation, diet, genderOptions } from './selectOptions';
 
 type Props = {
@@ -18,7 +18,7 @@ const PersonalInfo = (props: Props) => {
   return (
     <FormTransition visible={visible} uid="personal-info">
       <FormContext.Consumer>
-        {({ data, registerField }) => (
+        {({ data, errors, registerField }) => (
           <div className="scrolled-form">
             <Select
               label="Shirt Size"
@@ -27,6 +27,8 @@ const PersonalInfo = (props: Props) => {
               onSelect={registerField('shirtSize')}
               disableInput
               index={data.shirtSize}
+              error={errors.shirtSize}
+              errorMessage="Please select your shirt size"
             />
             <Select
               label="Transportation"
@@ -35,6 +37,8 @@ const PersonalInfo = (props: Props) => {
               onSelect={registerField('transportation')}
               disableInput
               index={data.transportation}
+              error={errors.transportation}
+              errorMessage="Please select if you need travel assistance"
             />
             <Select
               label="Diet"
@@ -43,6 +47,8 @@ const PersonalInfo = (props: Props) => {
               onSelect={registerField('diet')}
               disableInput
               index={data.diet}
+              error={errors.diet}
+              errorMessage="Please specify any dietary restrictions"
             />
             <TextField
               label="Phone"
@@ -50,6 +56,8 @@ const PersonalInfo = (props: Props) => {
               placeholder="123 456 7890"
               value={data.phone}
               onChange={registerField('phone')}
+              error={errors.phone}
+              errorMessage="Please enter your phone number"
             />
             <div className="split">
               <TextField
@@ -57,7 +65,9 @@ const PersonalInfo = (props: Props) => {
                 name="age"
                 placeholder="How old are you?"
                 value={data.age}
-                onChange={registerField('age')}
+                onChange={registerField('age', checkAge)}
+                error={errors.age}
+                errorMessage="Please enter a valid age"
               />
               <Select
                 label="Gender"
@@ -66,6 +76,8 @@ const PersonalInfo = (props: Props) => {
                 onSelect={registerField('gender')}
                 disableInput
                 index={data.gender}
+                error={errors.gender}
+                errorMessage="Please select your gender"
               />
             </div>
           </div>

@@ -1,3 +1,5 @@
+@import '../../../../styles/variables.scss';
+
 $link-height: 20px;
 $link-yellow: #fcca88;
 $yellow-faded: rgba(252, 202, 136, 0.3);
@@ -58,5 +60,9 @@ $yellow-faded: rgba(252, 202, 136, 0.3);
         }
       }
     }
+  }
+
+  @media (max-width: $tablet-max) {
+    display: none;
   }
 }

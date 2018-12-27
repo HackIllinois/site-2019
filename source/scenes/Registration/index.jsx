@@ -1,6 +1,8 @@
 // @flow
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import { githubOAuthURL } from 'services/api/auth';
 import register from 'services/api/registration';
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
@@ -10,7 +12,9 @@ import './styles.scss';
 
 import type { RegistrationData } from './FormContext';
 
-type Props = {};
+type Props = {
+  jwt: ?string,
+};
 
 type State = {
   pane: number,
@@ -37,7 +41,7 @@ class Registration extends Component<Props, State> {
         isBeginner: -1,
         linkedin: '',
         resume: null,
-        interests: '',
+        interests: -1,
         skills: '',
         priorAttendance: -1,
         extraInfo: '',
@@ -103,17 +107,29 @@ class Registration extends Component<Props, State> {
   }
 
   render() {
+    const { jwt } = this.props;
     const { pane, data, errors } = this.state;
 
-    return (
-      <div className="registration">
-        <SideBar pane={pane} setPane={this.setPane} />
-        <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
-          <ScrollableForm pane={pane} setPane={this.setPane} />
-        </FormContext.Provider>
-      </div>
-    );
+    if (jwt) {
+      return (
+        <div className="registration">
+          <SideBar pane={pane} setPane={this.setPane} />
+          <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
+            <ScrollableForm pane={pane} setPane={this.setPane} />
+          </FormContext.Provider>
+        </div>
+      );
+    }
+
+    window.location.replace(githubOAuthURL);
+    return null;
   }
 }
 
-export default Registration;
+const mapStateToProps = state => ({
+  jwt: state.auth.jwt,
+});
+export default connect(
+  mapStateToProps,
+  undefined,
+)(Registration);

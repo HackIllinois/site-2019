@@ -14,9 +14,9 @@ type Props = {
 const OtherInfo = (props: Props) => {
   const { visible } = props;
   return (
-    <FormTransition visible={visible} uid="student-info">
+    <FormTransition visible={visible} uid="other-info">
       <FormContext.Consumer>
-        {({ data, registerField }) => (
+        {({ data, errors, registerField }) => (
           <div className="scrolled-form">
             <Select
               label="Have you attended HackIllinois in the past?"
@@ -25,6 +25,8 @@ const OtherInfo = (props: Props) => {
               onSelect={registerField('priorAttendance')}
               disableInput
               index={data.priorAttendance}
+              error={errors.priorAttendance}
+              errorMessage="Please select prior attendance"
             />
             <TextField
               label="Anything else you’d like us to know?"
