@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { githubOAuthURL } from 'services/api/auth';
+import { getGithubOAuthURL } from 'services/api/auth';
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
@@ -113,7 +113,7 @@ class Registration extends Component<Props, State> {
       );
     }
 
-    window.location.replace(githubOAuthURL);
+    window.location.replace(getGithubOAuthURL('/register'));
     return null;
   }
 }
