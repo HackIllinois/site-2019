@@ -16,17 +16,13 @@ const serialize = data => {
   serialized.graduationYear = Number.parseInt(data.graduationYear, 10);
   serialized.shirtSize = selectOptions.shirtSizes[data.shirtSize].value;
   serialized.transportation = selectOptions.transportation[data.transportation].value;
-  serialized.diet = selectOptions.diet[data.diet].value;
+  serialized.diet = data.diet;
   serialized.phone = data.phone;
   serialized.age = Number.parseInt(data.age, 10);
   serialized.gender = selectOptions.genderOptions[data.gender].value;
   serialized.isBeginner = selectOptions.yn[data.isBeginner].value;
   serialized.linkedin = data.linkedin;
-  if (data.interests === -1) {
-    serialized.interests = [];
-  } else {
-    serialized.interests = [selectOptions.careerInterests[data.interests].value];
-  }
+  serialized.interests = data.interests;
   serialized.skills = split(data.skills);
   serialized.priorAttendance = selectOptions.yn[data.priorAttendance].value;
   serialized.extraInfo = data.extraInfo;

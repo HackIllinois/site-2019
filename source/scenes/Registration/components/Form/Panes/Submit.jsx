@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import loader from 'assets/loader.svg';
+import uploadResume from 'services/api/upload';
 import register from 'services/api/registration';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
@@ -49,7 +50,9 @@ class StudentInfo extends Component<Props, State> {
     this.setState({
       fetching: true,
     });
-    register(data)
+
+    uploadResume(data.resume)
+      .then(() => register(data))
       .then(() => {
         this.setState({ fetching: false, error: false, success: true });
         this.redirect = setTimeout(() => {
