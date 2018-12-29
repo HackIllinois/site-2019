@@ -3,6 +3,12 @@ import store from '../store';
 
 const registrationRoute = `${process.env.API_ENDPOINT}/registration`;
 
+const split = s => {
+  const arr = s.split(',');
+  const trimmed = arr.map(x => x.trim());
+  return trimmed.filter(x => x !== '');
+};
+
 const serialize = data => {
   const serialized = {};
   serialized.school = selectOptions.schools[data.school].text;
@@ -21,15 +27,15 @@ const serialize = data => {
   } else {
     serialized.interests = [selectOptions.careerInterests[data.interests].value];
   }
-  serialized.skills = data.skills.split(',');
+  serialized.skills = split(data.skills);
   serialized.priorAttendance = selectOptions.yn[data.priorAttendance].value;
   serialized.extraInfo = data.extraInfo;
-  serialized.teamMembers = data.teamMembers.split(',');
+  serialized.teamMembers = split(data.teamMembers);
   serialized.beginnerInfo = {
     versionControl: selectOptions.range[data.versionControl].value,
     pullRequest: selectOptions.range[data.pullRequest].value,
     yearsExperience: Number.parseInt(data.yearsExperience, 10),
-    technicalSkills: data.technicalSkills.split(','),
+    technicalSkills: split(data.technicalSkills),
   };
   return serialized;
 };
