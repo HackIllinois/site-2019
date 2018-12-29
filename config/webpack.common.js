@@ -68,7 +68,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([BUILD_DIR], { root: ROOT_DIR }),
     new CopyWebpackPlugin([{ from: 'source/public_assets', to: 'assets' }]),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
     new FlowWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
