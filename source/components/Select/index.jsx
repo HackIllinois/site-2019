@@ -1,7 +1,8 @@
-// @Flow
+// @flow
 /* eslint no-lonely-if: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
+/* eslint react/require-default-props: 0 */
 
 // disabled due to prettierrc:
 /* eslint operator-linebreak: 0 */
@@ -12,39 +13,72 @@ import * as React from 'react';
 import dropDownArrow from 'assets/drop_down_arrow.svg';
 import './styles.scss';
 
+import type { ElementRef } from 'react';
+
 type Props = {
   label: string,
   placeholder: string,
   items: Array<{ text: string }>,
-  onSelect: string => void,
+  onSelect: number => void,
+  disableInput?: boolean,
+  index: number,
+  error?: boolean,
+  errorMessage?: string,
+};
+
+type State = {
+  isOpen: boolean,
+  inputValue: string,
+  matchIndex: number,
+  valueSelected: boolean,
 };
 
 // static count var to give each instance a unique id
 let id = 0;
 
-class Select extends React.Component<Props> {
-  constructor(props) {
+class Select extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
+    const initialValue = props.index === -1 ? '' : props.items[props.index].text;
     this.state = {
       isOpen: false,
-      inputValue: '',
-      matchIndex: 0,
+      inputValue: initialValue,
+      matchIndex: props.index,
+      valueSelected: initialValue !== -1,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.selectItem = this.selectItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
 
+    this.selectRef = React.createRef();
     this.inputRef = React.createRef();
     this.id = `select-menu-${id}`;
     id += 1;
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  id: string;
+  inputRef: ElementRef<*>;
+  selectRef: ElementRef<*>;
+
+  toggleMenu: () => void;
   toggleMenu() {
     const { isOpen } = this.state;
+    const { disableInput } = this.props;
     if (!isOpen) {
-      this.inputRef.current.select();
+      if (!disableInput) {
+        this.inputRef.current.select();
+      }
       const { inputValue } = this.state;
       this.setState({ isOpen: true, inputValue });
     } else {
@@ -52,28 +86,49 @@ class Select extends React.Component<Props> {
     }
   }
 
-  selectItem(newIndex) {
+  handleClickOutside: MouseEvent => void;
+  handleClickOutside(event: MouseEvent) {
+    const { isOpen } = this.state;
+    if (this.selectRef && !this.selectRef.contains(event.target) && isOpen) {
+      this.setState({
+        isOpen: false,
+      });
+    }
+  }
+
+  selectItem: number => void;
+  selectItem(newIndex: number) {
     const { items, onSelect } = this.props;
     this.setState({
       matchIndex: newIndex,
       inputValue: items[newIndex].text,
       isOpen: false,
+      valueSelected: true,
     });
     onSelect(newIndex);
   }
 
-  handleChange(e) {
-    const newValue = e.target.value;
+  handleChange: (SyntheticEvent<HTMLInputElement>) => void;
+  handleChange(e: SyntheticEvent<HTMLInputElement>) {
+    const { disableInput } = this.props;
+    if (disableInput) {
+      return;
+    }
+
+    const newValue = e.currentTarget.value;
     if (newValue === '') {
-      this.setState({ inputValue: newValue, matchIndex: 0 });
-      document.getElementById(this.id).scrollTop = 0;
+      this.setState({ inputValue: newValue, matchIndex: 0, valueSelected: false });
+      const dropdown = document.getElementById(this.id);
+      if (dropdown) {
+        dropdown.scrollTop = 0;
+      }
     } else {
       let { matchIndex } = this.state;
       const { inputValue } = this.state;
       const { items } = this.props;
 
       // If change is a backspace, set matchIndex back to 0
-      if (inputValue.length > newValue.length) {
+      if (inputValue.length > newValue.length || matchIndex === -1) {
         matchIndex = 0;
       }
       // Find index of closest item to search value
@@ -84,22 +139,29 @@ class Select extends React.Component<Props> {
         matchIndex += 1;
       }
 
-      document.getElementById(this.id).scrollTop = 37 * matchIndex;
+      const dropdown = document.getElementById(this.id);
+      if (dropdown) {
+        dropdown.scrollTop = 37 * matchIndex;
+      }
 
       this.setState({ inputValue: newValue, matchIndex });
     }
   }
 
-  handleKeyDown(e) {
+  handleKeyDown: (SyntheticKeyboardEvent<HTMLInputElement>) => void;
+  handleKeyDown(e: SyntheticKeyboardEvent<HTMLInputElement>) {
     const { isOpen } = this.state;
+    const { disableInput } = this.props;
     if (isOpen) {
       if (e.key === 'ArrowUp') {
         let { matchIndex } = this.state;
         const { items } = this.props;
         if (matchIndex !== 0) {
           matchIndex -= 1;
-          if (document.getElementById(this.id).scrollTop >= 37 * (matchIndex + 1)) {
-            document.getElementById(this.id).scrollTop -= 37;
+
+          const dropdown = document.getElementById(this.id);
+          if (dropdown && dropdown.scrollTop >= 37 * (matchIndex + 1)) {
+            dropdown.scrollTop -= 37;
           }
           this.setState({ matchIndex, inputValue: items[matchIndex].text });
         }
@@ -108,8 +170,10 @@ class Select extends React.Component<Props> {
         const { items } = this.props;
         if (matchIndex !== items.length - 1) {
           matchIndex += 1;
-          if (document.getElementById(this.id).scrollTop <= 37 * (matchIndex - 5)) {
-            document.getElementById(this.id).scrollTop += 37;
+
+          const dropdown = document.getElementById(this.id);
+          if (dropdown && dropdown.scrollTop <= 37 * (matchIndex - 5)) {
+            dropdown.scrollTop += 37;
           }
           this.setState({ matchIndex, inputValue: items[matchIndex].text });
         }
@@ -119,29 +183,32 @@ class Select extends React.Component<Props> {
         this.setState({
           inputValue: items[matchIndex].text,
           isOpen: false,
+          valueSelected: true,
         });
         onSelect(matchIndex);
       }
     } else {
       if (e.key === 'Enter') {
-        e.target.select();
+        if (!disableInput) {
+          e.currentTarget.select();
+        }
         this.setState({ isOpen: true });
       }
     }
   }
 
-  handleFocus(e) {
-    console.log('hi');
+  handleFocus: (SyntheticEvent<HTMLDivElement>) => void;
+  handleFocus(e: SyntheticEvent<HTMLDivElement>) {
     e.preventDefault();
     this.toggleMenu();
     this.inputRef.current.focus();
   }
 
   render() {
-    const { items, label, placeholder } = this.props;
-    const { isOpen, inputValue, matchIndex } = this.state;
+    const { items, label, placeholder, error, errorMessage } = this.props;
+    const { isOpen, inputValue, matchIndex, valueSelected } = this.state;
 
-    const menuHeight = items.length * 37 < 185 ? items.length * 37 : 185;
+    const menuHeight = items.length * 40 <= 200 ? items.length * 40 : 210;
     const openedStyling = {
       height: menuHeight,
     };
@@ -151,18 +218,25 @@ class Select extends React.Component<Props> {
     };
 
     return (
-      <div className="select">
+      <div
+        className="select form-field"
+        ref={n => {
+          this.selectRef = n;
+        }}
+      >
         <label className="label" htmlFor={`${this.id}-input`}>
-          {label}
+          <p>{label}</p>
           <div className="input-cont" onClick={this.handleFocus}>
             <input
               className="input"
+              style={valueSelected ? { color: 'white' } : null}
               value={inputValue}
               onChange={this.handleChange}
               onKeyDown={this.handleKeyDown}
               ref={this.inputRef}
               placeholder={placeholder}
               id={`${this.id}-input`}
+              autoComplete="off"
             />
             <img
               className={isOpen ? 'drop-down-arrow rotated' : 'drop-down-arrow'}
@@ -182,6 +256,7 @@ class Select extends React.Component<Props> {
             </div>
           ))}
         </div>
+        {error && <p className="error-message">{errorMessage}</p>}
       </div>
     );
   }

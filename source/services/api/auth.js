@@ -1,5 +1,8 @@
 const authRoute = `${process.env.API_ENDPOINT}/auth`;
 
+const redirectTarget = encodeURIComponent(`${process.env.BASE_URL}/auth/`);
+export const githubOAuthURL = `${authRoute}/github/?redirect_uri=${redirectTarget}`;
+
 export default function authenticateCode(code) {
   return fetch(`${authRoute}/code/github/`, {
     method: 'POST',

@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .select {
   width: 100%;
   position: relative;
@@ -10,7 +12,6 @@
 
   .input-cont {
     width: 100%;
-    margin-top: 3px;
     border-bottom: 2px solid #95c6c9;
     transition: background-color 0.3s, border-bottom 0.3s ease-in;
     background-color: rgba(0, 0, 0, 0);
@@ -29,10 +30,7 @@
   .input {
     width: calc(100% - 24px);
     border: none;
-    font-weight: 200;
     color: #74b5bb;
-    font-size: 16px;
-    padding: 3px 0;
     outline: none;
     cursor: default;
     transition: background-color 0.3s;
@@ -54,7 +52,7 @@
 
   .input::placeholder {
     text-shadow: 0 0 0 #74b5bb;
-    color: transparent;
+    color: $faded-white;
   }
 
   .drop-down-arrow {
@@ -72,12 +70,14 @@
     position: absolute;
     width: 100%;
     transition: all 0.2s ease-out;
-    overflow: scroll;
+    overflow-y: scroll;
     z-index: 100;
+    box-sizing: border-box;
   }
 
   .menu-el {
     transition: background-color 0.3s;
+    box-sizing: border-box;
     background-color: #10666d;
     width: 100%;
     border-bottom: 1px solid #95c6c9;
@@ -87,7 +87,7 @@
     z-index: 105;
     position: relative;
     padding-left: 4px;
-    font-size: 16px;
+    font-size: 19px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

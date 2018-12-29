@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import clouds from 'assets/Home/clouds_stars.svg';
 import fish from 'assets/Home/fish.png';
@@ -40,6 +41,12 @@ const Home = () => (
       <img className="wave wave-back" src={waveBack} alt="Wave Back" />
       <img className="wave wave-mid" src={waveMid} alt="Wave Middle" />
       <img className="wave wave-front" src={waveFront} alt="Wave Front" />
+
+      <div className="buttons">
+        <Link className="button-blue" to="/register">
+          Registration
+        </Link>
+      </div>
 
       <div className="rocks">
         <img className="mid-top-half" src={midTopHalf} alt="rocks" />
