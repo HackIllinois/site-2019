@@ -51,14 +51,25 @@ class Select extends React.Component<Props, State> {
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
 
+    this.selectRef = React.createRef();
     this.inputRef = React.createRef();
     this.id = `select-menu-${id}`;
     id += 1;
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
   id: string;
   inputRef: ElementRef<*>;
+  selectRef: ElementRef<*>;
 
   toggleMenu: () => void;
   toggleMenu() {
@@ -72,6 +83,16 @@ class Select extends React.Component<Props, State> {
       this.setState({ isOpen: true, inputValue });
     } else {
       this.setState({ isOpen: false });
+    }
+  }
+
+  handleClickOutside: MouseEvent => void;
+  handleClickOutside(event: MouseEvent) {
+    const { isOpen } = this.state;
+    if (this.selectRef && !this.selectRef.contains(event.target) && isOpen) {
+      this.setState({
+        isOpen: false,
+      });
     }
   }
 
@@ -197,7 +218,12 @@ class Select extends React.Component<Props, State> {
     };
 
     return (
-      <div className="select form-field">
+      <div
+        className="select form-field"
+        ref={n => {
+          this.selectRef = n;
+        }}
+      >
         <label className="label" htmlFor={`${this.id}-input`}>
           <p>{label}</p>
           <div className="input-cont" onClick={this.handleFocus}>

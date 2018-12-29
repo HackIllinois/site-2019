@@ -8,6 +8,12 @@ const team = [];
 const paneOrder = [student, personal, professional, beginner, other, team, []];
 
 const required = (pane, data) =>
-  paneOrder[pane].filter(field => data[field] === '' || data[field] === -1 || data[field] === null);
+  paneOrder[pane].filter(
+    field =>
+      data[field] === '' ||
+      data[field] === -1 ||
+      (Array.isArray(data[field]) && data[field].length === 0) ||
+      data[field] === null,
+  );
 
 export default required;

@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 
+import MultiSelect from 'components/MultiSelect';
 import Select from 'components/Select';
 import TextField from 'components/TextField';
 import FileUpload from 'components/FileUpload';
@@ -43,13 +44,11 @@ const ProfessionalInfo = (props: Props) => {
               error={errors.resume}
               errorMessage="Resume file should be in PDF or Docx format"
             />
-            <Select
+            <MultiSelect
               label="Career Interests"
-              placeholder="What do you want to be after you graduate?"
+              placeholder="Looking for a job or internship?"
               items={careerInterests}
               onSelect={registerField('interests')}
-              disableInput
-              index={data.interests}
             />
             <TextField
               label="Professional Skills"

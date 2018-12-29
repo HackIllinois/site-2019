@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 
+import MultiSelect from 'components/MultiSelect';
 import Select from 'components/Select';
 import TextField from 'components/TextField';
 
@@ -40,13 +41,11 @@ const PersonalInfo = (props: Props) => {
               error={errors.transportation}
               errorMessage="Please select if you need travel assistance"
             />
-            <Select
+            <MultiSelect
               label="Diet"
               placeholder="Any dietary restrictions we should know about?"
               items={diet}
               onSelect={registerField('diet')}
-              disableInput
-              index={data.diet}
               error={errors.diet}
               errorMessage="Please specify any dietary restrictions"
             />

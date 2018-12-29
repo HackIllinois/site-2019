@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { githubOAuthURL } from 'services/api/auth';
-import register from 'services/api/registration';
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
@@ -34,14 +33,14 @@ class Registration extends Component<Props, State> {
         graduationYear: '',
         shirtSize: -1,
         transportation: -1,
-        diet: -1,
+        diet: [],
         phone: '',
         age: '',
         gender: -1,
         isBeginner: -1,
         linkedin: '',
         resume: null,
-        interests: -1,
+        interests: [],
         skills: '',
         priorAttendance: -1,
         extraInfo: '',
@@ -56,7 +55,6 @@ class Registration extends Component<Props, State> {
 
     this.setPane = this.setPane.bind(this);
     this.registerField = this.registerField.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   setPane: number => void;
@@ -98,12 +96,6 @@ class Registration extends Component<Props, State> {
         };
       });
     };
-  }
-
-  handleSubmit: void => void;
-  handleSubmit() {
-    const { data } = this.state;
-    register(data);
   }
 
   render() {
