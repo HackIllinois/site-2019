@@ -14,6 +14,10 @@ env:
     # These variables are for the "master" branch.
     - MASTER_API_ENDPOINT="https://api.hackillinois.org"
     - MASTER_BASE_URL="https://hackillinois.org"
+
+    # These variables are for all other branches.
+    - DEFAULT_API_ENDPOINT="https://api.hackillinois.org"
+    - DEFAULT_BASE_URL="https://hackillinois.org
 before_script:
   - |
       if [ "$TRAVIS_BRANCH" = "staging" ]; then
@@ -23,6 +27,10 @@ before_script:
       elif [ "$TRAVIS_BRANCH" = "master" ]; then
         for prefixed_envvar in ${!MASTER_*}; do
           eval export ${prefixed_envvar#MASTER_}="${!prefixed_envvar}"
+        done
+      else
+        for prefixed_envvar in ${!DEFAULT_*}; do
+          eval export ${prefixed_envvar#DEFAULT_}="${!prefixed_envvar}"
         done
       fi
   - npm install
