@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import { connect } from 'react-redux';
 
 import ErrorPage from 'scenes/Error';
+import Loader from 'scenes/Loader';
 import { authCode } from 'services/auth/actions';
 
 import type { Location } from 'react-router-dom';
@@ -42,7 +43,7 @@ const Auth = (props: Props) => {
   } else {
     authorize(code);
   }
-  return null;
+  return <Loader />;
 };
 
 const mapStateToProps = state => ({
