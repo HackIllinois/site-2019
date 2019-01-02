@@ -36,6 +36,41 @@ const serialize = data => {
   return serialized;
 };
 
+const findIndex = (data, field, comparisonField) => {
+  console.log(field);
+  for (let i = 0; i < selectOptions[field].length; i += 1) {
+    if (selectOptions[field][i][comparisonField] === data) {
+      return i;
+    }
+  }
+  return -1;
+};
+
+const deserialize = data => {
+  const res = {};
+  res.school = findIndex(data.school, 'schools', 'text');
+  res.major = data.major;
+  res.graduationYear = data.graduationYear.toString(10);
+  res.shirtSize = findIndex(data.shirtSize, 'shirtSizes', 'value');
+  res.transportation = findIndex(data.transportation, 'transportation', 'value');
+  res.diet = data.diet;
+  res.phone = data.phone;
+  res.age = data.age.toString(10);
+  res.gender = findIndex(data.gender, 'genderOptions', 'value');
+  res.isBeginner = findIndex(data.isBeginner, 'yn', 'value');
+  res.linkedin = data.linkedin;
+  res.interests = data.interests;
+  res.skills = data.skills.join(', ');
+  res.priorAttendance = findIndex(data.priorAttendance, 'yn', 'value');
+  res.extraInfo = data.extraInfo;
+  res.teamMembers = data.teamMembers.join(', ');
+  res.versionControl = findIndex(data.beginnerInfo.versionControl, 'range', 'value');
+  res.pullRequest = findIndex(data.beginnerInfo.pullRequest, 'range', 'value');
+  res.yearsExperience = data.beginnerInfo.yearsExperience.toString(10);
+  res.technicalSkills = data.beginnerInfo.technicalSkills.join(', ');
+  return res;
+};
+
 export default function register(data) {
   const serializedData = serialize(data);
   return fetch(`${registrationRoute}/attendee/`, {
@@ -52,4 +87,21 @@ export default function register(data) {
     }
     return response.json();
   });
+}
+
+export function fetchRegistrationData() {
+  return fetch(`${registrationRoute}/attendee/`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      Authorization: store.getState().auth.jwt,
+    },
+  })
+    .then(response => {
+      if (response.status >= 400) {
+        throw new Error(response);
+      }
+      return response.json();
+    })
+    .then(data => deserialize(data));
 }

@@ -43,7 +43,7 @@ const BeginnerInfo = (props: Props) => {
               label="Years of Programming Experience"
               name="programmingExperience"
               placeholder="Type in a number"
-              value={data.programmingExperience}
+              value={data.yearsExperience}
               onChange={registerField('yearsExperience', isNumeric)}
               error={errors.yearsExperience}
               errorMessage="Please enter your years of programming experience"

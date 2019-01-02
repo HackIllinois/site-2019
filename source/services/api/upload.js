@@ -4,6 +4,10 @@ import store from '../store';
 const uploadRoute = `${process.env.API_ENDPOINT}/upload`;
 
 export default function uploadResume(resume: File) {
+  if (process.env.NODE_ENV === 'development') {
+    return new Promise(resolve => setTimeout(resolve, 3000));
+  }
+
   return fetch(`${uploadRoute}/resume/upload/`, {
     method: 'GET',
     headers: {
