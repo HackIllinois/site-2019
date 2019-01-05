@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Loader from 'scenes/Loader';
 import { getGithubOAuthURL } from 'services/api/auth';
-import { getRegistrationData } from 'services/registration/actions';
+import { getRegistrationData, touchResume, touchData } from 'services/registration/actions';
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
@@ -18,6 +18,8 @@ type Props = {
   regValid: boolean,
   regData: ?Object,
   checkRegistration: () => void,
+  touchData: () => void,
+  touchResume: () => void,
 };
 
 type State = {
@@ -112,11 +114,22 @@ class Registration extends Component<Props, State> {
 
   registerField: (string, ?(string) => boolean) => string => void;
   registerField(field: string, validator?: string => boolean) {
+    /* eslint-disable react/destructuring-assignment */
+    // Resume uploads separately from rest of data, so we will track
+    // what has and has not been updated, and only call the necessary
+    // routes
+    let dirtyFn = this.props.touchData;
+    if (field === 'resume') {
+      dirtyFn = this.props.touchResume;
+    }
+    /* eslint-enable react/destructuring-assignment */
+
     return (value: string) => {
       const { data } = this.state;
       if (!(field in data)) {
         throw new Error(`${field} missing from Form state`);
       }
+      dirtyFn();
       this.setState(prevState => {
         const d = {};
         d[field] = value;
@@ -164,6 +177,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   checkRegistration: () => dispatch(getRegistrationData()),
+  touchResume: () => dispatch(touchResume()),
+  touchData: () => dispatch(touchData()),
 });
 
 export default connect(

@@ -3,12 +3,14 @@ import store from '../store';
 
 const registrationRoute = `${process.env.API_ENDPOINT}/registration`;
 
+// Comma separated list parsing, splits up commas and trims whitespace
 const split = s => {
   const arr = s.split(',');
   const trimmed = arr.map(x => x.trim());
   return trimmed.filter(x => x !== '');
 };
 
+// Read frontend data from form state, serialize to be compatible with api spec
 const serialize = data => {
   const serialized = {};
   serialized.school = selectOptions.schools[data.school].text;
@@ -37,7 +39,6 @@ const serialize = data => {
 };
 
 const findIndex = (data, field, comparisonField) => {
-  console.log(field);
   for (let i = 0; i < selectOptions[field].length; i += 1) {
     if (selectOptions[field][i][comparisonField] === data) {
       return i;
@@ -47,6 +48,7 @@ const findIndex = (data, field, comparisonField) => {
 };
 
 const deserialize = data => {
+  // Takes data from the backend and formats it for the frontend components
   const res = {};
   res.school = findIndex(data.school, 'schools', 'text');
   res.major = data.major;
@@ -59,6 +61,7 @@ const deserialize = data => {
   res.gender = findIndex(data.gender, 'genderOptions', 'value');
   res.isBeginner = findIndex(data.isBeginner, 'yn', 'value');
   res.linkedin = data.linkedin;
+  res.resume = {}; // Placeholder
   res.interests = data.interests;
   res.skills = data.skills.join(', ');
   res.priorAttendance = findIndex(data.priorAttendance, 'yn', 'value');
@@ -73,8 +76,9 @@ const deserialize = data => {
 
 export default function register(data) {
   const serializedData = serialize(data);
+  const method = store.getState().registration.data === null ? 'POST' : 'PUT';
   return fetch(`${registrationRoute}/attendee/`, {
-    method: 'POST',
+    method,
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -89,6 +93,7 @@ export default function register(data) {
   });
 }
 
+// For prepoluating form when a prior registration exists
 export function fetchRegistrationData() {
   return fetch(`${registrationRoute}/attendee/`, {
     method: 'GET',

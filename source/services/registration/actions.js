@@ -2,6 +2,9 @@ import { fetchRegistrationData } from 'services/api/registration';
 
 export const REGISTRATION_REQUEST = 'REGISTRATION_REQUEST';
 export const REGISTRATION_RESPONSE = 'REGISTRATION_RESPONSE';
+export const TOUCH_RESUME = 'TOUCH_RESUME';
+export const TOUCH_DATA = 'TOUCH_DATA';
+export const INVALIDATE_DATA = 'INVALIDATE_DATA';
 
 function requestRegistration() {
   return {
@@ -22,5 +25,23 @@ export function getRegistrationData() {
     fetchRegistrationData()
       .then(data => dispatch(receiveRegistration(data)))
       .catch(() => dispatch(receiveRegistration(null)));
+  };
+}
+
+export function touchResume() {
+  return {
+    type: TOUCH_RESUME,
+  };
+}
+
+export function touchData() {
+  return {
+    type: TOUCH_DATA,
+  };
+}
+
+export function invalidateData() {
+  return {
+    type: INVALIDATE_DATA,
   };
 }
