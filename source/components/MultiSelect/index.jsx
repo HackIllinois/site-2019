@@ -2,6 +2,7 @@
 /* eslint no-lonely-if: 0 */
 /* eslint jsx-a11y/click-events-have-key-events: 0 */
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
+/* eslint react/no-unused-prop-types: 0 */
 /* eslint react/require-default-props: 0 */
 
 import React, { Component } from 'react';
@@ -15,6 +16,7 @@ type Props = {
   placeholder: string,
   items: Array<{ text: string, value: string }>,
   onSelect: (string[]) => void,
+  selected: Array<string>,
   error?: boolean,
   errorMessage?: string,
 };
@@ -53,6 +55,27 @@ class MultiSelect extends Component<Props, State> {
 
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  static getDerivedStateFromProps(props: Props, state: State) {
+    const { items } = props;
+    const stored = props.selected;
+    // $FlowFixMe
+    const storedSelected = items.map(() => false);
+    for (let i = 0; i < items.length; i += 1) {
+      if (stored.indexOf(items[i].value) !== -1) {
+        storedSelected[i] = true;
+      }
+    }
+
+    const newState = Object.assign({}, state, { selected: storedSelected });
+    for (let i = 0; i < storedSelected.length; i += 1) {
+      if (storedSelected[i] !== state.selected[i]) {
+        return newState;
+      }
+    }
+
+    return state;
   }
 
   id: string;

@@ -46,6 +46,7 @@ const PersonalInfo = (props: Props) => {
               placeholder="Any dietary restrictions we should know about?"
               items={diet}
               onSelect={registerField('diet')}
+              selected={data.diet}
               error={errors.diet}
               errorMessage="Please specify any dietary restrictions"
             />

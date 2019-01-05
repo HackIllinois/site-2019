@@ -49,6 +49,7 @@ const ProfessionalInfo = (props: Props) => {
               placeholder="Looking for a job or internship?"
               items={careerInterests}
               onSelect={registerField('interests')}
+              selected={data.interests}
             />
             <TextField
               label="Professional Skills"

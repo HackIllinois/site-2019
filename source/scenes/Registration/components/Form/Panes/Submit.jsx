@@ -1,10 +1,12 @@
 // @flow
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import loader from 'assets/loader.svg';
 import uploadResume from 'services/api/upload';
 import register from 'services/api/registration';
+import { invalidateData } from 'services/registration/actions';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 
@@ -12,6 +14,9 @@ import './SubmitStyles.scss';
 
 type Props = {
   visible: boolean,
+  resumeDirty: boolean,
+  dataDirty: boolean,
+  reset: () => void,
 };
 
 type State = {
@@ -51,11 +56,24 @@ class StudentInfo extends Component<Props, State> {
       fetching: true,
     });
 
-    uploadResume(data.resume)
-      .then(() => register(data))
+    const { dataDirty, resumeDirty, reset } = this.props;
+    let updateRes = () => uploadResume(data.resume);
+    let updateData = () => register(data);
+    if (!dataDirty) {
+      updateData = () => Promise.resolve();
+    }
+    if (!resumeDirty) {
+      updateRes = () => Promise.resolve();
+    }
+
+    updateRes()
+      .then(updateData)
       .then(() => {
         this.setState({ fetching: false, error: false, success: true });
         this.redirect = setTimeout(() => {
+          if (dataDirty) {
+            setTimeout(reset, 500);
+          }
           this.setState({ redirect: true });
         }, 3500);
       })
@@ -109,4 +127,16 @@ class StudentInfo extends Component<Props, State> {
   }
 }
 
-export default StudentInfo;
+const mapStateToProps = state => ({
+  dataDirty: state.registration.dataDirty,
+  resumeDirty: state.registration.resumeDirty,
+});
+
+const mapDispatchToProps = dispatch => ({
+  reset: () => dispatch(invalidateData()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(StudentInfo);
