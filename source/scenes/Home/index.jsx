@@ -47,7 +47,9 @@ const Home = () => (
 
         <div id="rocks-mid-bottom-grouping">
           <img className="mid-bottom-half" src={midBottomHalf} alt="rocks" />
-          <img id="fish" src={fish} alt="fish" />
+          <div id="fish-wrapper">
+            <img id="fish" src={fish} alt="fish" />
+          </div>
         </div>
 
         <div className="floor">
