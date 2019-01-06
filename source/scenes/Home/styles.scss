@@ -164,6 +164,12 @@ $asset-width: 1600px;
         position: relative;
         top: -3px;
 
+        #fish-wrapper{
+          max-width:0;
+          left:0;
+          animation: fish-vertical 10s alternate infinite ease-in-out;
+        }
+
         #fish {
           position: absolute;
           top: 36%;
@@ -176,6 +182,8 @@ $asset-width: 1600px;
           @media (max-width: 600px) {
             width: 100px;
           }
+
+          animation: fish-horizontal 40s infinite linear;
         }
       }
 
@@ -243,5 +251,41 @@ $asset-width: 1600px;
   }
   100% {
     left: -70px;
+  }
+}
+
+@keyframes fish-vertical {
+  0% {
+    transform: translate(0px, -100px);
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, -100px);
+  }
+}
+
+@keyframes fish-horizontal {
+  0% {
+    transform: translate(calc(-5vw - 205px), 0px);
+  }
+
+  49% {
+    transform: translate(calc(105vw + 205px), 0px);
+  }
+
+  50% {
+    transform: translate(calc(105vw + 205px), 0px) rotateY(180deg);
+  }
+
+  99% {
+    transform: translate(calc(-5vw - 205px), 0px) rotateY(180deg);
+  }
+
+  100% {
+    transform: translate(calc(-5vw - 205px), 0px);
   }
 }
