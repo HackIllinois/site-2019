@@ -7,7 +7,7 @@ import TextField from 'components/TextField';
 import FileUpload from 'components/FileUpload';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
-import { checkResumeExt } from '../inputValidators';
+import { checkResume } from '../inputValidators';
 import { yn, careerInterests } from './selectOptions';
 
 type Props = {
@@ -39,10 +39,10 @@ const ProfessionalInfo = (props: Props) => {
               onChange={registerField('linkedin')}
             />
             <FileUpload
-              onChange={registerField('resume', checkResumeExt)}
+              onChange={registerField('resume', checkResume)}
               file={data.resume}
               error={errors.resume}
-              errorMessage="Resume file should be in PDF or Docx format"
+              errorMessage="Resume file should be in PDF or Docx format (2MB Max Size)"
             />
             <MultiSelect
               label="Career Interests"
