@@ -39,6 +39,18 @@ export const careerInterests = [
   { text: 'Full Time', value: 'FULLTIME' },
 ];
 
+export const majors = [
+  { text: 'Computer Science' },
+  { text: 'Computer Engineering' },
+  { text: 'Electrical Engineering' },
+  { text: 'Engineering' },
+  { text: 'Business' },
+  { text: 'Sciences' },
+  { text: 'Liberal Arts' },
+  { text: 'Fine Arts' },
+  { text: 'Other' },
+];
+
 export const schools = [
   { text: 'Anna University' },
   { text: 'Appalachian State University' },

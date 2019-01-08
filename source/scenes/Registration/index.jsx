@@ -30,7 +30,7 @@ type State = {
 
 const INITIAL_REGISTRATION_STATE = {
   school: -1,
-  major: '',
+  major: -1,
   graduationYear: '',
   shirtSize: -1,
   transportation: -1,
