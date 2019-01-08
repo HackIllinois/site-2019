@@ -1,5 +1,5 @@
 /* eslint no-useless-escape: 0 */
-export const isNumeric = x => !Number.isNaN(Number.parseInt(x, 10));
+export const isNumeric = x => /^\d+$/.test(x);
 export const checkGraduationYear = year => isNumeric(year) && +year >= new Date().getFullYear();
 export const checkAge = x => {
   const d = Number.parseInt(x, 10);
