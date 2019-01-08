@@ -8,7 +8,7 @@ import { getRegistrationData, touchResume, touchData } from 'services/registrati
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
-import required from './components/Form/required';
+import { required, validatePane } from './components/Form/check';
 import './styles.scss';
 
 import type { RegistrationData } from './FormContext';
@@ -91,7 +91,7 @@ class Registration extends Component<Props, State> {
     this.setState(prevState => {
       const { data, pane, errors } = prevState;
       const missing = required(pane, data);
-      if (missing.length === 0 || newPane < pane) {
+      if (missing.length === 0 && validatePane(pane, errors)) {
         return { pane: newPane };
       }
 
