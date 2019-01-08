@@ -6,19 +6,29 @@ const student = [
 const personal = [
   { field: 'shirtSize', required: true },
   { field: 'transportation', required: true },
-  { field: 'diet', required: true },
+  { field: 'diet', required: false },
   { field: 'phone', required: true },
   { field: 'age', required: true },
   { field: 'gender', required: true },
 ];
-const professional = [{ field: 'isBeginner', required: true }, { field: 'resume', required: true }];
+const professional = [
+  { field: 'isBeginner', required: true },
+  { field: 'linkedin', required: false },
+  { field: 'resume', required: true },
+  { field: 'interests', required: false },
+  { field: 'skills', required: false },
+];
 const beginner = [
   { field: 'versionControl', required: true },
   { field: 'pullRequest', required: true },
   { field: 'yearsExperience', required: true },
+  { field: 'technicalSkills', required: false },
 ];
-const other = [{ field: 'priorAttendance', required: true }];
-const team = [];
+const other = [
+  { field: 'priorAttendance', required: true },
+  { field: 'extraInfo', required: false },
+];
+const team = [{ field: 'teamMembers', required: false }];
 
 const paneOrder = [student, personal, professional, beginner, other, team, []];
 

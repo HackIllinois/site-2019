@@ -86,6 +86,8 @@ class Registration extends Component<Props, State> {
     }
   }
 
+  // Handles changing of panes. Only allows changes if all required
+  // fields are filled, and there are no errors so far
   setPane: number => void;
   setPane(newPane: number) {
     this.setState(prevState => {
@@ -124,6 +126,11 @@ class Registration extends Component<Props, State> {
     }
     /* eslint-enable react/destructuring-assignment */
 
+    // This function has closure over the field, validator function,
+    // and the dirty function.
+    // Bascially modifies the appropriate key in local state with the
+    // value passed. Optional validator function can be used to
+    // validate the input value.
     return (value: string) => {
       const { data } = this.state;
       if (!(field in data)) {

@@ -21,7 +21,6 @@ export const transportation = [
 ];
 
 export const diet = [
-  { text: 'None', value: 'NONE' },
   { text: 'Vegan', value: 'VEGAN' },
   { text: 'Vegetarian', value: 'VEGETARIAN' },
   { text: 'Gluten Free', value: 'NOGLUTEN' },
