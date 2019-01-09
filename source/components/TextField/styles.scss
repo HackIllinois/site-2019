@@ -11,7 +11,8 @@
     line-height: 23px;
   }
 
-  input {
+  input,
+  textarea {
     background: none;
     border: none;
     border-bottom: 2px solid $faded-white;

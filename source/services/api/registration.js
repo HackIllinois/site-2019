@@ -14,7 +14,7 @@ const split = s => {
 const serialize = data => {
   const serialized = {};
   serialized.school = selectOptions.schools[data.school].text;
-  serialized.major = data.major;
+  serialized.major = selectOptions.majors[data.major].text;
   serialized.graduationYear = Number.parseInt(data.graduationYear, 10);
   serialized.shirtSize = selectOptions.shirtSizes[data.shirtSize].value;
   serialized.transportation = selectOptions.transportation[data.transportation].value;
@@ -51,7 +51,7 @@ const deserialize = data => {
   // Takes data from the backend and formats it for the frontend components
   const res = {};
   res.school = findIndex(data.school, 'schools', 'text');
-  res.major = data.major;
+  res.major = findIndex(data.major, 'majors', 'text');
   res.graduationYear = data.graduationYear.toString(10);
   res.shirtSize = findIndex(data.shirtSize, 'shirtSizes', 'value');
   res.transportation = findIndex(data.transportation, 'transportation', 'value');

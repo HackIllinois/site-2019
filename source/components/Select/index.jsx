@@ -16,6 +16,8 @@ import './styles.scss';
 
 import type { ElementRef } from 'react';
 
+const menuItemHeight = 40;
+
 type Props = {
   label: string,
   placeholder: string,
@@ -156,7 +158,7 @@ class Select extends React.Component<Props, State> {
 
       const dropdown = document.getElementById(this.id);
       if (dropdown) {
-        dropdown.scrollTop = 37 * newIndex;
+        dropdown.scrollTop = menuItemHeight * newIndex;
       }
     }
   }
@@ -174,8 +176,8 @@ class Select extends React.Component<Props, State> {
           onSelect(newIndex);
 
           const dropdown = document.getElementById(this.id);
-          if (dropdown && dropdown.scrollTop >= 40 * (newIndex + 1)) {
-            dropdown.scrollTop -= 40;
+          if (dropdown && dropdown.scrollTop >= menuItemHeight * (newIndex + 1)) {
+            dropdown.scrollTop -= menuItemHeight;
           }
         }
       } else if (e.key === 'ArrowDown') {
@@ -186,8 +188,8 @@ class Select extends React.Component<Props, State> {
           onSelect(newIndex);
 
           const dropdown = document.getElementById(this.id);
-          if (dropdown && dropdown.scrollTop <= 40 * (newIndex - 5)) {
-            dropdown.scrollTop += 40;
+          if (dropdown && dropdown.scrollTop <= menuItemHeight * (newIndex - 5)) {
+            dropdown.scrollTop += menuItemHeight;
           }
         }
       } else if (e.key === 'Enter' || e.key === 'Tab') {
@@ -219,7 +221,7 @@ class Select extends React.Component<Props, State> {
     const { items, label, placeholder, error, errorMessage, index } = this.props;
     const { isOpen, inputValue, valueSelected } = this.state;
 
-    const menuHeight = items.length * 40 <= 200 ? items.length * 40 : 210;
+    const menuHeight = items.length * menuItemHeight <= 200 ? items.length * menuItemHeight : 210;
     const openedStyling = {
       height: menuHeight,
     };

@@ -6,7 +6,7 @@ import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { checkGraduationYear } from '../inputValidators';
-import { schools } from './selectOptions';
+import { schools, majors } from './selectOptions';
 
 type Props = {
   visible: boolean,
@@ -28,12 +28,13 @@ const StudentInfo = (props: Props) => {
               error={errors.school}
               errorMessage="Please select your school"
             />
-            <TextField
+            <Select
               label="Major"
-              name="major"
               placeholder="Type in your major"
-              value={data.major}
-              onChange={registerField('major')}
+              items={majors}
+              onSelect={registerField('major')}
+              disableInput
+              index={data.major}
               error={errors.major}
               errorMessage="Please enter your major"
             />

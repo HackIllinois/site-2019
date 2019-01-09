@@ -8,7 +8,7 @@ import { getRegistrationData, touchResume, touchData } from 'services/registrati
 import FormContext from './FormContext';
 import SideBar from './components/SideBar';
 import ScrollableForm from './components/Form';
-import required from './components/Form/required';
+import { required, validatePane } from './components/Form/check';
 import './styles.scss';
 
 import type { RegistrationData } from './FormContext';
@@ -30,7 +30,7 @@ type State = {
 
 const INITIAL_REGISTRATION_STATE = {
   school: -1,
-  major: '',
+  major: -1,
   graduationYear: '',
   shirtSize: -1,
   transportation: -1,
@@ -86,12 +86,14 @@ class Registration extends Component<Props, State> {
     }
   }
 
+  // Handles changing of panes. Only allows changes if all required
+  // fields are filled, and there are no errors so far
   setPane: number => void;
   setPane(newPane: number) {
     this.setState(prevState => {
       const { data, pane, errors } = prevState;
       const missing = required(pane, data);
-      if (missing.length === 0 || newPane < pane) {
+      if (missing.length === 0 && validatePane(pane, errors)) {
         return { pane: newPane };
       }
 
@@ -124,6 +126,11 @@ class Registration extends Component<Props, State> {
     }
     /* eslint-enable react/destructuring-assignment */
 
+    // This function has closure over the field, validator function,
+    // and the dirty function.
+    // Bascially modifies the appropriate key in local state with the
+    // value passed. Optional validator function can be used to
+    // validate the input value.
     return (value: string) => {
       const { data } = this.state;
       if (!(field in data)) {

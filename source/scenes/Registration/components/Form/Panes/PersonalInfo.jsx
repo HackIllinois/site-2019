@@ -42,7 +42,7 @@ const PersonalInfo = (props: Props) => {
               errorMessage="Please select if you need travel assistance"
             />
             <MultiSelect
-              label="Diet"
+              label="Dietary Restrictions"
               placeholder="Any dietary restrictions we should know about?"
               items={diet}
               onSelect={registerField('diet')}
