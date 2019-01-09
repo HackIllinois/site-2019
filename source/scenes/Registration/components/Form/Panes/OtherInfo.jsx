@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Select from 'components/Select';
-import TextField from 'components/TextField';
+import MultiLine from 'components/MultiLine';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { yn } from './selectOptions';
@@ -28,7 +28,7 @@ const OtherInfo = (props: Props) => {
               error={errors.priorAttendance}
               errorMessage="Please select prior attendance"
             />
-            <TextField
+            <MultiLine
               label="Anything else you’d like us to know?"
               name="extraInfo"
               placeholder="Type in any other considerations"
