@@ -11,6 +11,7 @@ type Props = {
   placeholder: string,
   value: string,
   onChange: string => void,
+  phone?: boolean,
   error?: boolean,
   errorMessage?: string,
 };
@@ -28,13 +29,13 @@ class TextField extends Component<Props> {
   }
 
   render() {
-    const { label, name, placeholder, value, error, errorMessage } = this.props;
+    const { label, name, placeholder, value, phone, error, errorMessage } = this.props;
     return (
       <div className="form-field">
         <label htmlFor={name}>
           <p>{label}</p>
           <input
-            type="text"
+            type={phone ? 'tel' : 'text'}
             name={name}
             placeholder={placeholder}
             value={value}
