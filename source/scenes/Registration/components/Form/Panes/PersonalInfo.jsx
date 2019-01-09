@@ -7,7 +7,7 @@ import TextField from 'components/TextField';
 
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
-import { checkAge } from '../inputValidators';
+import { checkAge, checkPhoneNumber } from '../inputValidators';
 import { shirtSizes, transportation, diet, genderOptions } from './selectOptions';
 
 type Props = {
@@ -55,9 +55,10 @@ const PersonalInfo = (props: Props) => {
               name="phone"
               placeholder="123 456 7890"
               value={data.phone}
-              onChange={registerField('phone')}
+              onChange={registerField('phone', checkPhoneNumber)}
+              phone
               error={errors.phone}
-              errorMessage="Please enter your phone number"
+              errorMessage="Please enter a valid 10-digit phone number"
             />
             <div className="split">
               <TextField

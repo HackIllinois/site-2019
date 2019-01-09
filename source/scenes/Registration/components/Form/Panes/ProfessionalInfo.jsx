@@ -7,7 +7,7 @@ import TextField from 'components/TextField';
 import FileUpload from 'components/FileUpload';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
-import { checkResume } from '../inputValidators';
+import { checkResume, checkLinkedin } from '../inputValidators';
 import { yn, careerInterests } from './selectOptions';
 
 type Props = {
@@ -34,9 +34,11 @@ const ProfessionalInfo = (props: Props) => {
             <TextField
               label="LinkedIn Profile"
               name="linkedin"
-              placeholder="Paste your profile url here"
+              placeholder="linkedin.com/in/username/"
               value={data.linkedin}
-              onChange={registerField('linkedin')}
+              onChange={registerField('linkedin', checkLinkedin)}
+              error={errors.linkedin}
+              errorMessage="Please enter a valid linkedin url"
             />
             <FileUpload
               onChange={registerField('resume', checkResume)}
