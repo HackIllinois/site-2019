@@ -6,7 +6,7 @@ export const checkAge = x => {
   return !Number.isNaN(d) && d > 0 && d < 120;
 };
 export const checkPhoneNumber = x => /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(x);
-export const checkLinkedin = x => /^((https?):\/\/)?(www.)?linkedin\.com.*/.text(x) || x === '';
+export const checkLinkedin = x => /^((https?):\/\/)?(www\.)?linkedin\.com.*/.text(x) || x === '';
 export const checkResume = file => {
   // Enforce file extensions, can't actually validate
   // PDF/DOCX any other way
