@@ -29,14 +29,14 @@ const StudentInfo = (props: Props) => {
               errorMessage="Please select your school"
             />
             <Select
-              label="Major"
-              placeholder="Type in your major"
+              label="Field of Study"
+              placeholder="Select your field of study"
               items={majors}
               onSelect={registerField('major')}
               disableInput
               index={data.major}
               error={errors.major}
-              errorMessage="Please enter your major"
+              errorMessage="Please select your field of study"
             />
             <TextField
               label="Graduation Year"

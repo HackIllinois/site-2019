@@ -146,6 +146,7 @@ export const schools = [
   { text: 'Ohio State University' },
   { text: 'Ohlone College' },
   { text: 'Oregon State University' },
+  { text: 'Other' },
   { text: 'Parkland College' },
   { text: 'Pennsylvania State University' },
   { text: "Prince George's Community College" },
@@ -205,7 +206,7 @@ export const schools = [
   { text: 'University of Georgia' },
   { text: 'University of Houston' },
   { text: 'University of Illinois - Chicago' },
-  { text: 'University of Illinois - SpringfieldType' },
+  { text: 'University of Illinois - Springfield' },
   { text: 'University of Illinois Urbana - Champaign' },
   { text: 'University of Iowa' },
   { text: 'University of Kansas' },
@@ -253,5 +254,4 @@ export const schools = [
   { text: 'Worcester Polytechnic Institute' },
   { text: 'Wright State University' },
   { text: 'Yale University' },
-  { text: 'Other' },
 ];

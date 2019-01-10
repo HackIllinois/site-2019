@@ -62,7 +62,7 @@ const PersonalInfo = (props: Props) => {
             />
             <div className="split">
               <TextField
-                label="Age"
+                label="Age (On Feb. 22)"
                 name="age"
                 placeholder="How old are you?"
                 value={data.age}
