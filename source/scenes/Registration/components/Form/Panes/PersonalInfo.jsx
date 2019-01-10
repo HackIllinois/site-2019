@@ -22,7 +22,7 @@ const PersonalInfo = (props: Props) => {
         {({ data, errors, registerField }) => (
           <div className="scrolled-form">
             <Select
-              label="Shirt Size"
+              label="Shirt Size (Unisex)"
               placeholder="Select a size"
               items={shirtSizes}
               onSelect={registerField('shirtSize')}
