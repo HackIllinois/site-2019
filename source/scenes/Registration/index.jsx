@@ -167,7 +167,7 @@ class Registration extends Component<Props, State> {
     }
     return (
       <div className="registration">
-        <SideBar pane={pane} setPane={this.setPane} />
+        <SideBar pane={pane} />
         <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
           <ScrollableForm pane={pane} setPane={this.setPane} />
         </FormContext.Provider>
