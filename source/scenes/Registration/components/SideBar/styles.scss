@@ -29,11 +29,9 @@ $yellow-faded: rgba(252, 202, 136, 0.3);
         border: 3px solid $link-yellow;
         margin-right: 15px;
         transition: background-color 0.3s, border-color 0.3s;
-        cursor: pointer;
       }
 
       p {
-        cursor: pointer;
         color: $link-yellow;
         font-size: 18px;
         line-height: $link-height;

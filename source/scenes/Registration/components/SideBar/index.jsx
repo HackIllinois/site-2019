@@ -9,11 +9,10 @@ type SideBarLinkProps = {
   children: Node,
   index: number,
   pane: number,
-  onClick: () => void,
 };
 
 const SideBarLink = (props: SideBarLinkProps) => {
-  const { children, index, pane, onClick } = props;
+  const { children, index, pane } = props;
   let s = 'unvisited';
   if (index === pane) {
     s = 'current';
@@ -23,7 +22,7 @@ const SideBarLink = (props: SideBarLinkProps) => {
 
   return (
     <li>
-      <button className={`sidebar-link ${s}`} type="button" onClick={onClick}>
+      <button className={`sidebar-link ${s}`} type="button">
         <div className="bubble" />
         <p>{children}</p>
       </button>
@@ -33,30 +32,29 @@ const SideBarLink = (props: SideBarLinkProps) => {
 
 type SideBarProps = {
   pane: number,
-  setPane: number => void,
 };
 
 const SideBar = (props: SideBarProps) => {
-  const { pane, setPane } = props;
+  const { pane } = props;
   return (
     <section className="sidebar">
       <ul>
-        <SideBarLink index={0} pane={pane} onClick={() => setPane(0)}>
+        <SideBarLink index={0} pane={pane}>
           Student Info
         </SideBarLink>
-        <SideBarLink index={1} pane={pane} onClick={() => setPane(1)}>
+        <SideBarLink index={1} pane={pane}>
           Personal Info
         </SideBarLink>
-        <SideBarLink index={2} pane={pane} onClick={() => setPane(2)}>
+        <SideBarLink index={2} pane={pane}>
           Professional Info
         </SideBarLink>
-        <SideBarLink index={3} pane={pane} onClick={() => setPane(3)}>
-          Beginner Info
+        <SideBarLink index={3} pane={pane}>
+          Experience
         </SideBarLink>
-        <SideBarLink index={4} pane={pane} onClick={() => setPane(4)}>
+        <SideBarLink index={4} pane={pane}>
           Other
         </SideBarLink>
-        <SideBarLink index={5} pane={pane} onClick={() => setPane(5)}>
+        <SideBarLink index={5} pane={pane}>
           Team
         </SideBarLink>
       </ul>
