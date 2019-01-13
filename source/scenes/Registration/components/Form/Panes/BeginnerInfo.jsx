@@ -6,7 +6,7 @@ import TextField from 'components/TextField';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { isNumeric } from '../inputValidators';
-import { range } from './selectOptions';
+import { yn, range } from './selectOptions';
 
 type Props = {
   visible: boolean,
@@ -19,6 +19,16 @@ const BeginnerInfo = (props: Props) => {
       <FormContext.Consumer>
         {({ data, errors, registerField }) => (
           <div className="scrolled-form">
+            <Select
+              label="Are you a beginner?"
+              placeholder="Yes or No"
+              items={yn}
+              onSelect={registerField('isBeginner')}
+              disableInput
+              index={data.isBeginner}
+              error={errors.isBeginner}
+              errorMessage="Please select an option"
+            />
             <Select
               label="Familiarity with Version Control"
               placeholder="From 1-5 (1 = low, 5 = high)"

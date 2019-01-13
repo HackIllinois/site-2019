@@ -2,13 +2,12 @@
 import React from 'react';
 
 import MultiSelect from 'components/MultiSelect';
-import Select from 'components/Select';
 import TextField from 'components/TextField';
 import FileUpload from 'components/FileUpload';
 import FormTransition from '../FormTransition';
 import FormContext from '../../../FormContext';
 import { checkResume, checkLinkedin } from '../inputValidators';
-import { yn, careerInterests } from './selectOptions';
+import { careerInterests } from './selectOptions';
 
 type Props = {
   visible: boolean,
@@ -21,16 +20,6 @@ const ProfessionalInfo = (props: Props) => {
       <FormContext.Consumer>
         {({ data, errors, registerField }) => (
           <div className="scrolled-form">
-            <Select
-              label="Are you a beginner?"
-              placeholder="Are you though?"
-              items={yn}
-              onSelect={registerField('isBeginner')}
-              disableInput
-              index={data.isBeginner}
-              error={errors.isBeginner}
-              errorMessage="Please select an option"
-            />
             <TextField
               label="LinkedIn Profile"
               name="linkedin"
