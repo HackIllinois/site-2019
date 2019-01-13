@@ -149,13 +149,80 @@ $asset-width: 1600px;
       justify-content: center;
     }
 
+    .fish-1 {
+      position: absolute;
+      z-index: 20;
+      top: 380px;
+      left: -10px;
+      width: 220px;
+
+      @media (max-width: 1250px) {
+        width: 200px;
+      }
+      @media (max-width: 600px) {
+        width: 100px;
+        top: 320px;
+      }
+    }
+
+    .fish-2 {
+      position: absolute;
+      z-index: 20;
+      top: 475px;
+      right: -17px;
+      width: 180px;
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+
+      @media (max-width: 1250px) {
+        width: 200px;
+        top: 640px;
+      }
+      @media (max-width: 600px) {
+        width: 100px;
+        top: 600px;
+        right: 27px;
+      }
+    }
+
+    .info {
+      position: relative;
+      top: 360px;
+      @media (max-width: $mobile-max) {
+        top: 300px;
+      }
+      z-index: 100;
+      margin: 0 10%;
+      margin-bottom: -40px;
+      line-height: 1.2;
+
+      h2 {
+        color: #fecc84;
+        z-index: 101;
+        font-size: 22px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      p {
+        color: #f0f1f1;
+        z-index: 101;
+        margin-bottom: 20px;
+      }
+    }
+
     .rocks {
       position: relative;
       top: $wave-offset;
+      margin-top: -300px;
+      padding-top: 470px;
       @media (max-width: $mobile-max) {
-        padding-top: 45px;
+        top: $wave-offset - 30px;
+        margin-top: -450px;
+        padding-top: 600px;
       }
-      background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1) 20%);
+      background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1));
 
       .mid-top-half {
         position: relative;
