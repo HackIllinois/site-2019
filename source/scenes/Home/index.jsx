@@ -51,29 +51,38 @@ const Home = () => (
       <img className="fish-1" src={fish} alt="fish" />
       <img className="fish-2" src={fish} alt="fish" />
 
-      <div className="info">
-        <h2>Dream it. Build it.</h2>
-        <p>
-          Since its inception in 2014, HackIllinois has pushed boundaries to create an exceptional
-          and dynamic hackathon culture. Last year, HackIllinois broke ground as the first Open
-          Source-focused collegiate hack-athon. This year, we challenge you to go beyond and explore
-          your own dreamscape.
-        </p>
-        <h2>The Event.</h2>
-        <p>
-          This year, we are continuing our commitment to the Open Source community. From February
-          23rd through 25th, get ready to develop, create, and support exciting Open Source
-          projects!
-        </p>
-        <h2>About Us.</h2>
-        <p>
-          We are the HackIllinois team, dedicated to creating a collaborative environment for
-          hackers to push creativity and innovation beyond bounds. Our team worked hard to gather
-          the resources you need to bring your dreamscape to life.
-        </p>
-      </div>
-
       <div className="rocks">
+        <div className="info">
+          <h2>Open Source</h2>
+          <p>
+            HackIllinois is redefining the collegiate hackathon as the first entirely open source
+            hackathon. Students work with experienced open source mentors over 36 hours to
+            contribute to open source through new features, bug fixes, and documentation changes.
+          </p>
+          <h2>The Event.</h2>
+          <p>
+            This year, only groups who work with a mentor on an open source contribution and add a
+            license will be eligible to win prizes. Contribute to a useful open source tool that you
+            use, an open source project of your own, or join a team led by an open source mentor.
+          </p>
+          <h2>Join Us</h2>
+          <p>
+            <b>Interested in contributing to open source? </b>
+            Be sure to apply for your chance to attend.
+          </p>
+          <p>
+            <b>Really want to come? </b>
+            Complete our Open Source Challenge for guaranteed admission to HackIllinois 2019. It’s
+            simple—just make one PR to any project between December 1, 2018 and the close of
+            applications.
+          </p>
+          <p>
+            <b>New to open source? </b>
+            No problem. Our workshops and mentors will help guide you through the intricacies of
+            open source, from licensing to making your first PR (pull request).
+          </p>
+        </div>
+
         <img className="mid-top-half" src={midTopHalf} alt="rocks" />
         <FAQ />
 

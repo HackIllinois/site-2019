@@ -187,42 +187,36 @@ $asset-width: 1600px;
       }
     }
 
-    .info {
-      position: relative;
-      top: 360px;
-      @media (max-width: $mobile-max) {
-        top: 300px;
-      }
-      z-index: 100;
-      margin: 0 10%;
-      margin-bottom: -40px;
-      line-height: 1.2;
-
-      h2 {
-        color: #fecc84;
-        z-index: 101;
-        font-size: 22px;
-        margin-bottom: 10px;
-        font-weight: 700;
-      }
-      p {
-        color: #f0f1f1;
-        z-index: 101;
-        margin-bottom: 20px;
-      }
-    }
-
     .rocks {
+      padding-top: 160px;
       position: relative;
       top: $wave-offset;
-      margin-top: -300px;
-      padding-top: 470px;
       @media (max-width: $mobile-max) {
         top: $wave-offset - 30px;
-        margin-top: -450px;
-        padding-top: 600px;
       }
       background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1));
+
+      .info {
+        position: relative;
+        top: 100px;
+        z-index: 100;
+        margin: 0 10%;
+        margin-bottom: -40px;
+        line-height: 1.2;
+
+        h2 {
+          color: #fecc84;
+          z-index: 101;
+          font-size: 22px;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+        p {
+          color: #f0f1f1;
+          z-index: 101;
+          margin-bottom: 20px;
+        }
+      }
 
       .mid-top-half {
         position: relative;
