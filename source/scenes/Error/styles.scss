@@ -1,10 +1,4 @@
-@import '../../styles/theme.scss';
-
 .error {
-  @include ocean-gradient;
-  height: 100vh;
-  position: relative;
-
   .content-wrapper {
     display: flex;
     flex-direction: column;

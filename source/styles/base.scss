@@ -1,3 +1,6 @@
+@import './theme.scss';
+@import './variables.scss';
+
 body {
   margin: 0;
 
@@ -8,7 +11,9 @@ body {
     h4,
     h5,
     h6,
-    p {
+    p,
+    a,
+    input {
       font-family: 'Montserrat', sans-serif;
     }
   }
@@ -18,4 +23,22 @@ button {
   background: transparent;
   border: none;
   outline: none;
+}
+
+.ocean-screen {
+  @include ocean-gradient;
+  height: 100vh;
+  position: relative;
+}
+
+.button-blue {
+  background-color: $button-blue;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
 }

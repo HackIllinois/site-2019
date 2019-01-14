@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+.form-field {
+  padding: 7px 0 17px 0;
+  width: 100%;
+
+  label p {
+    color: white;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  input,
+  textarea {
+    background: none;
+    border: none;
+    border-bottom: 2px solid $faded-white;
+    box-sizing: border-box;
+    color: white;
+    font-size: 19px;
+    margin-top: 4px;
+    padding: 4px;
+    transition: border-bottom-color 0.2s;
+    width: 100%;
+
+    &::placeholder {
+      color: $faded-white;
+    }
+
+    &:focus {
+      border-bottom-color: white;
+      outline: none;
+    }
+  }
+
+  .error-message {
+    padding-top: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    color: #fdcb89;
+  }
+}

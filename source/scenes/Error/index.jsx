@@ -14,7 +14,7 @@ type Props = {
 const ErrorPage = (props: Props) => {
   const { message } = props;
   return (
-    <div className="error">
+    <div className="error ocean-screen">
       <div className="content-wrapper">
         <div className="contents">
           <img src={logo} alt="HackIllinois Logo" />
