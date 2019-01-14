@@ -22,7 +22,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/auth" component={Auth} />
-        <Route exact path="/register" component={Registration} />
+        <Route exact path="/apply" component={Registration} />
         <Route exact path="/sponsor" component={PDFView('/assets/sponsorship-2019.pdf')} />
         <Route exact path="/mentor" component={PDFView('/assets/mentorship-2019.pdf')} />
         <Route component={() => <Error message="404 Not Found" />} />
