@@ -159,7 +159,7 @@ class Registration extends Component<Props, State> {
     const { pane, data, errors } = this.state;
 
     if (!jwt) {
-      window.location.replace(getGithubOAuthURL('/register'));
+      window.location.replace(getGithubOAuthURL('/apply'));
       return null;
     }
     if (!regValid) {

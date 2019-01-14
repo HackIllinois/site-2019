@@ -82,7 +82,7 @@ class ScrollableForm extends Component<Props> {
 
     return (
       <section className="scrollable-form">
-        <h1>Registration</h1>
+        <h1>Application</h1>
 
         <div id="form-view">
           <div id="form-view-container">
