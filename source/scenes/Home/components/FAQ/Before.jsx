@@ -14,10 +14,9 @@ const Before = () => (
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
-          We will be providing buses to certain locations across the Midwest. Last year,
-          HackIllinois had <a href="https://2018.hackillinois.org/travel">these bus routes</a>{' '}
-          (subject to change this year). HackIllinois will not be providing travel reimbursements to
-          students.
+          At this time, HackIllinois is still exploring travel options for students coming to the event.
+          To stay up to date on the latest travel information, make sure keep checking our social media
+          pages and this website!
         </p>
       </section>
       <section className="faq-column">

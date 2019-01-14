@@ -24,7 +24,7 @@ const General = () => (
       <section className="faq-column">
         <h4>When</h4>
         <p>
-          Buses will arrive by 5 pm on Friday, February 22 for an opening ceremony and other
+          You should arrive by 5 pm on Friday, February 22 for an opening ceremony and other
           activities. The contribution period will begin at 10 pm and will last until 10 am on
           Sunday, February 24. A more detailed schedule will be released closer to the event here on
           our website.
@@ -34,9 +34,9 @@ const General = () => (
         <h4>Who</h4>
         <p>
           All university and college students of all skill levels are eligible to attend. We welcome
-          a diverse mix of colleges, disciplines, and interests at our event, and will be providing
-          buses to certain locations for students outside the Champaign-Urbana area. There will be
-          workshops and support from mentors if you are new to open source.
+          a diverse mix of colleges, disciplines, and interests at our event, and encourage students
+          from outside the Champaign-Urbana area to attend. There will be workshops and support from
+          mentors if you are new to open source.
         </p>
       </section>
     </div>
