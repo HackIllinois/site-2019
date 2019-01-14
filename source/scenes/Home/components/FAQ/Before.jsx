@@ -14,9 +14,9 @@ const Before = () => (
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
-          At this time, HackIllinois is still exploring travel options for students coming to the event.
-          To stay up to date on the latest travel information, make sure to keep checking our social media
-          pages and this website!
+          At this time, HackIllinois is still exploring travel options for students coming to the
+          event. To stay up to date on the latest travel information, make sure to keep checking
+          our social media pages and this website!
         </p>
       </section>
       <section className="faq-column">
