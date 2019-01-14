@@ -30,6 +30,16 @@ const BeginnerInfo = (props: Props) => {
               errorMessage="Please select an option"
             />
             <Select
+              label="Have you ever contributed to Open Source before?"
+              placeholder="Yes or No"
+              items={yn}
+              onSelect={registerField('isOSContributor')}
+              disableInput
+              index={data.isOSContributor}
+              error={errors.isOSContributor}
+              errorMessage="Please select an option"
+            />
+            <Select
               label="Familiarity with Version Control"
               placeholder="From 1-5 (1 = low, 5 = high)"
               items={range}
@@ -57,13 +67,6 @@ const BeginnerInfo = (props: Props) => {
               onChange={registerField('yearsExperience', isNumeric)}
               error={errors.yearsExperience}
               errorMessage="Please enter your years of programming experience"
-            />
-            <TextField
-              label="What programming languages/technical skills do you know?"
-              name="technicalSkills"
-              placeholder="JavaScript, Python, ..."
-              value={data.technicalSkills}
-              onChange={registerField('technicalSkills')}
             />
           </div>
         )}

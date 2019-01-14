@@ -49,6 +49,13 @@ const ProfessionalInfo = (props: Props) => {
               value={data.skills}
               onChange={registerField('skills')}
             />
+            <TextField
+              label="What programming languages/technical skills do you know?"
+              name="technicalSkills"
+              placeholder="JavaScript, Python, ..."
+              value={data.technicalSkills}
+              onChange={registerField('technicalSkills')}
+            />
           </div>
         )}
       </FormContext.Consumer>

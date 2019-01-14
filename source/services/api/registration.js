@@ -23,6 +23,7 @@ const serialize = data => {
   serialized.age = Number.parseInt(data.age, 10);
   serialized.gender = selectOptions.genderOptions[data.gender].value;
   serialized.isBeginner = selectOptions.yn[data.isBeginner].value;
+  serialized.isOSContributor = selectOptions.yn[data.isOSContributor].value;
   serialized.linkedin = data.linkedin;
   serialized.interests = data.interests;
   serialized.skills = split(data.skills);
@@ -67,6 +68,7 @@ const deserialize = data => {
   res.priorAttendance = findIndex(data.priorAttendance, 'yn', 'value');
   res.extraInfo = data.extraInfo;
   res.teamMembers = data.teamMembers.join(', ');
+  res.isOSContributor = findIndex(data.isOSContributor, 'yn', 'value');
   res.versionControl = findIndex(data.beginnerInfo.versionControl, 'range', 'value');
   res.pullRequest = findIndex(data.beginnerInfo.pullRequest, 'range', 'value');
   res.yearsExperience = data.beginnerInfo.yearsExperience.toString(10);

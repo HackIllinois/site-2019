@@ -46,6 +46,7 @@ const INITIAL_REGISTRATION_STATE = {
   priorAttendance: -1,
   extraInfo: '',
   teamMembers: '',
+  isOSContributor: -1,
   versionControl: -1,
   pullRequest: -1,
   yearsExperience: '',
