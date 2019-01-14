@@ -25,6 +25,10 @@ button {
   outline: none;
 }
 
+b {
+  font-weight: 700;
+}
+
 .ocean-screen {
   @include ocean-gradient;
   height: 100vh;
