@@ -4,19 +4,11 @@ const Before = () => (
   <section className="faq-pane">
     <div className="faq-container faq-column-container">
       <section className="faq-column">
-        <h4>What should I bring?</h4>
+        <h4>How do applications work?</h4>
         <p>
-          You should bring a student ID, a reusable water bottle, a change of clothing, personal
-          items such as toiletries, and a laptop &amp; charger. Due to safety considerations, please
-          do not bring desktop computers, extra monitors, firearms, or alcoholic beverages.
-        </p>
-      </section>
-      <section className="faq-column">
-        <h4>When will I find out if I can attend?</h4>
-        <p>
-          Decisions will be released one month ahead of the event in January to allow time for
-          students to make transportation plans. RSVP is required to check in, so be on the lookout
-          for your acceptance email!
+          You must apply in order to be considered for HackIllinois. Admissions will be based on a
+          weighted random lottery. Decisions will be released in January. If you’re accepted, there
+          will be a limited time to RSVP, so be on the lookout for your acceptance email!
         </p>
       </section>
       <section className="faq-column">
@@ -36,6 +28,14 @@ const Before = () => (
           a mentor in order to be eligible for a prize. Mentors will be available on Slack before
           the event, as well at a project session on Friday. There are no team size limits, but most
           contributions end up coming from teams of around 6-8.
+        </p>
+      </section>
+      <section className="faq-column">
+        <h4>What should I bring?</h4>
+        <p>
+          You should bring a student ID, a reusable water bottle, a change of clothing, personal
+          items such as toiletries, and a laptop &amp; charger. Due to safety considerations, please
+          do not bring desktop computers, extra monitors, weapons, or alcoholic beverages.
         </p>
       </section>
     </div>

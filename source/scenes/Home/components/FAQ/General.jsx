@@ -8,7 +8,7 @@ const General = () => (
         <p>
           HackIllinois is a 36-hour event where college students from across the country work on
           open source projects, including new features, documentation, and bug fixes. You can work
-          on contributing to a useful open source tool that you use, a open source project of your
+          on contributing to a useful open source tool that you use, an open source project of your
           own, or joining a team led by an open source mentor.
         </p>
       </section>
@@ -33,9 +33,10 @@ const General = () => (
       <section className="faq-column">
         <h4>Who</h4>
         <p>
-          All university and college students of all skill levels are eligible to compete. We
-          welcome a diverse mix of colleges, disciplines, and interests at our event, and will be
-          providing buses to certain locations for students outside the Champaign-Urbana area.
+          All university and college students of all skill levels are eligible to attend. We welcome
+          a diverse mix of colleges, disciplines, and interests at our event, and will be providing
+          buses to certain locations for students outside the Champaign-Urbana area. There will be
+          workshops and support from mentors if you are new to open source.
         </p>
       </section>
     </div>

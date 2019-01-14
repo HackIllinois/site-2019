@@ -8,8 +8,7 @@ const During = () => (
         <p>
           Snacks, drinks, and all meals will be provided for the entire weekend. If you have a
           dietary restriction, please make sure to mention it on the application. We’ll have a wide
-          variety of healthy food available throughout the weekend. If you’re at the event and there
-          isn’t food available, let staff know and we’ll fix it immediately.
+          variety of food available throughout the weekend.
         </p>
       </section>
       <section className="faq-column">
