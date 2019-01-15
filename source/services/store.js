@@ -14,6 +14,13 @@ const rootReducer = combineReducers({
   user: userReducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+let middleware;
 
+if (process.env.TRAVIS_BRANCH === 'master') {
+  middleware = applyMiddleware(thunk);
+} else {
+  middleware = applyMiddleware(thunk, logger);
+}
+
+const store = createStore(rootReducer, middleware);
 export default store;
