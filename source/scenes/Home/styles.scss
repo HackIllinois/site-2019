@@ -139,10 +139,23 @@ $asset-width: 1600px;
       animation-delay: -3s;
     }
 
+    .title-logo-wrapper {
+      position: absolute;
+      top: 120px;
+      width: 100%;
+      z-index: 3;
+
+      .fulcrum-logo {
+        display: block;
+        margin: auto;
+        width: 200px;
+      }
+    }
+
     .buttons {
       position: absolute;
       z-index: 3;
-      top: 180px;
+      top: 190px;
       width: 100%;
       display: flex;
       flex-direction: row;
