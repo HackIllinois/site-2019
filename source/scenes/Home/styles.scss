@@ -141,21 +141,21 @@ $asset-width: 1600px;
 
     .title-logo-wrapper {
       position: absolute;
-      top: 120px;
+      top: 140px;
       width: 100%;
       z-index: 3;
 
       .fulcrum-logo {
         display: block;
         margin: auto;
-        width: 200px;
+        width: 300px;
       }
     }
 
     .buttons {
       position: absolute;
       z-index: 3;
-      top: 190px;
+      top: 250px;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -201,10 +201,11 @@ $asset-width: 1600px;
     }
 
     .rocks {
-      padding-top: 160px;
+      padding-top: 180px;
       position: relative;
       top: $wave-offset;
       @media (max-width: $mobile-max) {
+        padding-top: 200px;
         top: $wave-offset - 30px;
       }
       background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1));
