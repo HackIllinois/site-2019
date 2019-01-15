@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import FulcrumLogo from 'assets/fulcrum.png';
 import clouds from 'assets/Home/clouds_stars.svg';
 import fish from 'assets/Home/fish.png';
 import logo from 'assets/logo.svg';
@@ -41,6 +42,10 @@ const Home = () => (
       <img className="wave wave-back" src={waveBack} alt="Wave Back" />
       <img className="wave wave-mid" src={waveMid} alt="Wave Middle" />
       <img className="wave wave-front" src={waveFront} alt="Wave Front" />
+
+      <div className="title-logo-wrapper">
+        <img className="fulcrum-logo" src={FulcrumLogo} alt="Fulcrum GT Logo" />
+      </div>
 
       <div className="buttons">
         <Link className="button-blue" to="/apply">
