@@ -1,119 +1,333 @@
 @import '../../styles/variables.scss';
 @import '../../styles/theme.scss';
 
+$cloud-width: 1300px;
+$sky-height: 520px;
+$wave-offset: 70px;
+
+$asset-width: 1600px;
+
+@mixin fix-center($width) {
+  width: $width;
+  margin-left: -($width / 2);
+  left: 50%;
+}
+
 .home {
-  @include ocean-gradient;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+  .sky {
+    position: relative;
+    height: $sky-height;
+    background-image: linear-gradient(180deg, $upper-sky, $lower-sky);
 
-  .diver {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
+    .cloud-wrapper {
+      position: absolute;
+      width: 100%;
+      overflow: hidden;
 
-  .diver-desktop {
-    width: 1300px;
-    display: none;
-
-    @media (min-width: $tablet-min) {
-      display: block;
+      .clouds {
+        position: relative;
+        display: block;
+        margin-top: 20px;
+        @include fix-center($cloud-width);
+      }
     }
 
-    @media (max-width: $tablet-max) {
-      width: 910px;
-    }
-  }
+    .sun-wrapper {
+      padding-top: 130px;
+      .sun {
+        height: $sun-width;
+        width: $sun-width;
+        border-radius: 50%;
+        margin: auto;
+        background-image: linear-gradient(180deg, rgba(233, 224, 147, 1), rgba(233, 224, 147, 0));
 
-  .diver-mobile {
-    max-height: 700px;
-    bottom: -50px;
-    display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: white;
+
+        > img {
+          padding-top: 45px;
+          width: 100px;
+        }
+
+        h1 {
+          text-transform: uppercase;
+          font-size: 44px;
+          font-weight: bold;
+          margin: 30px 0;
+        }
+
+        p {
+          font-size: 22px;
+        }
+      }
+    }
 
     @media (max-width: $mobile-max) {
-      display: block;
+      height: 445px;
+
+      .sun-wrapper {
+        .sun {
+          height: $mobile-sun-width;
+          width: $mobile-sun-width;
+
+          > img {
+            width: 70px;
+          }
+          h1 {
+            font-size: 32px;
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
 
-  .info-text {
-    position: absolute;
-    bottom: 120px;
-    left: 210px;
-    width: 315px;
-    color: white;
-    text-align: center;
+  .rocks-top-wrapper {
+    position: relative;
 
-    .logo {
-      width: 200px;
+    .rocks-top {
+      position: absolute;
+      top: -130px;
+      left: 0;
+      width: 420px;
+
+      @media (max-width: $tablet-max) {
+        width: 260px;
+        top: -107px;
+      }
+
+      @media (max-width: $mobile-max) {
+        width: 180px;
+        top: -90px;
+      }
+    }
+  }
+
+  .water {
+    margin-top: -$wave-offset;
+    padding-bottom: $wave-offset;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    > img.wave {
+      position: absolute;
+      z-index: 1;
+      width: 110%;
+      min-width: 1050px;
+      left: -5%;
+      animation: wave-move-lr 9s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      @media (max-width: 775px) {
+        animation: wave-move-lr-small 9s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
     }
 
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin: 0;
+    > img.wave-mid {
+      top: 30px;
+      animation-delay: -6s;
     }
 
-    h3 {
-      font-size: 30px;
-      font-weight: 500;
-      margin: 0;
+    > img.wave-front {
+      top: 45px;
+      z-index: 2;
+      animation-delay: -3s;
     }
 
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-      left: 165px;
-      bottom: 92px;
+    .title-logo-wrapper {
+      position: absolute;
+      top: 140px;
+      width: 100%;
+      z-index: 3;
+
+      .fulcrum-logo {
+        display: block;
+        margin: auto;
+        width: 300px;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      z-index: 3;
+      top: 250px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .fish-1 {
+      position: absolute;
+      z-index: 20;
+      top: 380px;
+      left: -10px;
       width: 220px;
 
-      .logo {
-        width: 160px;
+      @media (max-width: 1250px) {
+        width: 200px;
       }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      h3 {
-        font-size: 18px;
+      @media (max-width: 600px) {
+        width: 100px;
+        top: 320px;
       }
     }
 
-    @media (max-width: $mobile-max) {
-      left: 15px;
-      bottom: 20vh;
-      width: 200px;
+    .fish-2 {
+      position: absolute;
+      z-index: 20;
+      top: 475px;
+      right: -17px;
+      width: 180px;
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
 
-      .logo {
-        width: 160px;
+      @media (max-width: 1250px) {
+        width: 200px;
+        top: 640px;
+      }
+      @media (max-width: 600px) {
+        width: 100px;
+        top: 600px;
+        right: 27px;
+      }
+    }
+
+    .rocks {
+      padding-top: 180px;
+      position: relative;
+      top: $wave-offset;
+      @media (max-width: $mobile-max) {
+        padding-top: 200px;
+        top: $wave-offset - 30px;
+      }
+      background-image: linear-gradient(rgba($upper-sea, 0.99), rgba($upper-sea, 1));
+
+      .info {
+        position: relative;
+        top: 100px;
+        z-index: 100;
+        margin: 0 10%;
+        margin-bottom: -40px;
+        line-height: 1.2;
+
+        h2 {
+          color: #fecc84;
+          z-index: 101;
+          font-size: 22px;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+        p {
+          color: #f0f1f1;
+          line-height: 1.4;
+          margin-bottom: 20px;
+          z-index: 101;
+        }
       }
 
-      h1 {
-        font-size: 24px;
+      .mid-top-half {
+        position: relative;
+        margin-top: 100px;
+        width: 102%;
+        z-index: 1;
       }
 
-      h3 {
-        font-size: 18px;
+      .mid-bottom-half {
+        position: relative;
+        width: 102%;
+        z-index: 1;
+      }
+
+      #rocks-mid-bottom-grouping {
+        position: relative;
+        top: -3px;
+
+        #fish {
+          position: absolute;
+          top: 36%;
+          right: 25%;
+          width: 270px;
+
+          @media (max-width: 1250px) {
+            width: 200px;
+          }
+          @media (max-width: 600px) {
+            width: 100px;
+          }
+        }
+      }
+
+      .floor {
+        margin-top: -80px;
+        position: relative;
+
+        .ocean-arch {
+          display: block;
+          position: relative;
+          @include fix-center(105%);
+          z-index: 0;
+          padding-bottom: 80px;
+        }
+
+        .ocean-floor {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          @include fix-center(105%);
+          z-index: 1;
+        }
+
+        @media (max-width: $tablet-max) {
+          .ocean-arch {
+            @include fix-center(1000px);
+            padding-bottom: 30px;
+          }
+          .ocean-floor {
+            @include fix-center(1000px);
+          }
+        }
+
+        @media (max-width: $mobile-max) {
+          .ocean-arch {
+            @include fix-center(600px);
+          }
+          .ocean-floor {
+            @include fix-center(600px);
+          }
+        }
       }
     }
   }
+}
 
-  @media (max-height: 500px), (min-width: $tablet-min) and (max-width: 675px) {
-    .info-text {
-      bottom: 40px;
-      left: 75px;
-    }
+@keyframes wave-move-lr {
+  0% {
+    left: -9%;
+  }
+  50% {
+    left: -1%;
+  }
+  100% {
+    left: -9%;
+  }
+}
 
-    .diver {
-      left: -78px;
-      bottom: -46px;
-    }
-
-    .diver-desktop {
-      display: block;
-    }
-
-    .diver-mobile {
-      display: none;
-    }
+@keyframes wave-move-lr-small {
+  0% {
+    left: -70px;
+  }
+  50% {
+    left: -7px;
+  }
+  100% {
+    left: -70px;
   }
 }

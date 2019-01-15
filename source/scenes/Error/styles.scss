@@ -1,10 +1,4 @@
-@import '../../styles/theme.scss';
-
 .error {
-  @include ocean-gradient;
-  height: 100vh;
-  position: relative;
-
   .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -20,6 +14,7 @@
     color: white;
 
     > h1 {
+      margin-top: 30px;
       font-size: 40px;
       font-weight: 400;
     }
