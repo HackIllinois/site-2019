@@ -53,3 +53,5 @@ deploy:
    local_dir: build
    on:
     branch: staging
+after_deploy:
+  - ./scripts/invalidate.sh
