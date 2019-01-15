@@ -94,7 +94,7 @@ class Registration extends Component<Props, State> {
     this.setState(prevState => {
       const { data, pane, errors } = prevState;
       const missing = required(pane, data);
-      if (missing.length === 0 && validatePane(pane, errors)) {
+      if ((missing.length === 0 && validatePane(pane, errors)) || newPane < pane) {
         return { pane: newPane };
       }
 
