@@ -25,6 +25,7 @@ export const diet = [
   { text: 'Vegetarian', value: 'VEGETARIAN' },
   { text: 'Gluten Free', value: 'NOGLUTEN' },
   { text: 'Nut Allergy', value: 'NOPEANUT' },
+  { text: 'Other', value: 'OTHER' },
 ];
 
 export const genderOptions = [
@@ -206,9 +207,9 @@ export const schools = [
   { text: 'University of Florida' },
   { text: 'University of Georgia' },
   { text: 'University of Houston' },
-  { text: 'University of Illinois - Chicago' },
-  { text: 'University of Illinois - Springfield' },
-  { text: 'University of Illinois Urbana - Champaign' },
+  { text: 'University of Illinois at Chicago' },
+  { text: 'University of Illinois at Springfield' },
+  { text: 'University of Illinois at Urbana-Champaign' },
   { text: 'University of Iowa' },
   { text: 'University of Kansas' },
   { text: 'University of Louisiana at Monroe' },

@@ -18,7 +18,7 @@ const TeamInfo = (props: Props) => {
           <div className="scrolled-form">
             <TextField
               label="GitHub usernames of team members"
-              name="teamMembers"
+              name="teamMembers (Optional)"
               placeholder="Type in usernames, separate with commas"
               value={data.teamMembers}
               onChange={registerField('teamMembers')}
