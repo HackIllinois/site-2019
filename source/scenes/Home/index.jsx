@@ -73,18 +73,12 @@ const Home = () => (
           <h2>Join Us</h2>
           <p>
             <b>Interested in contributing to open source?</b> Be sure to apply for your chance to
-            attend.
-          </p>
-          <p>
-            <b>Really want to come?</b> Complete our{' '}
+            attend. <b>Really want to come?</b> Complete our{' '}
             <a href="http://go.hackillinois.org/opensourcechallenge">Open Source Challenge</a> for
             guaranteed admission to HackIllinois 2019. It’s simple—just make one PR to any project
-            between December 1, 2018 and the close of applications.
-          </p>
-          <p>
-            <b>New to open source?</b> No problem. Our workshops and mentors will help guide you
-            through the intricacies of open source, from licensing to making your first PR (pull
-            request).
+            between December 1, 2018 and the close of applications. <b>New to open source?</b> No
+            problem. Our workshops and mentors will help guide you through the intricacies of open
+            source, from licensing to making your first PR (pull request).
           </p>
         </div>
 
