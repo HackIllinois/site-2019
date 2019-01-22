@@ -31,7 +31,7 @@ const OtherInfo = (props: Props) => {
             <MultiLine
               label="Anything else you’d like us to know?"
               name="extraInfo"
-              placeholder="Type in any other considerations"
+              placeholder="Enter any other considerations such as if you have an unlisted dietary restriction."
               value={data.extraInfo}
               onChange={registerField('extraInfo')}
             />
