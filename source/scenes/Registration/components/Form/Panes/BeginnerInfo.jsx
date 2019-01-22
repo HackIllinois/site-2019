@@ -30,7 +30,7 @@ const BeginnerInfo = (props: Props) => {
               errorMessage="Please select an option"
             />
             <Select
-              label="Have you ever contributed to Open Source before?"
+              label="Have you ever contributed to open source before?"
               placeholder="Yes or No"
               items={yn}
               onSelect={registerField('isOSContributor')}
