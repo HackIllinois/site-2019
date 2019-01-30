@@ -15,6 +15,12 @@ import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
 
+import caveOne from 'assets/Home/cave-one.svg';
+import caveTwo from 'assets/Home/cave-two.svg';
+import caveThree from 'assets/Home/cave-three.svg';
+import caveFour from 'assets/Home/cave-four.svg';
+import squid from 'assets/Home/squid.svg';
+
 import FAQ from './components/FAQ';
 import './styles.scss';
 
@@ -85,15 +91,17 @@ const Home = () => (
         <img className="mid-top-half" src={midTopHalf} alt="rocks" />
         <FAQ />
 
-        <div id="rocks-mid-bottom-grouping">
-          <img className="mid-bottom-half" src={midBottomHalf} alt="rocks" />
-          <img id="fish" src={fish} alt="fish" />
+        <div id="caves">
+          <img className="front-cave" src={caveOne} alt="Cave one" />
+          <img className="front-mid-cave" src={caveTwo} alt="Cave two" />
+          <img className="back-mid-cave" src={caveThree} alt="Cave three" />
+          <img className="back-cave" src={caveFour} alt="Cave four" />
+          {/* <img id="fish" src={fish} alt="fish" /> */}
         </div>
-
-        <div className="floor">
+        {/* <div className="floor">
           <img className="ocean-arch" src={oceanArch} alt="Rock arch" />
-          <img className="ocean-floor" src={oceanFloor} alt="Ocean Floor" />
-        </div>
+          <img className="ocean-floor" src={oceanFloor} alt="Ocean Floor" />  
+        </div> */}
       </div>
     </div>
   </div>
