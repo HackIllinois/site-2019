@@ -7,11 +7,6 @@ $wave-offset: 70px;
 
 $asset-width: 1600px;
 
-$cave-one-height: 5646px; // from cave-one.svg
-$cave-two-height-percent: (2200px / $cave-one-height) * 100%; // from cave-two.svg
-$cave-three-height-percent: (4351px / $cave-one-height) * 100%; // from cave-three.svg
-$cave-four-height-percent: (5251px / $cave-one-height) * 100%; // from cave-four.svg
-
 @mixin fix-center($width) {
   width: $width;
   margin-left: -($width / 2);
@@ -252,39 +247,16 @@ $cave-four-height-percent: (5251px / $cave-one-height) * 100%; // from cave-four
       #caves {
         position: relative;
         width: 100%;
-        height: $cave-one-height;
-        margin-top: -5px;
-        overflow: hidden;
+        height: 100%;
+        overflow: auto;
+        overflow-y: hidden; // to hide the div scrollbar
 
-        .front-cave {
-          position: absolute;
+        .cave {
+          position: relative;
           width: 100%;
           height: 100%;
+          vertical-align: bottom;
           z-index: 100;
-        }
-
-        .front-mid-cave {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: $cave-two-height-percent;
-          z-index: 99;
-        }
-
-        .back-mid-cave {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: $cave-three-height-percent;
-          z-index: 98;
-        }
-
-        .back-cave {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: $cave-four-height-percent;
-          z-index: 97;
         }
       }
 

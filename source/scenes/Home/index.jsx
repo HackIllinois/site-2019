@@ -14,12 +14,9 @@ import rocksTop from 'assets/Home/rocks_top.png';
 import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
-
-import caveOne from 'assets/Home/cave-one.svg';
-import caveTwo from 'assets/Home/cave-two.svg';
-import caveThree from 'assets/Home/cave-three.svg';
-import caveFour from 'assets/Home/cave-four.svg';
 import squid from 'assets/Home/squid.svg';
+
+import cave from 'assets/Home/cave.svg';
 
 import FAQ from './components/FAQ';
 import './styles.scss';
@@ -92,10 +89,8 @@ const Home = () => (
         <FAQ />
 
         <div id="caves">
-          <img className="front-cave" src={caveOne} alt="Cave one" />
-          <img className="front-mid-cave" src={caveTwo} alt="Cave two" />
-          <img className="back-mid-cave" src={caveThree} alt="Cave three" />
-          <img className="back-cave" src={caveFour} alt="Cave four" />
+          <img className="cave" src={caveFive} alt="Cave" />
+
           {/* <img id="fish" src={fish} alt="fish" /> */}
         </div>
         {/* <div className="floor">
