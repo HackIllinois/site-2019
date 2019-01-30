@@ -1,0 +1,15 @@
+@import '../../../../../styles/variables.scss';
+
+.submission-page {
+  .submit-button,
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  p {
+    color: white;
+    font-size: 22px;
+    text-align: center;
+  }
+}

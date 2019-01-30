@@ -42,7 +42,7 @@ let id = 0;
 class Select extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    const initialValue = props.index === -1 ? '' : props.items[props.index].text;
+    const initialValue = props.index < 0 ? '' : props.items[props.index].text;
     this.state = {
       isOpen: false,
       inputValue: initialValue,

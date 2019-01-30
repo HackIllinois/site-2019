@@ -1,0 +1,58 @@
+.slider {
+  width: 100%;
+
+  label p {
+    color: #ececec;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 15px;
+    width: 100%;
+    position: relative;
+  }
+  label {
+    width: 100%;
+  }
+
+  .bar-cont {
+    position: relative;
+    height: 40px;
+    width: 100%;
+
+    .bar {
+      position: absolute;
+      z-index: 9;
+      height: 50%;
+      width: 100%;
+      box-sizing: border-box;
+      border-bottom: 1px solid white;
+    }
+
+    .nob {
+      position: relative;
+      margin-left: 0;
+      top: 15px;
+      z-index: 10;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: #238890;
+      border: 2px solid white;
+      box-sizing: border-box;
+      cursor: grab;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .nob:active {
+      cursor: grabbing;
+    }
+
+    .start {
+      position: absolute;
+    }
+
+    .end {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
