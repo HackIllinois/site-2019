@@ -89,7 +89,7 @@ const Home = () => (
         <FAQ />
 
         <div id="caves">
-          <img className="cave" src={caveFive} alt="Cave" />
+          <img className="cave" src={cave} alt="Cave" />
 
           {/* <img id="fish" src={fish} alt="fish" /> */}
         </div>
