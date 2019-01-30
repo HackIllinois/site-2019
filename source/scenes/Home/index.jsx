@@ -15,7 +15,6 @@ import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
 import squid from 'assets/Home/squid.svg';
-
 import cave from 'assets/Home/cave.svg';
 
 import FAQ from './components/FAQ';
