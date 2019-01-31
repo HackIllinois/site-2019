@@ -1,7 +1,13 @@
+@import '../../../../../styles/variables.scss';
+
 .ti-inst {
   text-align: center;
   margin-bottom: 15px;
   font-size: 22px;
   font-weight: 700;
   color: white;
+
+  @media (max-width: $mobile-max) {
+    font-size: 12px;
+  }
 }

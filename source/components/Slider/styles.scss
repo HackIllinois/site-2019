@@ -22,10 +22,9 @@
     .actual-slider {
       position: absolute;
       top: 5px;
-      -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-      width: 100%; /* Specific width is required for Firefox. */
-      background: transparent; /* Otherwise white in Chrome */
+      -webkit-appearance: none;
       width: 100%;
+      background: transparent;
     }
 
     .track {
@@ -76,7 +75,7 @@
     border-radius: 50%;
     cursor: grab;
     background-color: #308f97;
-    z-index: 10;
+    z-index: 20;
   }
 
   /* All the same stuff for IE */
@@ -89,5 +88,9 @@
     cursor: grab;
     background-color: #308f97;
     z-index: 10;
+  }
+
+  input[type='range']::-moz-range-track {
+    background: transparent;
   }
 }
