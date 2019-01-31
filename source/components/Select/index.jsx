@@ -27,6 +27,7 @@ type Props = {
   index: number,
   error?: boolean,
   errorMessage?: string,
+  smallLabel?: boolean,
 };
 
 type State = {
@@ -218,7 +219,7 @@ class Select extends React.Component<Props, State> {
   }
 
   render() {
-    const { items, label, placeholder, error, errorMessage, index } = this.props;
+    const { items, label, placeholder, error, errorMessage, index, smallLabel } = this.props;
     const { isOpen, inputValue, valueSelected } = this.state;
 
     const menuHeight = items.length * menuItemHeight <= 200 ? items.length * menuItemHeight : 210;
@@ -229,15 +230,20 @@ class Select extends React.Component<Props, State> {
       height: 0,
       visibility: 'hidden',
     };
+    let lessPadding = {};
+    if (smallLabel) {
+      lessPadding = { padding: '4px 0 10px 0' };
+    }
 
     return (
       <div
         className="select form-field"
+        style={lessPadding}
         ref={n => {
           this.selectRef = n;
         }}
       >
-        <label className="label" htmlFor={`${this.id}-input`}>
+        <label className={smallLabel ? 'small-label' : 'label'} htmlFor={`${this.id}-input`}>
           <p>{label}</p>
           <div className="input-cont" onClick={this.handleFocus}>
             <input

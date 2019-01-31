@@ -30,6 +30,7 @@ const TechInterests = (props: Props) => {
               index={data.dataScience}
               error={errors.dataScience}
               errorMessage="Please select a unique number for each field"
+              smallLabel
             />
             <Select
               label="Web Development"
@@ -40,6 +41,7 @@ const TechInterests = (props: Props) => {
               index={data.webDev}
               error={errors.webDev}
               errorMessage="Please select a unique number for each field"
+              smallLabel
             />
             <Select
               label="Systems Programming"
@@ -50,6 +52,7 @@ const TechInterests = (props: Props) => {
               index={data.systems}
               error={errors.systems}
               errorMessage="Please select a unique number for each field"
+              smallLabel
             />
             <Select
               label="App Development"
@@ -60,6 +63,7 @@ const TechInterests = (props: Props) => {
               index={data.appDev}
               error={errors.appDev}
               errorMessage="Please select a unique number for each field"
+              smallLabel
             />
             <Select
               label="Hardware"
@@ -70,6 +74,7 @@ const TechInterests = (props: Props) => {
               index={data.hardware}
               error={errors.hardware}
               errorMessage="Please select a unique number for each field"
+              smallLabel
             />
             <Select
               label="Development Tools"
@@ -80,6 +85,7 @@ const TechInterests = (props: Props) => {
               index={data.devTools}
               error={errors.devTools}
               errorMessage="Please select a unique number for each field"
+              smallLabel
             />
           </div>
         )}
