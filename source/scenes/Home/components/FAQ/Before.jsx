@@ -7,16 +7,18 @@ const Before = () => (
         <h4>How do applications work?</h4>
         <p>
           You must apply in order to be considered for HackIllinois. Admissions will be based on a
-          weighted random lottery. Decisions will be released in January. If you’re accepted, there
-          will be a limited time to RSVP, so be on the lookout for your acceptance email!
+          weighted random lottery. Decisions will be released in early February in two waves, and it
+          is to your advantage to apply as soon as possible. If you’re accepted, there will be a
+          limited time to RSVP before we reallocate your spot to another student, so be on the
+          lookout for your acceptance email!
         </p>
       </section>
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
           At this time, HackIllinois is still exploring travel options for students coming to the
-          event. To stay up to date on the latest travel information, make sure to keep checking
-          our social media pages and this website!
+          event. To stay up to date on the latest travel information, make sure to keep checking our
+          social media pages and this website!
         </p>
       </section>
       <section className="faq-column">
