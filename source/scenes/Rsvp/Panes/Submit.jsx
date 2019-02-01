@@ -6,13 +6,11 @@ import { Redirect } from 'react-router-dom';
 import loader from 'assets/loader.svg';
 import rsvp from 'services/api/rsvp';
 import { invalidateData } from 'services/rsvp/actions';
-import FormTransition from '../FormTransition';
-import FormContext from '../../../FormContext';
+import FormContext from '../FormContext';
 
 import './SubmitStyles.scss';
 
 type Props = {
-  visible: boolean,
   dataDirty: boolean,
   reset: () => void,
 };
@@ -76,7 +74,6 @@ class StudentInfo extends Component<Props, State> {
   }
 
   render() {
-    const { visible } = this.props;
     const { redirect, fetching, error, success } = this.state;
     let body = (
       <FormContext.Consumer>
@@ -112,11 +109,7 @@ class StudentInfo extends Component<Props, State> {
       );
     }
 
-    return (
-      <FormTransition visible={visible} uid="submission-page">
-        <div className="submission-page">{body}</div>
-      </FormTransition>
-    );
+    return <div className="submission-page">{body}</div>;
   }
 }
 

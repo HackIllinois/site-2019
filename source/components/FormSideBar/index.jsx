@@ -43,7 +43,7 @@ const SideBar = (props: SideBarProps) => {
         {panes.map((cur, i) => {
           if (cur.name) {
             return (
-              <SideBarLink index={i} pane={pane}>
+              <SideBarLink index={i} pane={pane} key={cur.uid}>
                 {cur.name}
               </SideBarLink>
             );

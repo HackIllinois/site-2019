@@ -18,3 +18,5 @@ export const checkResume = file => {
   // Enforce max file size (2MB)
   return file.size <= 2000000;
 };
+// Make sure option is selected and is unique for tech interests page
+export const checkUnique = (cur, others) => cur >= 0 && !others.includes(cur);

@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 import Loader from 'scenes/Loader';
 import { getGithubOAuthURL } from 'services/api/auth';
 import { getRsvpData, touchData, getDecision } from 'services/rsvp/actions';
+import MultiPageForm from 'components/MultiPageForm';
+import SideBar from 'components/FormSideBar';
+import { checkUnique } from 'services/inputValidators';
 import FormContext from './FormContext';
-import SideBar from './components/SideBar';
 import NotAccepted from './components/NotAccepted';
-import ScrollableForm from './components/Form';
-import { required, validatePane } from './components/Form/check';
-import { checkUnique } from './components/Form/inputValidators';
+import { required, validatePane } from './check';
+import panes from './Panes/list';
 
 import type { RegistrationData } from './FormContext';
 
@@ -231,9 +232,9 @@ class Rsvp extends Component<Props, State> {
     }
     return (
       <div className="registration">
-        <SideBar pane={pane} />
+        <SideBar pane={pane} panes={panes} />
         <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
-          <ScrollableForm pane={pane} setPane={this.setPane} />
+          <MultiPageForm pane={pane} setPane={this.setPane} title="RSVP" panes={panes} />
         </FormContext.Provider>
       </div>
     );

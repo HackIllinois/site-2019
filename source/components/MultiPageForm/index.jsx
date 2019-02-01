@@ -84,7 +84,7 @@ class ScrollableForm extends Component<Props> {
         <div id="form-view" ref={this.formViewRef}>
           <div id="form-view-container">
             {panes.map((Cur, i) => (
-              <FormTransition visible={pane === i} uid={Cur.uid}>
+              <FormTransition visible={pane === i} uid={Cur.uid} key={Cur.uid}>
                 <Cur.component visible={pane === i} />
               </FormTransition>
             ))}

@@ -1,4 +1,4 @@
-import * as selectOptions from 'scenes/Rsvp/components/Form/Panes/selectOptions';
+import * as selectOptions from 'scenes/Rsvp/Panes/selectOptions';
 import store from '../store';
 
 const rsvpRoute = `${process.env.API_ENDPOINT}/rsvp`;
