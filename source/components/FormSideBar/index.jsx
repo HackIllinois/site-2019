@@ -32,31 +32,24 @@ const SideBarLink = (props: SideBarLinkProps) => {
 
 type SideBarProps = {
   pane: number,
+  panes: () => void,
 };
 
 const SideBar = (props: SideBarProps) => {
-  const { pane } = props;
+  const { pane, panes } = props;
   return (
     <section className="sidebar">
       <ul>
-        <SideBarLink index={0} pane={pane}>
-          Student Info
-        </SideBarLink>
-        <SideBarLink index={1} pane={pane}>
-          Personal Info
-        </SideBarLink>
-        <SideBarLink index={2} pane={pane}>
-          Professional Info
-        </SideBarLink>
-        <SideBarLink index={3} pane={pane}>
-          Experience
-        </SideBarLink>
-        <SideBarLink index={4} pane={pane}>
-          Other
-        </SideBarLink>
-        <SideBarLink index={5} pane={pane}>
-          Team
-        </SideBarLink>
+        {panes.map((cur, i) => {
+          if (cur.name) {
+            return (
+              <SideBarLink index={i} pane={pane}>
+                {cur.name}
+              </SideBarLink>
+            );
+          }
+          return null;
+        })}
       </ul>
     </section>
   );
