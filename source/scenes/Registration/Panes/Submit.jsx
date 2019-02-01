@@ -7,7 +7,7 @@ import loader from 'assets/loader.svg';
 import uploadResume from 'services/api/upload';
 import register from 'services/api/registration';
 import { invalidateData } from 'services/registration/actions';
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 
 import './SubmitStyles.scss';
 

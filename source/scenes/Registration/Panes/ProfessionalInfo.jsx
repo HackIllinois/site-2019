@@ -5,7 +5,7 @@ import MultiSelect from 'components/MultiSelect';
 import TextField from 'components/TextField';
 import FileUpload from 'components/FileUpload';
 import { checkResume, checkLinkedin } from 'services/inputValidators';
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 import { careerInterests } from './selectOptions';
 
 const ProfessionalInfo = () => (

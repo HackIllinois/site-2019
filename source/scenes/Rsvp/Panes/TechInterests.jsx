@@ -2,9 +2,9 @@
 import React from 'react';
 
 import Select from 'components/Select';
+import FormContext from 'components/FormContext';
 
 import { range } from './selectOptions';
-import FormContext from '../FormContext';
 
 import './TechInterests.scss';
 

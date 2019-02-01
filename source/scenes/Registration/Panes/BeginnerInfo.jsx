@@ -4,7 +4,7 @@ import React from 'react';
 import Select from 'components/Select';
 import TextField from 'components/TextField';
 import { isNumeric } from 'services/inputValidators';
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 import { yn, range } from './selectOptions';
 
 const BeginnerInfo = () => (

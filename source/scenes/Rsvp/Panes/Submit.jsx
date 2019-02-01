@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import loader from 'assets/loader.svg';
 import rsvp from 'services/api/rsvp';
 import { invalidateData } from 'services/rsvp/actions';
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 
 import './SubmitStyles.scss';
 

@@ -2,8 +2,7 @@
 import React from 'react';
 
 import TextField from 'components/TextField';
-
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 
 const LanguageInfo = () => (
   <FormContext.Consumer>

@@ -8,12 +8,19 @@ import { getRsvpData, touchData, getDecision } from 'services/rsvp/actions';
 import MultiPageForm from 'components/MultiPageForm';
 import SideBar from 'components/FormSideBar';
 import { checkUnique } from 'services/inputValidators';
-import FormContext from './FormContext';
+import FormContext from 'components/FormContext';
 import NotAccepted from './components/NotAccepted';
 import { required, validatePane } from './check';
 import panes from './Panes/list';
 
-import type { RegistrationData } from './FormContext';
+type RsvpData = {
+  dataScience: number,
+  webDev: number,
+  systems: number,
+  appDev: number,
+  hardware: number,
+  devTools: number,
+};
 
 type Props = {
   jwt: ?string,
@@ -28,7 +35,7 @@ type Props = {
 
 type State = {
   pane: number,
-  data: RegistrationData,
+  data: RsvpData,
   errors: { [string]: boolean },
 };
 

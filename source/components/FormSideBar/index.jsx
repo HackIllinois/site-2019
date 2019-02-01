@@ -30,9 +30,15 @@ const SideBarLink = (props: SideBarLinkProps) => {
   );
 };
 
+type Pane = {
+  component: () => Node,
+  uid: string,
+  name: string,
+};
+
 type SideBarProps = {
   pane: number,
-  panes: () => void,
+  panes: Array<Pane>,
 };
 
 const SideBar = (props: SideBarProps) => {

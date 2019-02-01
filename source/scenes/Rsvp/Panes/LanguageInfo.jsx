@@ -2,8 +2,7 @@
 import React from 'react';
 
 import Slider from 'components/Slider';
-
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 
 import './LanguageInfo.scss';
 

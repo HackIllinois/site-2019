@@ -5,8 +5,7 @@ import MultiSelect from 'components/MultiSelect';
 import Select from 'components/Select';
 import TextField from 'components/TextField';
 import { checkAge, checkPhoneNumber } from 'services/inputValidators';
-
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 import { shirtSizes, transportation, diet, genderOptions } from './selectOptions';
 
 const PersonalInfo = () => (

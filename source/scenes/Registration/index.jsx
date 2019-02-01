@@ -7,12 +7,16 @@ import { getGithubOAuthURL } from 'services/api/auth';
 import { getRegistrationData, touchResume, touchData } from 'services/registration/actions';
 import MultiPageForm from 'components/MultiPageForm';
 import SideBar from 'components/FormSideBar';
-import FormContext from './FormContext';
+import FormContext from 'components/FormContext';
 import { required, validatePane } from './check';
 import panes from './Panes/list';
 import './styles.scss';
 
-import type { RegistrationData } from './FormContext';
+type RegistrationData = {
+  major: number,
+  graduationYear: string,
+  phone: string,
+};
 
 type Props = {
   jwt: ?string,

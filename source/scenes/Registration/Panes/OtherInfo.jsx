@@ -3,7 +3,7 @@ import React from 'react';
 
 import Select from 'components/Select';
 import MultiLine from 'components/MultiLine';
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 import { yn } from './selectOptions';
 
 const OtherInfo = () => (

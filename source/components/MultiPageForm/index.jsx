@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import anime from 'animejs';
 
-import type { ElementRef } from 'react';
+import type { ElementRef, Node } from 'react';
 
 import leftRocks from 'assets/Registration/leftRocks.svg';
 import rightRocks from 'assets/Registration/rightRocks.svg';
@@ -14,10 +14,16 @@ import FormTransition from './FormTransition';
 
 import './styles.scss';
 
+type Pane = {
+  component: () => Node,
+  uid: string,
+  name: string,
+};
+
 type Props = {
   pane: number,
   setPane: number => void,
-  panes: () => void,
+  panes: Array<Pane>,
   title: string,
 };
 

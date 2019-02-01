@@ -5,8 +5,7 @@ import TextField from 'components/TextField';
 import Select from 'components/Select';
 import MultiSelect from 'components/MultiSelect';
 import { checkPhoneNumber } from 'services/inputValidators';
-
-import FormContext from '../FormContext';
+import FormContext from 'components/FormContext';
 import { yn, diet, transportation } from './selectOptions';
 
 const GeneralInfo = () => (
