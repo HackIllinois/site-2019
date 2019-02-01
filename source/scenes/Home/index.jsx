@@ -7,14 +7,10 @@ import clouds from 'assets/Home/clouds_stars.svg';
 import fish from 'assets/Home/fish.png';
 import logo from 'assets/logo.svg';
 import midTopHalf from 'assets/Home/rock_top_half.png';
-import midBottomHalf from 'assets/Home/rock_bottom_half.png';
-import oceanArch from 'assets/Home/ocean-arch.png';
-import oceanFloor from 'assets/Home/ocean-floor.png';
 import rocksTop from 'assets/Home/rocks_top.png';
 import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
-import squid from 'assets/Home/squid.svg';
 import cave from 'assets/Home/cave.svg';
 
 import FAQ from './components/FAQ';
@@ -89,13 +85,8 @@ const Home = () => (
 
         <div id="caves">
           <img className="cave" src={cave} alt="Cave" />
-
-          {/* <img id="fish" src={fish} alt="fish" /> */}
+          <img id="fish" src={fish} alt="fish" />
         </div>
-        {/* <div className="floor">
-          <img className="ocean-arch" src={oceanArch} alt="Rock arch" />
-          <img className="ocean-floor" src={oceanFloor} alt="Ocean Floor" />  
-        </div> */}
       </div>
     </div>
   </div>

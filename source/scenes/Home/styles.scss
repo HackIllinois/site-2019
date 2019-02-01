@@ -7,6 +7,8 @@ $wave-offset: 70px;
 
 $asset-width: 1600px;
 
+$fish-width: (100/565) * 100%;
+
 @mixin fix-center($width) {
   width: $width;
   margin-left: -($width / 2);
@@ -258,16 +260,13 @@ $asset-width: 1600px;
           vertical-align: bottom;
           z-index: 100;
         }
-      }
-
-      #rocks-mid-bottom-grouping {
-        position: relative;
 
         #fish {
           position: absolute;
-          top: 36%;
-          right: 25%;
-          width: 270px;
+          top: 6.5%;
+          right: 28.5%;
+          width: $fish-width;
+          z-index: 99;
 
           @media (max-width: 1250px) {
             width: 200px;
