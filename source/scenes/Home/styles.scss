@@ -7,8 +7,6 @@ $wave-offset: 70px;
 
 $asset-width: 1600px;
 
-$fish-width: (100/565) * 100%;
-
 @mixin fix-center($width) {
   width: $width;
   margin-left: -($width / 2);
@@ -246,7 +244,7 @@ $fish-width: (100/565) * 100%;
         z-index: 1;
       }
 
-      #caves {
+      .caves {
         position: relative;
         width: 100%;
         height: 100%;
@@ -261,11 +259,11 @@ $fish-width: (100/565) * 100%;
           z-index: 100;
         }
 
-        #fish {
+        .fish {
           position: absolute;
-          top: 6.5%;
-          right: 28.5%;
-          width: $fish-width;
+          top: 355px;
+          right: 520px;
+          width: 290px;
           z-index: 99;
 
           @media (max-width: 1250px) {
@@ -274,6 +272,54 @@ $fish-width: (100/565) * 100%;
           @media (max-width: 600px) {
             width: 100px;
           }
+        }
+
+        .stingray-one {
+          position: absolute;
+          top: 350px;
+          left: 280px;
+          width: 300px;
+          z-index: 99;
+        }
+
+        .stingray-two {
+          position: absolute;
+          top: 700px;
+          right: 105px;
+          width: 260px;
+          z-index: 99;
+        }
+
+        .stingray-three {
+          position: absolute;
+          top: 1700px;
+          right: 170px;
+          width: 300px;
+          z-index: 99;
+        }
+
+        .currents-high {
+          position: absolute;
+          top: 720px;
+          left: 0px;
+          width: 100%;
+          z-index: 98;
+        }
+
+        .currents-mid {
+          position: absolute;
+          top: 1800px;
+          left: 0px;
+          width: 100%;
+          z-index: 98;
+        }
+
+        .currents-low {
+          position: absolute;
+          bottom: 2500px;
+          left: 0px;
+          width: 100%;
+          z-index: 98;
         }
       }
 

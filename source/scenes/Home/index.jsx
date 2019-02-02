@@ -12,6 +12,12 @@ import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
 import cave from 'assets/Home/cave.svg';
+import stingrayOne from 'assets/Home/stingray-one.svg';
+import stingrayTwo from 'assets/Home/stingray-two.svg';
+import stingrayThree from 'assets/Home/stingray-three.svg';
+import currentsHigh from 'assets/Home/currents-high.svg';
+import currentsMid from 'assets/Home/currents-mid.svg';
+import currentsLow from 'assets/Home/currents-low.svg';
 
 import FAQ from './components/FAQ';
 import './styles.scss';
@@ -83,9 +89,15 @@ const Home = () => (
         <img className="mid-top-half" src={midTopHalf} alt="rocks" />
         <FAQ />
 
-        <div id="caves">
-          <img className="cave" src={cave} alt="Cave" />
-          <img id="fish" src={fish} alt="fish" />
+        <div className="caves">
+          <img className="cave" src={cave} alt="cave" />
+          <img className="fish" src={fish} alt="fish" />
+          <img className="stingray-one" src={stingrayOne} alt="stingray one" />
+          <img className="stingray-two" src={stingrayTwo} alt="stingray two" />
+          <img className="stingray-three" src={stingrayThree} alt="stingray three" />
+          <img className="currents-high" src={currentsHigh} alt="currents high" />
+          <img className="currents-mid" src={currentsMid} alt="currents mid" />
+          <img className="currents-low" src={currentsLow} alt="currents low" />
         </div>
       </div>
     </div>
