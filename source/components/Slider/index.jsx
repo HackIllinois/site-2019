@@ -21,7 +21,7 @@ class Slider extends React.Component<Props, State> {
 
   handleChange(e) {
     const { onChange } = this.props;
-    onChange(e.target.value);
+    onChange(Number(e.target.value));
   }
 
   render() {
