@@ -256,11 +256,11 @@ $asset-width: 1600px;
           width: 100%;
           height: 100%;
           vertical-align: bottom;
+          transform: scaleY(1.005);
           z-index: 100;
 
           @media (max-width: 1024px) {
             content: url('../../assets/Home/cave-mobile.svg');
-            transform: scaleY(1.005);
           }
         }
 
@@ -291,10 +291,31 @@ $asset-width: 1600px;
 
         .stingray-one {
           position: absolute;
-          top: 350px;
-          left: 280px;
-          width: 300px;
+          top: 6%;
+          left: 15.2%;
+          width: 315px;
           z-index: 99;
+
+          @media (max-width: 1440px) {
+            left: 15.5%;
+            width: 210px;
+          }
+
+          @media (max-width: 1024px) {
+            top: 3.5%;
+            width: 150px;
+          }
+
+          @media (max-width: 768px) {
+            top: 3.6%;
+            left: 15.8%;
+            width: 100px;
+          }
+
+          @media (max-width: 450px) {
+            left: 16%;
+            width: 60px;
+          }
         }
 
         .stingray-two {
