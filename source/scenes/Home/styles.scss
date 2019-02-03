@@ -266,16 +266,27 @@ $asset-width: 1600px;
 
         .fish {
           position: absolute;
-          top: 355px;
-          right: 520px;
-          width: 290px;
+          top: 4%;
+          right: 28%;
+          width: 65px;
           z-index: 99;
 
-          @media (max-width: 1250px) {
-            width: 200px;
+          @media (min-width: 768px) {
+            width: 130px;
           }
-          @media (max-width: 600px) {
-            width: 100px;
+
+          @media (min-width: 1024px) {
+            width: 180px;
+          }
+
+          @media (min-width: 1280px) {
+            top: 7%;
+            right: 29%;
+            width: 250px;
+          }
+
+          @media (min-width: 1920px) {
+            width: 350px;
           }
         }
 
