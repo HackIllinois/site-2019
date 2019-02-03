@@ -266,9 +266,9 @@ $asset-width: 1600px;
 
         .fish {
           position: absolute;
-          top: 7%;
+          margin-top: 20%;
           right: 28%;
-          width: 300px;
+          width: 310px;
           z-index: 99;
 
           @media (max-width: 1440px) {
@@ -276,7 +276,7 @@ $asset-width: 1600px;
           }
 
           @media (max-width: 1024px) {
-            top: 4%;
+            margin-top: calc(18% + 5px);
             width: 160px;
           }
 
@@ -292,28 +292,25 @@ $asset-width: 1600px;
         .stingray-one {
           position: absolute;
           top: 6%;
-          left: 15.2%;
+          left: 15%;
           width: 315px;
           z-index: 99;
 
           @media (max-width: 1440px) {
-            left: 15.5%;
+            left: 16%;
             width: 210px;
           }
 
           @media (max-width: 1024px) {
-            top: 3.5%;
+            top: 4%;
             width: 150px;
           }
 
           @media (max-width: 768px) {
-            top: 3.6%;
-            left: 15.8%;
             width: 100px;
           }
 
           @media (max-width: 450px) {
-            left: 16%;
             width: 60px;
           }
         }
