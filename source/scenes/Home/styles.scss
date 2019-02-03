@@ -291,22 +291,22 @@ $asset-width: 1600px;
 
         .stingray-one {
           position: absolute;
-          top: 6%;
-          left: 15%;
-          width: 315px;
+          margin-top: 20%;
+          left: 15.5%;
+          width: 290px;
           z-index: 99;
 
           @media (max-width: 1440px) {
-            left: 16%;
-            width: 210px;
+            width: 200px;
           }
 
           @media (max-width: 1024px) {
-            top: 4%;
-            width: 150px;
+            margin-top: 17%;
+            width: 160px;
           }
 
           @media (max-width: 768px) {
+            left: 16%;
             width: 100px;
           }
 
