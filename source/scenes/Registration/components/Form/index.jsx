@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import anime from 'animejs';
 
+import type { ElementRef } from 'react';
+
 import leftRocks from 'assets/Registration/leftRocks.svg';
 import rightRocks from 'assets/Registration/rightRocks.svg';
 import oceanCurrents from 'assets/Registration/oceanCurrents.svg';
@@ -30,40 +32,40 @@ class ScrollableForm extends Component<Props> {
 
     this.prevPane = this.prevPane.bind(this);
     this.nextPane = this.nextPane.bind(this);
+
+    this.formViewRef = React.createRef();
   }
 
   componentDidMount() {
-    const formView = document.getElementById('form-view');
-    if (formView) {
-      setTimeout(() => {
-        anime({
-          targets: '.nav-buttons',
-          opacity: 1,
-          top: [formView.clientHeight, formView.clientHeight + 15],
-          duration: 200,
-          easing: 'easeOutQuad',
-        });
-      }, 10);
-    }
+    const { clientHeight } = this.formViewRef.current;
+    setTimeout(() => {
+      anime({
+        targets: '.nav-buttons',
+        opacity: 1,
+        top: [clientHeight, clientHeight + 15],
+        duration: 200,
+        easing: 'easeOutQuad',
+      });
+    }, 10);
   }
 
   componentDidUpdate(prevProps: Props) {
     const { pane } = this.props;
     if (pane !== prevProps.pane) {
       // Animate button location
-      const formView = document.getElementById('form-view');
-      if (formView) {
-        setTimeout(() => {
-          anime({
-            targets: '.nav-buttons',
-            top: formView.clientHeight + 15,
-            duration: 200,
-            easing: 'easeOutQuad',
-          });
-        }, 200);
-      }
+      setTimeout(() => {
+        const { clientHeight } = this.formViewRef.current;
+        anime({
+          targets: '.nav-buttons',
+          top: clientHeight + 15,
+          duration: 200,
+          easing: 'easeOutQuad',
+        });
+      }, 200);
     }
   }
+
+  formViewRef: ElementRef<any>;
 
   prevPane: () => void;
   prevPane() {
@@ -84,7 +86,7 @@ class ScrollableForm extends Component<Props> {
       <section className="scrollable-form">
         <h1>Application</h1>
 
-        <div id="form-view">
+        <div id="form-view" ref={this.formViewRef}>
           <div id="form-view-container">
             <StudentInfo visible={pane === 0} />
             <PersonalInfo visible={pane === 1} />
