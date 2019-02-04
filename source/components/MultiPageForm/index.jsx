@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import anime from 'animejs';
 
-import type { ElementRef } from 'react';
+import type { ElementRef, Node } from 'react';
 
 import leftRocks from 'assets/Registration/leftRocks.svg';
 import rightRocks from 'assets/Registration/rightRocks.svg';
@@ -10,20 +10,21 @@ import oceanCurrents from 'assets/Registration/oceanCurrents.svg';
 import fish1 from 'assets/Registration/fish_1.png';
 import fish2 from 'assets/Registration/fish_2.png';
 
-import PersonalInfo from './Panes/PersonalInfo';
-import StudentInfo from './Panes/StudentInfo';
-import ProfessionalInfo from './Panes/ProfessionalInfo';
-import BeginnerInfo from './Panes/BeginnerInfo';
-import OtherInfo from './Panes/OtherInfo';
-import TeamInfo from './Panes/TeamInfo';
-import Submit from './Panes/Submit';
+import FormTransition from './FormTransition';
+
 import './styles.scss';
 
-const NUM_PANES = 7;
+type Pane = {
+  component: () => Node,
+  uid: string,
+  name: string,
+};
 
 type Props = {
   pane: number,
   setPane: number => void,
+  panes: Array<Pane>,
+  title: string,
 };
 
 class ScrollableForm extends Component<Props> {
@@ -80,21 +81,19 @@ class ScrollableForm extends Component<Props> {
   }
 
   render() {
-    const { pane } = this.props;
+    const { pane, panes, title } = this.props;
 
     return (
       <section className="scrollable-form">
-        <h1>Application</h1>
+        <h1>{title}</h1>
 
         <div id="form-view" ref={this.formViewRef}>
           <div id="form-view-container">
-            <StudentInfo visible={pane === 0} />
-            <PersonalInfo visible={pane === 1} />
-            <ProfessionalInfo visible={pane === 2} />
-            <BeginnerInfo visible={pane === 3} />
-            <OtherInfo visible={pane === 4} />
-            <TeamInfo visible={pane === 5} />
-            <Submit visible={pane === 6} />
+            {panes.map((Cur, i) => (
+              <FormTransition visible={pane === i} uid={Cur.uid} key={Cur.uid}>
+                <Cur.component visible={pane === i} />
+              </FormTransition>
+            ))}
           </div>
 
           <div className="nav-buttons">
@@ -104,7 +103,7 @@ class ScrollableForm extends Component<Props> {
 
             <div className="spacing" />
 
-            <button type="button" onClick={this.nextPane} disabled={pane === NUM_PANES - 1}>
+            <button type="button" onClick={this.nextPane} disabled={pane === panes.length - 1}>
               Next
             </button>
           </div>
