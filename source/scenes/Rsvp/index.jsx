@@ -7,9 +7,9 @@ import { getGithubOAuthURL } from 'services/api/auth';
 import { getRsvpData, touchData, getDecision } from 'services/rsvp/actions';
 import MultiPageForm from 'components/MultiPageForm';
 import SideBar from 'components/FormSideBar';
+import ErrorPage from 'scenes/Error';
 import { checkUnique } from 'services/inputValidators';
 import FormContext from 'components/FormContext';
-import NotAccepted from './components/NotAccepted';
 import { required, validatePane } from './check';
 import panes from './Panes/list';
 
@@ -129,9 +129,6 @@ class Rsvp extends Component<Props, State> {
   registerField: (string, ?(string) => boolean) => string => void;
   registerField(field: string, validator?: string => boolean, isTechInterest?: boolean) {
     /* eslint-disable react/destructuring-assignment */
-    // Resume uploads separately from rest of data, so we will track
-    // what has and has not been updated, and only call the necessary
-    // routes
     const dirtyFn = this.props.touchData;
     /* eslint-enable react/destructuring-assignment */
 
@@ -228,14 +225,14 @@ class Rsvp extends Component<Props, State> {
     const { pane, data, errors } = this.state;
 
     if (!jwt) {
-      window.location.replace(getGithubOAuthURL('/register'));
+      window.location.replace(getGithubOAuthURL('/rsvp'));
       return null;
     }
     if (!rsvpValid || !decisionValid) {
       return <Loader />;
     }
     if (!accepted) {
-      return <NotAccepted />;
+      return <ErrorPage message="RSVP available upon acceptance" />;
     }
     return (
       <div className="registration">

@@ -104,7 +104,7 @@ class StudentInfo extends Component<Props, State> {
     } else if (success) {
       body = (
         <div>
-          <p>Registration Successful!</p>
+          <p>RSVP Successful!</p>
         </div>
       );
     }

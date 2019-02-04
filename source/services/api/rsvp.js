@@ -101,7 +101,7 @@ export function fetchRsvpData() {
       }
       return response.json();
     })
-    .then(data => deserialize(data), () => new Promise());
+    .then(data => deserialize(data), () => Promise.resolve(null));
 }
 
 export function fetchDecision() {

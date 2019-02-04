@@ -13,7 +13,7 @@ const PanesList = [
   {
     component: LanguageInfo,
     uid: 'personal-info',
-    name: 'Language Experience',
+    name: 'Languages',
   },
   {
     component: TechInterests,
