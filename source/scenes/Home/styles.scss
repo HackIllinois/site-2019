@@ -259,7 +259,7 @@ $asset-width: 1600px;
           transform: scaleY(1.005);
           z-index: 100;
 
-          @media (max-width: 1024px) {
+          @media (max-width: 890px) {
             content: url('../../assets/Home/cave-mobile.svg');
           }
         }

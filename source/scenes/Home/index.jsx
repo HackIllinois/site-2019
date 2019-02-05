@@ -20,6 +20,7 @@ import currentsMid from 'assets/Home/currents-mid.svg';
 import currentsLow from 'assets/Home/currents-low.svg';
 
 import FAQ from './components/FAQ';
+import Sponsors from './components/Sponsors';
 import './styles.scss';
 
 const Home = () => (
@@ -98,6 +99,7 @@ const Home = () => (
           <img className="currents-high" src={currentsHigh} alt="currents high" />
           <img className="currents-mid" src={currentsMid} alt="currents mid" />
           <img className="currents-low" src={currentsLow} alt="currents low" />
+          <Sponsors />
         </div>
       </div>
     </div>

@@ -1,0 +1,142 @@
+.sponsor-wrapper {
+  left: 50%;
+  position: absolute;
+  top: 530px;
+  z-index: 200;
+
+  .sponsors {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    left: -50%;
+    max-width: calc(100vw - 190px);
+    padding-top: 45px;
+    position: relative;
+    width: 800px;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .icon {
+      width: 69px;
+      margin: 35px 0 10px 0;
+    }
+
+    .sponsor-group {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      align-self: center;
+      padding: 20px;
+    }
+    .logo-xl {
+      max-height: 110px;
+    }
+    .logo-l {
+      max-height: 70px;
+    }
+    .logo-cat {
+      max-height: 50px;
+    }
+    .logo-m {
+      max-height: 40px;
+    }
+    .logo-s {
+      max-height: 30px;
+    }
+    .logo-xs {
+      max-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .sponsor-wrapper {
+    top: 375px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sponsor-wrapper {
+    top: 260px;
+  }
+}
+
+@media (max-width: 670px) {
+  .sponsor-wrapper {
+    top: 200px;
+
+    .sponsors {
+      max-width: calc(100vw - 60px);
+      .icon {
+        margin: 20px 0 5px 0;
+        width: 56px;
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .sponsor-wrapper {
+    .sponsors {
+      .logo {
+        padding: 10px;
+      }
+      .logo-xl {
+        max-height: 83px;
+      }
+      .logo-l {
+        max-height: 53px;
+      }
+      .logo-cat {
+        max-height: 38px;
+      }
+      .logo-m {
+        max-height: 30px;
+      }
+      .logo-s {
+        max-height: 23px;
+      }
+      .logo-xs {
+        max-height: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .sponsor-wrapper {
+    top: 150px;
+
+    .sponsors {
+      .logo-xl {
+        max-height: 55px;
+      }
+      .logo-l {
+        max-height: 35px;
+      }
+      .logo-cat {
+        max-height: 25px;
+      }
+      .logo-m {
+        max-height: 20px;
+      }
+      .logo-s {
+        max-height: 15px;
+      }
+      .logo-xs {
+        max-height: 10px;
+      }
+    }
+  }
+}
