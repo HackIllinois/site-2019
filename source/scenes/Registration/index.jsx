@@ -5,13 +5,18 @@ import { connect } from 'react-redux';
 import Loader from 'scenes/Loader';
 import { getGithubOAuthURL } from 'services/api/auth';
 import { getRegistrationData, touchResume, touchData } from 'services/registration/actions';
-import FormContext from './FormContext';
-import SideBar from './components/SideBar';
-import ScrollableForm from './components/Form';
-import { required, validatePane } from './components/Form/check';
+import MultiPageForm from 'components/MultiPageForm';
+import SideBar from 'components/FormSideBar';
+import FormContext from 'components/FormContext';
+import { required, validatePane } from './check';
+import panes from './Panes/list';
 import './styles.scss';
 
-import type { RegistrationData } from './FormContext';
+type RegistrationData = {
+  major: number,
+  graduationYear: string,
+  phone: string,
+};
 
 type Props = {
   jwt: ?string,
@@ -168,9 +173,9 @@ class Registration extends Component<Props, State> {
     }
     return (
       <div className="registration">
-        <SideBar pane={pane} />
+        <SideBar pane={pane} panes={panes} />
         <FormContext.Provider value={{ data, errors, registerField: this.registerField }}>
-          <ScrollableForm pane={pane} setPane={this.setPane} />
+          <MultiPageForm pane={pane} setPane={this.setPane} title="Registration" panes={panes} />
         </FormContext.Provider>
       </div>
     );

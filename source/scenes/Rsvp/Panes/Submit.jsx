@@ -4,17 +4,13 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import loader from 'assets/loader.svg';
-import uploadResume from 'services/api/upload';
-import register from 'services/api/registration';
-import { invalidateData } from 'services/registration/actions';
-import FormTransition from '../FormTransition';
-import FormContext from '../../../FormContext';
+import rsvp from 'services/api/rsvp';
+import { invalidateData } from 'services/rsvp/actions';
+import FormContext from 'components/FormContext';
 
 import './SubmitStyles.scss';
 
 type Props = {
-  visible: boolean,
-  resumeDirty: boolean,
   dataDirty: boolean,
   reset: () => void,
 };
@@ -56,18 +52,13 @@ class StudentInfo extends Component<Props, State> {
       fetching: true,
     });
 
-    const { dataDirty, resumeDirty, reset } = this.props;
-    let updateRes = () => uploadResume(data.resume);
-    let updateData = () => register(data);
+    const { dataDirty, reset } = this.props;
+    let updateData = () => rsvp(data);
     if (!dataDirty) {
       updateData = () => Promise.resolve();
     }
-    if (!resumeDirty) {
-      updateRes = () => Promise.resolve();
-    }
 
-    updateRes()
-      .then(updateData)
+    updateData()
       .then(() => {
         this.setState({ fetching: false, error: false, success: true });
         this.redirect = setTimeout(() => {
@@ -83,7 +74,6 @@ class StudentInfo extends Component<Props, State> {
   }
 
   render() {
-    const { visible } = this.props;
     const { redirect, fetching, error, success } = this.state;
     let body = (
       <FormContext.Consumer>
@@ -114,22 +104,17 @@ class StudentInfo extends Component<Props, State> {
     } else if (success) {
       body = (
         <div>
-          <p>Application Successful!</p>
+          <p>RSVP Successful!</p>
         </div>
       );
     }
 
-    return (
-      <FormTransition visible={visible} uid="submission-page">
-        <div className="submission-page">{body}</div>
-      </FormTransition>
-    );
+    return <div className="submission-page">{body}</div>;
   }
 }
 
 const mapStateToProps = state => ({
-  dataDirty: state.registration.dataDirty,
-  resumeDirty: state.registration.resumeDirty,
+  dataDirty: state.rsvp.dataDirty,
 });
 
 const mapDispatchToProps = dispatch => ({

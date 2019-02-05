@@ -1,4 +1,4 @@
-import * as selectOptions from 'scenes/Registration/components/Form/Panes/selectOptions';
+import * as selectOptions from 'scenes/Registration/Panes/selectOptions';
 import store from '../store';
 
 const registrationRoute = `${process.env.API_ENDPOINT}/registration`;
