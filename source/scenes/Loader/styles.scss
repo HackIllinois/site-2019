@@ -1,0 +1,37 @@
+.loading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    animation: starfish-load 1.8s infinite;
+    margin-bottom: 30px;
+    width: 80px;
+  }
+
+  h1 {
+    color: rgba(255, 255, 255, 0.17);
+    font-size: 38px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+@keyframes starfish-load {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  23% {
+    transform: rotate(-15deg);
+  }
+
+  90% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

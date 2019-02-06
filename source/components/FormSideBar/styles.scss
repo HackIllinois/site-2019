@@ -1,0 +1,66 @@
+@import '../../styles/variables.scss';
+
+$link-height: 20px;
+$link-yellow: #fcca88;
+$yellow-faded: rgba(252, 202, 136, 0.3);
+
+.sidebar {
+  background-color: #00242c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  z-index: 1;
+
+  ul {
+    padding: 45px 0;
+    width: 200px;
+
+    button {
+      padding: 24px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &.sidebar-link .bubble {
+        width: $link-height;
+        height: $link-height;
+        border-radius: 50%;
+        border: 3px solid $link-yellow;
+        margin-right: 15px;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+
+      p {
+        color: $link-yellow;
+        font-size: 18px;
+        line-height: $link-height;
+      }
+
+      &.visited {
+        .bubble {
+          background-color: $yellow-faded;
+          border-color: rgba(0, 0, 0, 0);
+        }
+
+        p {
+          color: $yellow-faded;
+        }
+      }
+
+      &.current {
+        .bubble {
+          background-color: $link-yellow;
+        }
+
+        p {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet-max) {
+    display: none;
+  }
+}

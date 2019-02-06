@@ -1,0 +1,113 @@
+@import '../../styles/variables.scss';
+
+.select {
+  width: 100%;
+  position: relative;
+
+  .label {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .small-label p {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .input-cont {
+    width: 100%;
+    border-bottom: 2px solid #95c6c9;
+    transition: background-color 0.3s, border-bottom 0.3s ease-in;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+  }
+
+  .input-cont:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .input-cont:focus-within {
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .input {
+    width: calc(100% - 24px);
+    border: none;
+    color: #74b5bb;
+    outline: none;
+    cursor: default;
+    transition: background-color 0.3s;
+    background-color: rgba(0, 0, 0, 0);
+    color: transparent;
+    text-shadow: 0 0 0 #c3dfe1;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input::selection {
+    background: #c3dfe1;
+  }
+
+  .input::-moz-selection {
+    background: #c3dfe1;
+  }
+
+  .input::placeholder {
+    text-shadow: 0 0 0 #74b5bb;
+    color: $faded-white;
+  }
+
+  .drop-down-arrow {
+    height: 16px;
+    width: 16px;
+    margin: 0 4px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .rotated {
+    transform: rotate(180deg);
+  }
+
+  .menu {
+    position: absolute;
+    width: 100%;
+    transition: all 0.2s ease-out;
+    overflow-y: scroll;
+    z-index: 100;
+    box-sizing: border-box;
+  }
+
+  .menu-el {
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+    background-color: #10666d;
+    width: 100%;
+    border-bottom: 1px solid #95c6c9;
+    padding: 10px 0;
+    cursor: default;
+    color: white;
+    z-index: 105;
+    position: relative;
+    padding-left: 4px;
+    font-size: 19px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .menu-el:hover {
+    background-color: #c7e3e6;
+  }
+
+  .selected {
+    background-color: #64b0b7;
+  }
+
+  .selected:hover {
+    background-color: #539ea5;
+  }
+}

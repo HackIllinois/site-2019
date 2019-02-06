@@ -1,19 +1,26 @@
 // @flow
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import FulcrumLogo from 'assets/fulcrum.png';
 import clouds from 'assets/Home/clouds_stars.svg';
 import fish from 'assets/Home/fish.png';
 import logo from 'assets/logo.svg';
 import midTopHalf from 'assets/Home/rock_top_half.png';
-import midBottomHalf from 'assets/Home/rock_bottom_half.png';
-import oceanArch from 'assets/Home/ocean-arch.png';
-import oceanFloor from 'assets/Home/ocean-floor.png';
 import rocksTop from 'assets/Home/rocks_top.png';
 import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
+import cave from 'assets/Home/cave.svg';
+import stingrayOne from 'assets/Home/stingray-one.svg';
+import stingrayTwo from 'assets/Home/stingray-two.svg';
+import stingrayThree from 'assets/Home/stingray-three.svg';
+import currentsHigh from 'assets/Home/currents-high.svg';
+import currentsMid from 'assets/Home/currents-mid.svg';
+import currentsLow from 'assets/Home/currents-low.svg';
 
 import FAQ from './components/FAQ';
+import Sponsors from './components/Sponsors';
 import './styles.scss';
 
 const Home = () => (
@@ -41,18 +48,58 @@ const Home = () => (
       <img className="wave wave-mid" src={waveMid} alt="Wave Middle" />
       <img className="wave wave-front" src={waveFront} alt="Wave Front" />
 
+      <div className="title-logo-wrapper">
+        <img className="fulcrum-logo" src={FulcrumLogo} alt="Fulcrum GT Logo" />
+      </div>
+
+      <div className="buttons">
+        <Link className="button-blue" to="/apply">
+          Apply
+        </Link>
+      </div>
+
+      <img className="fish-1" src={fish} alt="fish" />
+      <img className="fish-2" src={fish} alt="fish" />
+
       <div className="rocks">
+        <div className="info">
+          <h2>Open Source</h2>
+          <p>
+            HackIllinois is redefining the collegiate hackathon as the first entirely open source
+            hackathon. Students work with experienced open source mentors over 36 hours to
+            contribute to open source through new features, bug fixes, and documentation changes.
+          </p>
+          <h2>The Event</h2>
+          <p>
+            This year, only groups who work with a mentor on an open source contribution and add a
+            license will be eligible to win prizes. Contribute to a useful open source tool that you
+            use, an open source project of your own, or join a team led by an open source mentor.
+          </p>
+          <h2>Join Us</h2>
+          <p>
+            <b>Interested in contributing to open source?</b> Be sure to apply for your chance to
+            attend. <b>Really want to come?</b> Complete our{' '}
+            <a href="http://go.hackillinois.org/opensourcechallenge">Open Source Challenge</a> for
+            guaranteed admission to HackIllinois 2019. It’s simple—just make one PR to any project
+            between December 1, 2018 and the close of applications. <b>New to open source?</b> No
+            problem. Our workshops and mentors will help guide you through the intricacies of open
+            source, from licensing to making your first PR (pull request).
+          </p>
+        </div>
+
         <img className="mid-top-half" src={midTopHalf} alt="rocks" />
         <FAQ />
 
-        <div id="rocks-mid-bottom-grouping">
-          <img className="mid-bottom-half" src={midBottomHalf} alt="rocks" />
-          <img id="fish" src={fish} alt="fish" />
-        </div>
-
-        <div className="floor">
-          <img className="ocean-arch" src={oceanArch} alt="Rock arch" />
-          <img className="ocean-floor" src={oceanFloor} alt="Ocean Floor" />
+        <div className="caves">
+          <img className="cave" src={cave} alt="cave" />
+          <img className="fish" src={fish} alt="fish" />
+          <img className="stingray-one" src={stingrayOne} alt="stingray one" />
+          <img className="stingray-two" src={stingrayTwo} alt="stingray two" />
+          <img className="stingray-three" src={stingrayThree} alt="stingray three" />
+          <img className="currents-high" src={currentsHigh} alt="currents high" />
+          <img className="currents-mid" src={currentsMid} alt="currents mid" />
+          <img className="currents-low" src={currentsLow} alt="currents low" />
+          <Sponsors />
         </div>
       </div>
     </div>
