@@ -16,10 +16,12 @@ const Before = () => (
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
-          HackIllinois will be sending buses along 3 separate routes this year! We will provide
-	        transportation from the University of Michigan and Michigan State, Purdue University, 
-	        and Northwestern, DePaul, UIC, and UChicago.
-	      </p>
+          HackIllinois will have three bus routes this year! We will provide transportation to and
+          from the event for University of Michigan &rarr; Michigan State, Purdue University, and
+          Northwestern &rarr; DePaul &rarr; UIC &rarr; UChicago. If you do not attend one of these
+          schools but would like to board at one of the stops, please send us an email to discuss.
+          HackIllinois will not be providing travel reimbursement, including for driving or flying.
+        </p>
       </section>
       <section className="faq-column">
         <h4>Do I need a team?</h4>
