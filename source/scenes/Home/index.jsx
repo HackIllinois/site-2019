@@ -7,15 +7,20 @@ import clouds from 'assets/Home/clouds_stars.svg';
 import fish from 'assets/Home/fish.png';
 import logo from 'assets/logo.svg';
 import midTopHalf from 'assets/Home/rock_top_half.png';
-import midBottomHalf from 'assets/Home/rock_bottom_half.png';
-import oceanArch from 'assets/Home/ocean-arch.png';
-import oceanFloor from 'assets/Home/ocean-floor.png';
 import rocksTop from 'assets/Home/rocks_top.png';
 import waveFront from 'assets/Home/wave-front.svg';
 import waveMid from 'assets/Home/wave-mid.svg';
 import waveBack from 'assets/Home/wave-back.svg';
+import cave from 'assets/Home/cave.svg';
+import stingrayOne from 'assets/Home/stingray-one.svg';
+import stingrayTwo from 'assets/Home/stingray-two.svg';
+import stingrayThree from 'assets/Home/stingray-three.svg';
+import currentsHigh from 'assets/Home/currents-high.svg';
+import currentsMid from 'assets/Home/currents-mid.svg';
+import currentsLow from 'assets/Home/currents-low.svg';
 
 import FAQ from './components/FAQ';
+import Sponsors from './components/Sponsors';
 import './styles.scss';
 
 const Home = () => (
@@ -85,14 +90,16 @@ const Home = () => (
         <img className="mid-top-half" src={midTopHalf} alt="rocks" />
         <FAQ />
 
-        <div id="rocks-mid-bottom-grouping">
-          <img className="mid-bottom-half" src={midBottomHalf} alt="rocks" />
-          <img id="fish" src={fish} alt="fish" />
-        </div>
-
-        <div className="floor">
-          <img className="ocean-arch" src={oceanArch} alt="Rock arch" />
-          <img className="ocean-floor" src={oceanFloor} alt="Ocean Floor" />
+        <div className="caves">
+          <img className="cave" src={cave} alt="cave" />
+          <img className="fish" src={fish} alt="fish" />
+          <img className="stingray-one" src={stingrayOne} alt="stingray one" />
+          <img className="stingray-two" src={stingrayTwo} alt="stingray two" />
+          <img className="stingray-three" src={stingrayThree} alt="stingray three" />
+          <img className="currents-high" src={currentsHigh} alt="currents high" />
+          <img className="currents-mid" src={currentsMid} alt="currents mid" />
+          <img className="currents-low" src={currentsLow} alt="currents low" />
+          <Sponsors />
         </div>
       </div>
     </div>
