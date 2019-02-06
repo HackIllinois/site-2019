@@ -22,10 +22,10 @@ const Before = () => (
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
-          We will be providing buses from across the Midwest. Last year, we had buses from schools
-          spanning the states of Illinois, Iowa, Wisconsin, Missouri, Indiana, and Ohio. Travel
-          reimbursement may be provided in a limited form.
-        </p>
+          HackIllinois will be sending buses along 3 separate routes this year! We will provide
+	  transportation from the University of Michigan and Michigan State, Purdue University, 
+	  and Northwestern, DePaul, UIC, and UChicago.
+	</p>
       </section>
       <section className="faq-column">
         <h4>Do I need a team?</h4>
