@@ -11,8 +11,8 @@ const LanguageInfo = () => (
     {({ data, errors, registerField }) => (
       <div className="scrolled-form language-info">
         <div className="instructions">
-          <h2>Please rate your experience with each language from 1-10</h2>
-          <h3>1 - No Experience, 5 - Some Experience, 10 - Very Comfortable</h3>
+          <h2>Please rate your experience with each language from 0-10</h2>
+          <h3>0 - No Experience, 5 - Some Experience, 10 - Very Comfortable</h3>
         </div>
         <div className="slider-cont">
           <Slider
