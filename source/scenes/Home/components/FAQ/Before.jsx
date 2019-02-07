@@ -16,9 +16,11 @@ const Before = () => (
       <section className="faq-column">
         <h4>How do I get there?</h4>
         <p>
-          At this time, HackIllinois is still exploring travel options for students coming to the
-          event. To stay up to date on the latest travel information, make sure to keep checking our
-          social media pages and this website!
+          HackIllinois will have three bus routes this year! We will provide transportation to and
+          from the event for University of Michigan &rarr; Michigan State, Purdue University, and
+          Northwestern &rarr; DePaul &rarr; UIC &rarr; UChicago. If you do not attend one of these
+          schools but would like to board at one of the stops, please send us an email to discuss.
+          HackIllinois will not be providing travel reimbursement, including for driving or flying.
         </p>
       </section>
       <section className="faq-column">

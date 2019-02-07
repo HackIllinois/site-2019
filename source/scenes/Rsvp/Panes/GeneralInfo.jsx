@@ -43,7 +43,7 @@ const GeneralInfo = () => (
         />
         <Select
           label="Travel"
-          placeholder="How will you get here?"
+          placeholder="Will you need a bus from your school to HackIllinois?"
           items={transportation}
           onSelect={registerField('transportation')}
           disableInput
