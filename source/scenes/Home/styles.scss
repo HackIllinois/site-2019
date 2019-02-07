@@ -3,6 +3,7 @@
 
 $cloud-width: 1300px;
 $sky-height: 520px;
+
 $wave-offset: 70px;
 
 $asset-width: 1600px;
@@ -244,27 +245,203 @@ $asset-width: 1600px;
         z-index: 1;
       }
 
-      .mid-bottom-half {
+      .caves {
         position: relative;
-        width: 102%;
-        z-index: 1;
-      }
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        overflow-y: hidden; // to hide the div scrollbar
 
-      #rocks-mid-bottom-grouping {
-        position: relative;
-        top: -3px;
+        .cave {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          vertical-align: bottom;
+          transform: scaleY(1.005);
+          z-index: 100;
 
-        #fish {
+          @media (max-width: 940px) {
+            content: url('../../assets/Home/cave-mobile.svg');
+          }
+        }
+
+        .fish {
           position: absolute;
-          top: 36%;
-          right: 25%;
-          width: 270px;
+          margin-top: 20%;
+          right: 28%;
+          width: 310px;
+          z-index: 99;
 
-          @media (max-width: 1250px) {
+          @media (max-width: 1440px) {
+            width: 210px;
+          }
+
+          @media (max-width: 1024px) {
+            margin-top: calc(18% + 5px);
+            width: 160px;
+          }
+
+          @media (max-width: 768px) {
+            width: 110px;
+          }
+
+          @media (max-width: 450px) {
+            width: 70px;
+          }
+        }
+
+        .stingray-one {
+          position: absolute;
+          margin-top: 17.5%;
+          left: 16.3%;
+          width: 292px;
+          z-index: 99;
+
+          @media (max-width: 1440px) {
+            left: 15.5%;
             width: 200px;
           }
-          @media (max-width: 600px) {
+
+          @media (max-width: 1024px) {
+            margin-top: 16.5%;
+            width: 160px;
+          }
+
+          @media (max-width: 768px) {
+            left: 16.2%;
+            margin-top: 16%;
+            width: 105px;
+          }
+
+          @media (max-width: 450px) {
+            margin-top: 16%;
+            width: 65px;
+          }
+        }
+
+        .stingray-two {
+          position: absolute;
+          margin-top: 38%;
+          right: 5.9%;
+          width: 240px;
+          z-index: 99;
+
+          @media (max-width: 1440px) {
+            margin-top: 37.5%;
+            width: 175px;
+          }
+
+          @media (max-width: 1024px) {
+            margin-top: 38%;
+            width: 150px;
+          }
+
+          @media (max-width: 768px) {
             width: 100px;
+          }
+
+          @media (max-width: 450px) {
+            width: 60px;
+          }
+        }
+
+        .stingray-three {
+          position: absolute;
+          margin-top: 100%;
+          right: 10%;
+          width: 330px;
+          z-index: 99;
+
+          @media (max-width: 1440px) {
+            right: 8.5%;
+            width: 155px;
+          }
+
+          @media (max-width: 1024px) {
+            margin-top: 99%;
+            right: 10%;
+            width: 130px;
+          }
+
+          @media (max-width: 768px) {
+            margin-top: 112%;
+            right: 9.5%;
+            width: 90px;
+          }
+
+          @media (max-width: 450px) {
+            margin-top: 112.5%;
+            right: 11%;
+            width: 45px;
+          }
+
+          @media (max-width: 350px) {
+            margin-top: 116%;
+            right: 12%;
+          }
+        }
+
+        .currents-high {
+          position: absolute;
+          margin-top: 38%;
+          left: 0px;
+          width: 100%;
+          z-index: 98;
+
+          @media (max-width: 1440px) {
+            margin-top: 37.5%;
+          }
+
+          @media (max-width: 1024px) {
+            margin-top: 38%;
+          }
+        }
+
+        .currents-mid {
+          position: absolute;
+          margin-top: 102%;
+          left: 0px;
+          width: 100%;
+          z-index: 98;
+
+          @media (max-width: 1440px) {
+            margin-top: 101%;
+          }
+
+          @media (max-width: 1024px) {
+            margin-top: 101%;
+          }
+
+          @media (max-width: 768px) {
+            margin-top: 114%;
+          }
+
+          @media (max-width: 450px) {
+            margin-top: 113%;
+          }
+
+          @media (max-width: 350px) {
+            margin-top: 119%;
+          }
+        }
+
+        .currents-low {
+          position: absolute;
+          margin-top: 150%;
+          left: 0px;
+          width: 100%;
+          z-index: 98;
+
+          @media (max-width: 768px) {
+            margin-top: 165%;
+          }
+
+          @media (max-width: 450px) {
+            margin-top: 195%;
+          }
+
+          @media (max-width: 350px) {
+            margin-top: 190%;
           }
         }
       }
