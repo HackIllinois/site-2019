@@ -6,7 +6,7 @@
 
   .sponsors {
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     display: flex;
     flex-direction: column;
     left: -50%;
@@ -33,6 +33,7 @@
       flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 20px;
+      width: 100%;
     }
 
     .logo {
@@ -40,10 +41,10 @@
       padding: 20px;
     }
     .logo-xl {
-      max-height: 110px;
+      max-height: 105px;
     }
     .logo-l {
-      max-height: 70px;
+      max-height: 73px;
     }
     .logo-cat {
       max-height: 50px;
@@ -62,32 +63,50 @@
 
 @media (max-width: 1200px) {
   .sponsor-wrapper {
-    top: 375px;
+    top: 295px;
   }
 }
 
 @media (max-width: 1000px) {
   .sponsor-wrapper {
     top: 260px;
-  }
-}
-
-@media (max-width: 670px) {
-  .sponsor-wrapper {
-    top: 200px;
-
-    .sponsors {
-      max-width: calc(100vw - 60px);
-      .icon {
-        margin: 20px 0 5px 0;
-        width: 56px;
+    .sponsor-group {
+      &:last-child {
+        width: 70%;
       }
     }
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 740px) {
   .sponsor-wrapper {
+    top: 150px;
+
+    .sponsors {
+      max-width: calc(100vw - 60px);
+      .sponsor-group {
+        &.plankton {
+          width: 70%;
+        }
+        &:last-child {
+          width: 60%;
+        }
+      }
+      .icon {
+        margin: 20px 0 5px 0;
+        width: 56px;
+      }
+      .logo {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  .sponsor-wrapper {
+    top: 120px;
+
     .sponsors {
       .logo {
         padding: 10px;
@@ -114,9 +133,9 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 490px) {
   .sponsor-wrapper {
-    top: 150px;
+    top: 90px;
 
     .sponsors {
       .logo-xl {
@@ -130,6 +149,38 @@
       }
       .logo-m {
         max-height: 20px;
+      }
+      .logo-s {
+        max-height: 15px;
+      }
+      .logo-xs {
+        max-height: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .sponsor-wrapper {
+    .sponsors {
+      .sponsor-group {
+        margin-bottom: 0px;
+      }
+      .icon {
+        margin-top: 15px;
+      }
+
+      .logo-xl {
+        max-height: 55px;
+      }
+      .logo-l {
+        max-height: 30px;
+      }
+      .logo-cat {
+        max-height: 20px;
+      }
+      .logo-m {
+        max-height: 18px;
       }
       .logo-s {
         max-height: 15px;

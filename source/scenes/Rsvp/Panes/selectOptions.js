@@ -17,6 +17,6 @@ export const diet = [
 ];
 
 export const transportation = [
-  { text: 'Will require travel assistance', value: 'BUS' },
-  { text: 'Will not require travel assistance', value: 'NONE' },
+  { text: 'I will need a bus', value: 'BUS' },
+  { text: 'I do not need a bus', value: 'NONE' },
 ];
