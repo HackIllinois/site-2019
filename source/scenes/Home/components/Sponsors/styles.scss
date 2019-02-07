@@ -41,10 +41,10 @@
       padding: 20px;
     }
     .logo-xl {
-      max-height: 110px;
+      max-height: 105px;
     }
     .logo-l {
-      max-height: 80px;
+      max-height: 73px;
     }
     .logo-cat {
       max-height: 50px;
@@ -63,7 +63,7 @@
 
 @media (max-width: 1200px) {
   .sponsor-wrapper {
-    top: 375px;
+    top: 295px;
   }
 }
 
@@ -75,20 +75,33 @@
 
 @media (max-width: 670px) {
   .sponsor-wrapper {
-    top: 200px;
+    top: 150px;
 
     .sponsors {
       max-width: calc(100vw - 60px);
+      .sponsor-group {
+        &.plankton {
+          width: 70%;
+        }
+        &:last-child {
+          width: 60%;
+        }
+      }
       .icon {
         margin: 20px 0 5px 0;
         width: 56px;
+      }
+      .logo {
+        padding: 16px;
       }
     }
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 590px) {
   .sponsor-wrapper {
+    top: 120px;
+
     .sponsors {
       .logo {
         padding: 10px;
@@ -115,9 +128,9 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 490px) {
   .sponsor-wrapper {
-    top: 150px;
+    top: 90px;
 
     .sponsors {
       .logo-xl {
