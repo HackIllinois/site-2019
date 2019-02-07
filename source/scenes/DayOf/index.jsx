@@ -1,11 +1,15 @@
 // @flow
 import React from 'react';
 
+import OceanScene from 'components/OceanScene';
+
 import './styles.scss';
 
 const DayOf = () => (
   <div className="dayof">
-    <h1>Day Of</h1>
+    <OceanScene>
+      <h1>Day Of</h1>
+    </OceanScene>
   </div>
 );
 

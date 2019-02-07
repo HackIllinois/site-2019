@@ -2,21 +2,7 @@
 
 $form-width: 500px;
 
-.scrollable-form {
-  background-image: linear-gradient(
-    0deg,
-    #017680 0%,
-    #1d858e 16%,
-    #1f868f 18%,
-    #349199 49%,
-    #2a8c94 54%,
-    #0c7c86 72%,
-    #017680 82%
-  );
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
-
+.ocean-scene {
   h1 {
     position: relative;
     padding-top: 62px;
@@ -89,41 +75,6 @@ $form-width: 500px;
     }
   }
 
-  .rocks {
-    position: absolute;
-    top: -2vh;
-    z-index: 2;
-    height: 104vh;
-  }
-
-  .left-rocks {
-    left: -1px;
-  }
-  .right-rocks {
-    right: -1px;
-  }
-  .currents {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    min-width: 1100px;
-    opacity: 0.2;
-  }
-  .fish1 {
-    position: absolute;
-    bottom: 60px;
-    right: 45px;
-    width: 150px;
-  }
-  .fish2 {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 250px;
-  }
-
   @media (max-height: 760px) {
     h1 {
       padding-top: 50px;
@@ -146,9 +97,5 @@ $form-width: 500px;
         padding-top: 0px;
       }
     }
-  }
-
-  .right-rocks {
-    right: -12px;
   }
 }
