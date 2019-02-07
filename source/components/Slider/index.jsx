@@ -37,7 +37,7 @@ class Slider extends React.Component<Props, State> {
             type="range"
             name={label}
             min={0}
-            max={9}
+            max={10}
             value={value}
             onChange={this.handleChange}
           />
