@@ -159,3 +159,35 @@
     }
   }
 }
+
+@media (max-width: 420px) {
+  .sponsor-wrapper {
+    .sponsors {
+      .sponsor-group {
+        margin-bottom: 0px;
+      }
+      .icon {
+        margin-top: 15px;
+      }
+
+      .logo-xl {
+        max-height: 55px;
+      }
+      .logo-l {
+        max-height: 30px;
+      }
+      .logo-cat {
+        max-height: 20px;
+      }
+      .logo-m {
+        max-height: 18px;
+      }
+      .logo-s {
+        max-height: 15px;
+      }
+      .logo-xs {
+        max-height: 10px;
+      }
+    }
+  }
+}
