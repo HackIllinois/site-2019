@@ -19,7 +19,7 @@ import SNL from 'assets/Logos/SNL.png';
 import TwoSigma from 'assets/Logos/TwoSigma.png';
 import Citadel from 'assets/Logos/Citadel.png';
 import RC from 'assets/Logos/RC.png';
-// import Mozilla from 'assets/Logos/Mozilla.png';
+import Mozilla from 'assets/Logos/Mozilla.png';
 import npmLogo from 'assets/Logos/npm.svg';
 import Zeit from 'assets/Logos/Zeit.svg';
 import Particle from 'assets/Logos/Particle.png';
@@ -56,7 +56,7 @@ const Sponsors = () => (
         <img src={TwoSigma} className="logo logo-cat" alt="TwoSigma Logo" />
         <img src={Citadel} className="logo logo-xs" alt="Citadel Logo" />
         <img src={RC} className="logo logo-s" alt="Rockwell Collins Logo" />
-        {/* <img src={Mozilla} className="logo logo-s" alt="Mozilla Logo" /> */}
+        <img src={Mozilla} className="logo logo-s" alt="Mozilla Logo" />
       </div>
       <img src={ClamIcon} className="icon" alt="Clam Icon" />
       <div className="sponsor-group">

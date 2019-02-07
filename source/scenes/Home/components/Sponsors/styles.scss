@@ -70,10 +70,15 @@
 @media (max-width: 1000px) {
   .sponsor-wrapper {
     top: 260px;
+    .sponsor-group {
+      &:last-child {
+        width: 70%;
+      }
+    }
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 740px) {
   .sponsor-wrapper {
     top: 150px;
 
