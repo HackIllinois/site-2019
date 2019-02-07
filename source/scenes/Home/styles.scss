@@ -111,7 +111,6 @@ $asset-width: 1600px;
 
   .water {
     margin-top: -$wave-offset;
-    padding-bottom: $wave-offset;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -249,8 +248,7 @@ $asset-width: 1600px;
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: auto;
-        overflow-y: hidden; // to hide the div scrollbar
+        overflow: hidden;
 
         .cave {
           position: relative;
