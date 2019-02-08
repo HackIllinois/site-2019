@@ -1,0 +1,157 @@
+{
+  "Friday": [
+    {
+      "time": "4:00 PM",
+      "events": [
+        { "title": "Company Expo", "locations": ["Atrium"] },
+        { "title": "Check In", "locations": ["DCL"] }
+      ]
+    },
+    {
+      "time": "7:30 PM",
+      "events": [{ "title": "Opening", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
+      "time": "9:00 PM",
+      "events": [
+        {
+          "title": "Dinner",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "10:00 PM",
+      "events": [{ "title": "Mentor Expo", "locations": [""] }]
+    }
+  ],
+  "Saturday": [
+    {
+      "time": "1:00 AM",
+      "events": [
+        {
+          "title": "Late-Night Meal",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "2:00 AM",
+      "events": [{ "title": "Lightning Talks", "locations": ["ECEB 1015"] }]
+    },
+    {
+      "time": "8:00 AM",
+      "events": [
+        {
+          "title": "Breakfast",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor Sunday"]
+        }
+      ]
+    },
+    {
+      "time": "9:00 AM",
+      "events": [
+        {
+          "title": "Submission Office Hours",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB 1015"]
+        },
+        { "title": "Google Workshop", "locations": ["Siebel"] }
+      ]
+    },
+    {
+      "time": "10:00 AM",
+      "events": [{ "title": "Submission Office Hours", "locations": ["Siebel 1302"] }]
+    },
+    {
+      "time": "11:00 AM",
+      "events": [{ "title": "Fulcrum Workshop", "locations": ["Siebel"] }]
+    },
+    {
+      "time": "12:30 PM",
+      "events": [
+        { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
+      ]
+    },
+    {
+      "time": "1:30 PM",
+      "events": [{ "title": "Rubrik Workshop", "locations": ["Siebel"] }]
+    },
+    {
+      "time": "2:30 PM",
+      "events": [{ "title": "Makerlab Workshop", "locations": ["ECEB"] }]
+    },
+    {
+      "time": "3:30 PM",
+      "events": [{ "title": "Microsoft Workshop", "locations": ["Siebel"] }]
+    },
+    {
+      "time": "4:30 PM",
+      "events": [{ "title": "IMO Workshop", "locations": ["ECEB"] }]
+    },
+    {
+      "time": "6:30 PM",
+      "events": [
+        {
+          "title": "Dinner",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "7:30 PM",
+      "events": [{ "title": "Keynote - Katie Huff", "locations": ["ECEB"] }]
+    },
+    {
+      "time": "8:30 PM",
+      "events": [{ "title": "Keynote - Vijay Pai", "locations": ["Siebel"] }]
+    }
+  ],
+  "Sunday": [
+    {
+      "time": "12:00 AM",
+      "events": [
+        {
+          "title": "Midnight Meal",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "1:00 AM",
+      "events": [{ "title": "Saurik Discussion Session", "locations": ["ECEB 1103"] }]
+    },
+    {
+      "time": "3:30 AM",
+      "events": [
+        {
+          "title": "Mini Meal",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor Sunday"]
+        }
+      ]
+    },
+    {
+      "time": "8:00 AM",
+      "events": [
+        {
+          "title": "Breakfast",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "8:30 AM",
+      "events": [{ "title": "Submission Office Hours", "locations": ["ECEB 1015"] }]
+    },
+    {
+      "time": "11:00 AM",
+      "events": [
+        { "title": "End of Hacking", "locations": [""] },
+        { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
+      ]
+    },
+    {
+      "time": "5:00 PM",
+      "events": [{ "title": "Bus Departure", "locations": ["Siebel"] }]
+    }
+  ]
+}
