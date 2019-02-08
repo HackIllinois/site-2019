@@ -1,16 +1,60 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
+import { Route, withRouter } from 'react-router-dom';
+
+import type { Match } from 'react-router-dom';
 
 import OceanScene from 'components/OceanScene';
 
+import Sidebar from './components/Sidebar';
+import Schedule from './scenes/Schedule';
+
 import './styles.scss';
 
-const DayOf = () => (
-  <div className="dayof">
-    <OceanScene>
-      <h1>Day Of</h1>
-    </OceanScene>
-  </div>
-);
+type Props = {
+  match: Match,
+};
+type State = {
+  open: boolean,
+};
 
-export default DayOf;
+class DayOf extends Component<Props, State> {
+  constructor() {
+    super();
+
+    this.state = {
+      open: false,
+    };
+
+    this.setSidebar = this.setSidebar.bind(this);
+  }
+
+  setSidebar: boolean => void;
+  setSidebar(open: boolean) {
+    this.setState({
+      open,
+    });
+  }
+
+  render() {
+    const { match } = this.props;
+    const { open } = this.state;
+
+    return (
+      <div className="dayof-wrapper">
+        <div className={`dayof ${open ? 'sidebar-open' : 'sidebar-closed'}`}>
+          <Sidebar setSidebar={this.setSidebar} />
+          <OceanScene>
+            <Route path={`${match.url}`} exact component={Schedule} />
+            <Route path={`${match.url}maps`} exact component={Schedule} />
+            <Route path={`${match.url}prizes`} exact component={Schedule} />
+            <Route path={`${match.url}travel`} exact component={Schedule} />
+            <Route path={`${match.url}mentorship`} exact component={Schedule} />
+          </OceanScene>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default withRouter(DayOf);
