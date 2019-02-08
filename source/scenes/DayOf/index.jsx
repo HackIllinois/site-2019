@@ -49,11 +49,15 @@ class DayOf extends Component<Props, State> {
         <div className={`dayof ${open ? 'sidebar-open' : 'sidebar-closed'}`}>
           <Sidebar setSidebar={this.setSidebar} />
           <OceanScene>
-            <Route path={`${match.url}`} exact component={Schedule} />
-            <Route path={`${match.url}maps`} exact component={Maps} />
-            <Route path={`${match.url}prizes`} exact component={Prizes} />
-            <Route path={`${match.url}travel`} exact component={Travel} />
-            <Route path={`${match.url}mentorship`} exact component={Mentorship} />
+            <div className="view-upper">
+              <div className="view-wrapper">
+                <Route path={`${match.url}`} exact component={Schedule} />
+                <Route path={`${match.url}maps`} exact component={Maps} />
+                <Route path={`${match.url}prizes`} exact component={Prizes} />
+                <Route path={`${match.url}travel`} exact component={Travel} />
+                <Route path={`${match.url}mentorship`} exact component={Mentorship} />
+              </div>
+            </div>
           </OceanScene>
         </div>
       </div>
