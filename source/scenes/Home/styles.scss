@@ -163,6 +163,18 @@ $asset-width: 1600px;
       justify-content: center;
     }
 
+    .close-message {
+      color: white;
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      position: absolute;
+      text-align: center;
+      top: 310px;
+      width: 100%;
+      z-index: 3;
+    }
+
     .fish-1 {
       position: absolute;
       z-index: 20;
@@ -202,7 +214,7 @@ $asset-width: 1600px;
     }
 
     .rocks {
-      padding-top: 180px;
+      padding-top: 220px;
       position: relative;
       top: $wave-offset;
       @media (max-width: $mobile-max) {
