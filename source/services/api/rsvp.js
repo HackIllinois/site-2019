@@ -79,8 +79,11 @@ export default function rsvp(data) {
     },
     body: JSON.stringify(serializedData),
   }).then(response => {
+    if (response.status === 422) {
+      throw new Error('Applicant decision has expired');
+    }
     if (response.status >= 400) {
-      throw new Error(response);
+      throw new Error('Error during submission, try again later');
     }
     return response.json();
   });
