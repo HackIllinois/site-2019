@@ -1,5 +1,9 @@
 @import '../../../../styles/variables.scss';
 
+$GRID_SPACING_L: 40px;
+$GRID_SPACING_M: 30px;
+$GRID_SPACING_S: 20px;
+
 .day {
   background-color: white;
   box-sizing: border-box;
@@ -22,7 +26,7 @@
     display: grid;
     grid-auto-rows: auto;
     grid-row-gap: 0;
-    grid-template-columns: 1fr 2.8fr 2.8fr;
+    grid-template-columns: (80px + $GRID_SPACING_L) 1fr 1fr;
     margin: 44px 0;
 
     p {
@@ -33,7 +37,7 @@
       border-right: 1px solid $header-red;
       grid-column: 1;
       padding-bottom: 24px;
-      padding-right: 40px;
+      padding-right: $GRID_SPACING_L;
 
       p {
         font-size: 15px;
@@ -42,7 +46,8 @@
     }
     .details {
       padding-bottom: 24px;
-      padding-left: 40px;
+      padding-left: $GRID_SPACING_L;
+      padding-right: $GRID_SPACING_L;
       p.name {
         font-size: 18px;
         margin-bottom: 5px;
@@ -58,6 +63,25 @@
     }
     .details-b {
       grid-column: 3;
+    }
+  }
+}
+
+@media (max-width: $tablet-max) {
+  .day {
+    padding: 20px 30px;
+
+    .events {
+      grid-template-columns: (80px + $GRID_SPACING_M) 1fr 1fr;
+      margin: 22px 0;
+
+      .time {
+        padding-right: $GRID_SPACING_M;
+      }
+      .details {
+        padding-left: $GRID_SPACING_M;
+        padding-left: $GRID_SPACING_M;
+      }
     }
   }
 }
