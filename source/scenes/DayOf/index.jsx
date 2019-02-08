@@ -8,6 +8,10 @@ import OceanScene from 'components/OceanScene';
 
 import Sidebar from './components/Sidebar';
 import Schedule from './scenes/Schedule';
+import Maps from './scenes/Maps';
+import Prizes from './scenes/Prizes';
+import Travel from './scenes/Travel';
+import Mentorship from './scenes/Mentorship';
 
 import './styles.scss';
 
@@ -46,10 +50,10 @@ class DayOf extends Component<Props, State> {
           <Sidebar setSidebar={this.setSidebar} />
           <OceanScene>
             <Route path={`${match.url}`} exact component={Schedule} />
-            <Route path={`${match.url}maps`} exact component={Schedule} />
-            <Route path={`${match.url}prizes`} exact component={Schedule} />
-            <Route path={`${match.url}travel`} exact component={Schedule} />
-            <Route path={`${match.url}mentorship`} exact component={Schedule} />
+            <Route path={`${match.url}maps`} exact component={Maps} />
+            <Route path={`${match.url}prizes`} exact component={Prizes} />
+            <Route path={`${match.url}travel`} exact component={Travel} />
+            <Route path={`${match.url}mentorship`} exact component={Mentorship} />
           </OceanScene>
         </div>
       </div>

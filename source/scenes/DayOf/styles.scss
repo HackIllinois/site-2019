@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .dayof-wrapper {
   overflow: hidden;
 
@@ -12,12 +14,14 @@
     &.sidebar-open {
       transform: translateX(100vw);
     }
+  }
+}
 
-    .ocean-scene {
-      .left-rocks,
-      .right-rocks {
-        display: none;
-      }
+@media (max-width: $tablet-max - 1px) {
+  .dayof-wrapper .dayof .ocean-scene {
+    .left-rocks,
+    .right-rocks {
+      display: none;
     }
   }
 }
