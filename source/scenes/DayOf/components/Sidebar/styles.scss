@@ -1,7 +1,7 @@
 @import '../../../../styles/variables.scss';
 
 $HIDDEN_WIDTH: 40px;
-$DESKTOP_WIDTH: 260px;
+$DESKTOP_WIDTH: 230px;
 
 .sidebar-mobile {
   background-color: $rocks-blue;
@@ -93,7 +93,9 @@ $DESKTOP_WIDTH: 260px;
 
 @media (min-width: $tablet-max) {
   .sidebar-mobile {
+    right: -1px;
     width: $DESKTOP_WIDTH;
+    z-index: 100;
 
     button {
       display: none;
