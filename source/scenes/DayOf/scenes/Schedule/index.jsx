@@ -20,24 +20,26 @@ const Day = (props: DayProps) => {
               <div className="time">
                 <p>{time}</p>
               </div>
-              <div className="details details-a">
-                <p className="name">{events[0].title}</p>
-                {events[0].locations.map(l => (
-                  <p key={l} className="location">
-                    {l}
-                  </p>
-                ))}
-              </div>
-              <div className="details details-b">
+              <div className="details">
+                <div className="details-a">
+                  <p className="name">{events[0].title}</p>
+                  {events[0].locations.map(l => (
+                    <p key={l} className="location">
+                      {l}
+                    </p>
+                  ))}
+                </div>
                 {events.length === 2 && (
-                  <Fragment>
-                    <p className="name">{events[1].title}</p>
-                    {events[1].locations.map(l => (
-                      <p key={l} className="location">
-                        {l}
-                      </p>
-                    ))}
-                  </Fragment>
+                  <div className="details-b">
+                    <Fragment>
+                      <p className="name">{events[1].title}</p>
+                      {events[1].locations.map(l => (
+                        <p key={l} className="location">
+                          {l}
+                        </p>
+                      ))}
+                    </Fragment>
+                  </div>
                 )}
               </div>
             </Fragment>
