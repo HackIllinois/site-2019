@@ -30,40 +30,77 @@ import './styles.scss';
 const Sponsors = () => (
   <div className="sponsor-wrapper">
     <div className="sponsors">
-      <h1>Our Sponsors</h1>
       <img src={WhaleIcon} className="icon" alt="Whale Icon" />
       <div className="sponsor-group">
-        <img src={Fulcrum} className="logo logo-xl" alt="Fulcrum GT Logo" />
+        <a href="https://fulcrumgt.com/">
+          <img src={Fulcrum} className="logo logo-xl" alt="Fulcrum GT Logo" />
+        </a>
       </div>
       <img src={SquidIcon} className="icon" alt="Squid Icon" />
       <div className="sponsor-group">
-        <img src={Optum} className="logo logo-l" alt="Optum Logo" />
-        <img src={IMC} className="logo logo-l" alt="IMC Logo" />
-        <img src={Caterpillar} className="logo logo-cat" alt="Caterpillar Logo" />
-        <img src={Amadeus} className="logo logo-cat" alt="Amadeus Logo" />
+        <a href="https://www.optum.com/">
+          <img src={Optum} className="logo logo-l" alt="Optum Logo" />
+        </a>
+        <a href="https://www.imc.com/">
+          <img src={IMC} className="logo logo-l" alt="IMC Logo" />
+        </a>
+        <a href="https://www.caterpillar.com/">
+          <img src={Caterpillar} className="logo logo-cat" alt="Caterpillar Logo" />
+        </a>
+        <a href="https://amadeus.com/en">
+          <img src={Amadeus} className="logo logo-cat" alt="Amadeus Logo" />
+        </a>
       </div>
       <img src={JellyIcon} className="icon" alt="Jelly Icon" />
       <div className="sponsor-group">
-        <img src={Facebook} className="logo logo-m" alt="Facebook Logo" />
-        <img src={Jackson} className="logo logo-m" alt="Jackson Logo" />
-        <img src={Schlum} className="logo logo-m" alt="Schlumberger Logo" />
-        <img src={Google} className="logo logo-m" alt="Google Logo" />
-        <img src={C1} className="logo logo-m" alt="Capital One Logo" />
-        <img src={SNL} className="logo logo-m" alt="Sandia National LabsLogo" />
+        <a href="https://www.facebook.com/careers/">
+          <img src={Facebook} className="logo logo-m" alt="Facebook Logo" />
+        </a>
+        <a href="https://www.jackson.com/">
+          <img src={Jackson} className="logo logo-m" alt="Jackson Logo" />
+        </a>
+        <a href="https://www.slb.com/">
+          <img src={Schlum} className="logo logo-m" alt="Schlumberger Logo" />
+        </a>
+        <a href="https://www.google.com/">
+          <img src={Google} className="logo logo-m" alt="Google Logo" />
+        </a>
+        <a href="https://campus.capitalone.com/">
+          <img src={C1} className="logo logo-m" alt="Capital One Logo" />
+        </a>
+        <a href="https://www.sandia.gov/">
+          <img src={SNL} className="logo logo-m" alt="Sandia National Labs Logo" />
+        </a>
       </div>
       <img src={PlanktonIcon} className="icon" alt="Plankton Icon" />
       <div className="sponsor-group plankton">
-        <img src={TwoSigma} className="logo logo-cat" alt="TwoSigma Logo" />
-        <img src={Citadel} className="logo logo-xs" alt="Citadel Logo" />
-        <img src={RC} className="logo logo-s" alt="Rockwell Collins Logo" />
-        <img src={Mozilla} className="logo logo-s" alt="Mozilla Logo" />
+        <a href="https://www.twosigma.com/">
+          <img src={TwoSigma} className="logo logo-cat" alt="Two Sigma Logo" />
+        </a>
+        <a href="https://www.citadel.com/">
+          <img src={Citadel} className="logo logo-xs" alt="Citadel Logo" />
+        </a>
+        <a href="https://www.rockwellcollins.com/">
+          <img src={RC} className="logo logo-s" alt="Rockwell Collins Logo" />
+        </a>
+        <a href="https://www.mozilla.org/en-US/">
+          <img src={Mozilla} className="logo logo-s" alt="Mozilla Logo" />
+        </a>
       </div>
       <img src={ClamIcon} className="icon" alt="Clam Icon" />
       <div className="sponsor-group">
-        <img src={npmLogo} className="logo logo-s" alt="NPM Logo" />
-        <img src={Zeit} className="logo logo-s" alt="Zeit Logo" />
-        <img src={Particle} className="logo logo-s" alt="Particle Logo" />
-        <img src={Nvisia} className="logo logo-s" alt="Nvisia Logo" />
+        <a href="https://www.npmjs.com/">
+          <img src={npmLogo} className="logo logo-s" alt="npm Logo" />
+        </a>
+        <a href="https://zeit.co/">
+          <img src={Zeit} className="logo logo-s" alt="ZEIT Logo" />
+        </a>
+        <a href="https://www.particle.io/">
+          <img src={Particle} className="logo logo-s" alt="Particle Logo" />
+        </a>
+        <a href="https://www.nvisia.com/">
+          <img src={Nvisia} className="logo logo-s" alt="Nvisia Logo" />
+        </a>
       </div>
     </div>
   </div>
