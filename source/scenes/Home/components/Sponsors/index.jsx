@@ -53,7 +53,7 @@ const Sponsors = () => (
       </div>
       <img src={JellyIcon} className="icon" alt="Jelly Icon" />
       <div className="sponsor-group">
-        <a href="https://www.facebook.com/">
+        <a href="https://www.facebook.com/careers/">
           <img src={Facebook} className="logo logo-m" alt="Facebook Logo" />
         </a>
         <a href="https://www.jackson.com/">
@@ -65,17 +65,17 @@ const Sponsors = () => (
         <a href="https://www.google.com/">
           <img src={Google} className="logo logo-m" alt="Google Logo" />
         </a>
-        <a href="https://www.capitalone.com/">
+        <a href="https://campus.capitalone.com/">
           <img src={C1} className="logo logo-m" alt="Capital One Logo" />
         </a>
         <a href="https://www.sandia.gov/">
-          <img src={SNL} className="logo logo-m" alt="Sandia National LabsLogo" />
+          <img src={SNL} className="logo logo-m" alt="Sandia National Labs Logo" />
         </a>
       </div>
       <img src={PlanktonIcon} className="icon" alt="Plankton Icon" />
       <div className="sponsor-group plankton">
         <a href="https://www.twosigma.com/">
-          <img src={TwoSigma} className="logo logo-cat" alt="TwoSigma Logo" />
+          <img src={TwoSigma} className="logo logo-cat" alt="Two Sigma Logo" />
         </a>
         <a href="https://www.citadel.com/">
           <img src={Citadel} className="logo logo-xs" alt="Citadel Logo" />
@@ -90,10 +90,10 @@ const Sponsors = () => (
       <img src={ClamIcon} className="icon" alt="Clam Icon" />
       <div className="sponsor-group">
         <a href="https://www.npmjs.com/">
-          <img src={npmLogo} className="logo logo-s" alt="NPM Logo" />
+          <img src={npmLogo} className="logo logo-s" alt="npm Logo" />
         </a>
         <a href="https://zeit.co/">
-          <img src={Zeit} className="logo logo-s" alt="Zeit Logo" />
+          <img src={Zeit} className="logo logo-s" alt="ZEIT Logo" />
         </a>
         <a href="https://www.particle.io/">
           <img src={Particle} className="logo logo-s" alt="Particle Logo" />
