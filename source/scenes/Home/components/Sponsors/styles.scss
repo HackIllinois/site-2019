@@ -11,7 +11,7 @@
     flex-direction: column;
     left: -50%;
     max-width: calc(100vw - 190px);
-    padding-top: 45px;
+    padding-top: 15px;
     position: relative;
     width: 800px;
 
@@ -41,22 +41,22 @@
       padding: 20px;
     }
     .logo-xl {
-      max-height: 105px;
+      height: 105px;
     }
     .logo-l {
-      max-height: 73px;
+      height: 73px;
     }
     .logo-cat {
-      max-height: 50px;
+      height: 50px;
     }
     .logo-m {
-      max-height: 40px;
+      height: 40px;
     }
     .logo-s {
-      max-height: 30px;
+      height: 30px;
     }
     .logo-xs {
-      max-height: 20px;
+      height: 20px;
     }
   }
 }
@@ -112,22 +112,22 @@
         padding: 10px;
       }
       .logo-xl {
-        max-height: 83px;
+        height: 83px;
       }
       .logo-l {
-        max-height: 53px;
+        height: 53px;
       }
       .logo-cat {
-        max-height: 38px;
+        height: 38px;
       }
       .logo-m {
-        max-height: 30px;
+        height: 30px;
       }
       .logo-s {
-        max-height: 23px;
+        height: 23px;
       }
       .logo-xs {
-        max-height: 15px;
+        height: 15px;
       }
     }
   }
@@ -139,22 +139,22 @@
 
     .sponsors {
       .logo-xl {
-        max-height: 55px;
+        height: 55px;
       }
       .logo-l {
-        max-height: 35px;
+        height: 35px;
       }
       .logo-cat {
-        max-height: 25px;
+        height: 25px;
       }
       .logo-m {
-        max-height: 20px;
+        height: 20px;
       }
       .logo-s {
-        max-height: 15px;
+        height: 15px;
       }
       .logo-xs {
-        max-height: 10px;
+        height: 10px;
       }
     }
   }
@@ -169,24 +169,8 @@
       .icon {
         margin-top: 15px;
       }
-
-      .logo-xl {
-        max-height: 55px;
-      }
       .logo-l {
-        max-height: 30px;
-      }
-      .logo-cat {
-        max-height: 20px;
-      }
-      .logo-m {
-        max-height: 18px;
-      }
-      .logo-s {
-        max-height: 15px;
-      }
-      .logo-xs {
-        max-height: 10px;
+        height: 30px;
       }
     }
   }
