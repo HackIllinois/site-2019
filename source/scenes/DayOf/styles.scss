@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .dayof-wrapper {
+  background-color: $rocks-blue;
   overflow: hidden;
 
   .dayof {
@@ -13,6 +14,28 @@
 
     &.sidebar-open {
       transform: translateX(100vw);
+    }
+
+    .view-upper {
+      display: block;
+      height: 100vh;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: 82%;
+      z-index: 1;
+
+      .view-wrapper {
+        box-sizing: content-box;
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: 17px;
+        width: 100%;
+
+        h1 {
+          text-align: left;
+        }
+      }
     }
   }
 }
