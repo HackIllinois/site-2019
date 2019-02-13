@@ -12,6 +12,10 @@ type MentorProps = {
 const Mentor = (props: MentorProps) => {
   const { image, name, description } = props;
 
+  if (description === '') {
+    return null;
+  }
+
   return (
     <div className="mentor-profile">
       <div className="img-name">
