@@ -57,6 +57,7 @@ const Home = () => (
           Apply
         </Link>
       </div>
+      <p className="close-message">Applications Close February 17th</p>
 
       <img className="fish-1" src={fish} alt="fish" />
       <img className="fish-2" src={fish} alt="fish" />

@@ -17,7 +17,7 @@ type Props = {
 
 type State = {
   fetching: boolean,
-  error: boolean,
+  error: ?string,
   success: boolean,
   redirect: boolean,
 };
@@ -28,7 +28,7 @@ class StudentInfo extends Component<Props, State> {
 
     this.state = {
       fetching: false,
-      error: false,
+      error: null,
       success: false,
       redirect: false,
     };
@@ -60,7 +60,7 @@ class StudentInfo extends Component<Props, State> {
 
     updateData()
       .then(() => {
-        this.setState({ fetching: false, error: false, success: true });
+        this.setState({ fetching: false, error: null, success: true });
         this.redirect = setTimeout(() => {
           if (dataDirty) {
             setTimeout(reset, 500);
@@ -68,8 +68,8 @@ class StudentInfo extends Component<Props, State> {
           this.setState({ redirect: true });
         }, 3500);
       })
-      .catch(() => {
-        this.setState({ fetching: false, error: true });
+      .catch(err => {
+        this.setState({ fetching: false, error: err.message });
       });
   }
 
@@ -98,7 +98,7 @@ class StudentInfo extends Component<Props, State> {
     } else if (error) {
       body = (
         <div>
-          <p>Error during submission, try again later</p>
+          <p>{error}</p>
         </div>
       );
     } else if (success) {
