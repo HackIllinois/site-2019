@@ -214,7 +214,8 @@ const mentors = [
     name: 'Benjamin Coe',
     image: require('assets/Mentors/bcoe.png'),
     project: 'Npm',
-    description: 'npm is the open source package manager that help JavaScript developers easily share packaged modules of code. Behind is the the npm Registry, a public collection of packages of open-source code for Node.js, front-end web apps, mobile apps, robots, and countless other. npm is also the command line interface client that allows developers to install and publish those packages.',
+    description:
+      'npm is the open source package manager that help JavaScript developers easily share packaged modules of code. Behind is the the npm Registry, a public collection of packages of open-source code for Node.js, front-end web apps, mobile apps, robots, and countless other. npm is also the command line interface client that allows developers to install and publish those packages.',
     github: 'bcoe',
   },
   {

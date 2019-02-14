@@ -53,12 +53,18 @@ class DayOf extends Component<Props, State> {
           <OceanScene>
             <div className="view-upper">
               <div className="view-wrapper">
-                <Route path={`${match.url}`} exact component={() => <Redirect to={`${match.url}${root}`} />} />
-                { schedule && <Route path={`${match.url}schedule`} exact component={Schedule} /> }
-                { maps && <Route path={`${match.url}maps`} exact component={Maps} /> }
-                { prizes && <Route path={`${match.url}prizes`} exact component={Prizes} /> }
-                { travel && <Route path={`${match.url}travel`} exact component={Travel} /> }
-                { mentorship && <Route path={`${match.url}mentorship`} exact component={Mentorship} /> }
+                <Route
+                  path={`${match.url}`}
+                  exact
+                  component={() => <Redirect to={`${match.url}${root}`} />}
+                />
+                {schedule && <Route path={`${match.url}schedule`} exact component={Schedule} />}
+                {maps && <Route path={`${match.url}maps`} exact component={Maps} />}
+                {prizes && <Route path={`${match.url}prizes`} exact component={Prizes} />}
+                {travel && <Route path={`${match.url}travel`} exact component={Travel} />}
+                {mentorship && (
+                  <Route path={`${match.url}mentorship`} exact component={Mentorship} />
+                )}
               </div>
             </div>
           </OceanScene>
