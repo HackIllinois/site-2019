@@ -1,0 +1,8 @@
+{
+  "root": "mentorship",
+  "schedule": false,
+  "maps": false,
+  "prizes": false,
+  "travel": false,
+  "mentorship": true
+}
