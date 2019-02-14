@@ -20,7 +20,7 @@ const Mentor = (props: MentorProps) => {
     <div className="mentor-profile">
       <div className="img-name">
         <div className="profile-picture">
-          { github === '' ? (
+          {github === '' ? (
             <img src={image === '' ? Logo : image} alt={name} />
           ) : (
             <a href={`https://github.com/${github}`}>
