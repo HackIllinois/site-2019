@@ -1,9 +1,9 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import MapECEB from './Maps/HackillinoisMAPS-ECEB.png';
-import MapSIEBEL from './Maps/HackillinoisMAPS-SIEBEL.png';
-import MapKENNY from './Maps/HackillinoisMAPS-KENNY.png';
-import MapDCL from './Maps/HackillinoisMAPS-DCL.png';
+import MapECEB from '../../../../assets/Maps/HackillinoisMAPS-ECEB.png';
+import MapSIEBEL from '../../../../assets/Maps/HackillinoisMAPS-SIEBEL.png';
+import MapKENNY from '../../../../assets/Maps/HackillinoisMAPS-KENNY.png';
+import MapDCL from '../../../../assets/Maps/HackillinoisMAPS-DCL.png';
 
 import './styles.scss';
 
@@ -29,17 +29,17 @@ const Maps = () => (
 
       <TabPanel>
         <div>
-          <img src={MapECEB} alt="" className="bimage" />
+          <img src={MapECEB} alt="" className="map-image" />
         </div>
       </TabPanel>
       <TabPanel>
-        <img src={MapSIEBEL} alt="" className="bimage" />
+        <img src={MapSIEBEL} alt="" className="map-image" />
       </TabPanel>
       <TabPanel>
-        <img src={MapKENNY} alt="" className="bimage" />
+        <img src={MapKENNY} alt="" className="map-image" />
       </TabPanel>
       <TabPanel>
-        <img src={MapDCL} alt="" className="bimage" />
+        <img src={MapDCL} alt="" className="map-image" />
       </TabPanel>
     </Tabs>
   </div>

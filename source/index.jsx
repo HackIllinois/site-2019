@@ -9,6 +9,8 @@ import { readJWT } from './services/user/actions';
 import App from './App';
 
 if (process.env.NODE_ENV === 'development') {
+  store.dispatch(setJWT(process.env.TEST_USER_TOKEN));
+  store.dispatch(readJWT(process.env.TEST_USER_TOKEN));
 }
 
 ReactDOM.render(
