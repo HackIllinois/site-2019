@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc88dd81-b1d9-43c8-93cb-6a277ea6917a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/Maps/HackillinoisMAPS-DCL.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/Maps/HackillinoisMAPS-KENNY.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/Maps/HackillinoisMAPS-SIEBEL.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.env.example" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/index.jsx" afterPath="$PROJECT_DIR$/source/index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/index.jsx" afterPath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/styles.scss" afterPath="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,19 +21,34 @@
         <entry file="file://$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <marker date="1550186752348" expanded="true" signature="413:438" ph="&lt;p/&gt;" />
+                <marker date="1550186752348" expanded="true" signature="798:913" ph="&lt;TabPanel/&gt;" />
+                <marker date="1550186752348" expanded="true" signature="817:895" ph="&lt;div/&gt;" />
+                <marker date="1550186752348" expanded="true" signature="920:1006" ph="&lt;TabPanel/&gt;" />
+                <marker date="1550186752348" expanded="true" signature="1013:1098" ph="&lt;TabPanel/&gt;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="630">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -74,6 +82,7 @@
         <option value="$PROJECT_DIR$/source/index.jsx" />
         <option value="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/index.jsx" />
         <option value="$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/styles.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -234,12 +243,12 @@
       <workItem from="1550027677695" duration="6639000" />
       <workItem from="1550112862939" duration="191000" />
       <workItem from="1550113524011" duration="2069000" />
-      <workItem from="1550115669105" duration="13457000" />
+      <workItem from="1550115669105" duration="13826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24095000" />
+    <option name="totallyTimeSpent" value="24464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -356,6 +365,11 @@
           <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1550186752348" expanded="true" signature="413:438" ph="&lt;p/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="798:913" ph="&lt;TabPanel/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="817:895" ph="&lt;div/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="920:1006" ph="&lt;TabPanel/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="1013:1098" ph="&lt;TabPanel/&gt;" />
           </folding>
         </state>
       </provider>
@@ -646,9 +660,14 @@
     <entry file="file://$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1550186752348" expanded="true" signature="413:438" ph="&lt;p/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="798:913" ph="&lt;TabPanel/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="817:895" ph="&lt;div/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="920:1006" ph="&lt;TabPanel/&gt;" />
+            <marker date="1550186752348" expanded="true" signature="1013:1098" ph="&lt;TabPanel/&gt;" />
           </folding>
         </state>
       </provider>
@@ -660,8 +679,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/scenes/DayOf/scenes/Maps/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="630">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
           <folding />
         </state>
       </provider>
