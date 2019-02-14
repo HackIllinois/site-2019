@@ -28,9 +28,7 @@ const App = () => (
         <Route exact path="/apply" component={Registration} />
         <Route exact path="/rsvp" component={Rsvp} />
         <Route path="/dayof" strict exact component={() => <Redirect to="/dayof/" />} />
-        {process.env.TRAVIS_BRANCH !== 'master' && (
-          <Route path="/dayof/" strict component={DayOf} />
-        )}
+        <Route path="/dayof/" strict component={DayOf} />
         <Route path="/mentors" exact component={Mentors} />
         <Route exact path="/sponsor" component={PDFView('/assets/sponsorship-2019.pdf')} />
         <Route exact path="/mentor" component={PDFView('/assets/mentorship-2019.pdf')} />

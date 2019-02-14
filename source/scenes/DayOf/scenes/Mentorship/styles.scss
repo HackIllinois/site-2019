@@ -21,6 +21,7 @@ $PROFILE_SIDE: 180px;
 
       .profile-picture {
         align-items: center;
+        background-color: $rocks-blue;
         border: 9px solid $rocks-blue;
         border-radius: $PROFILE_SIDE / 2;
         box-sizing: border-box;
@@ -43,13 +44,25 @@ $PROFILE_SIDE: 180px;
       }
     }
 
-    p {
-      font-size: 14px;
-      font-weight: 600;
-      grid-column: 2;
-      grid-row: 1;
-      line-height: 2;
-      padding-bottom: 22px;
+    .description {
+      h5 {
+        border-bottom: 3px solid $rocks-blue;
+        color: $rocks-blue;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding-bottom: 3px;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 600;
+        grid-column: 2;
+        grid-row: 1;
+        line-height: 2;
+        padding-bottom: 22px;
+      }
     }
 
     .line {
@@ -82,8 +95,14 @@ $PROFILE_SIDE: 180px;
       display: flex;
       flex-direction: column;
 
-      p {
+      .description {
         padding-top: 20px;
+        width: 100%;
+
+        h5 {
+          margin: auto;
+          text-align: center;
+        }
       }
     }
   }
