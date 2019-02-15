@@ -1,9 +1,9 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import MapECEB from '../../../../assets/Maps/HackillinoisMAPS-ECEB.png';
-import MapSIEBEL from '../../../../assets/Maps/HackillinoisMAPS-SIEBEL.png';
-import MapKENNY from '../../../../assets/Maps/HackillinoisMAPS-KENNY.png';
-import MapDCL from '../../../../assets/Maps/HackillinoisMAPS-DCL.png';
+import MapECEB from 'assets/Maps/HackillinoisMAPS-ECEB.png';
+import MapSIEBEL from 'assets/Maps/HackillinoisMAPS-SIEBEL.png';
+import MapKENNY from 'assets/Maps/HackillinoisMAPS-KENNY.png';
+import MapDCL from 'assets/Maps/HackillinoisMAPS-DCL.png';
 
 import './styles.scss';
 

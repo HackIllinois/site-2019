@@ -30,12 +30,17 @@
   width: 80vw;
 }
 ::-webkit-scrollbar {
-  width: 0px; /* remove scrollbar space */
-  background: transparent; /* optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
 }
 
 .react-tabs__tab-panel--selected {
   clear: both;
+}
+
+.react-tabs__tab--selected {
+  --border-style-bottom: solid;
+  padding-bottom: 13px;
 }
 
 .tab-underline {
@@ -50,14 +55,9 @@
   float: left;
   list-style: none;
   box-sizing: border-box;
-  width: calc(80vw / 4);
+  width: 20vw;
   padding: 28px 0 18px 0;
   text-align: center;
-}
-
-.react-tabs__tab--selected {
-  --border-style-bottom: solid !important;
-  padding-bottom: 13px;
 }
 
 .react-tabs__tab-list {
@@ -66,37 +66,35 @@
   margin-bottom: 22px;
 }
 
-@media only screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
   .react-tabs__tab-list {
     width: 80vw;
   }
 
-  .react-tabs__tab {
-    width: calc(80vw / 4 - 5px);
-    font-size: 14px;
-  }
-
   .react-tabs {
     width: 80vw;
-    left: auto;
   }
 
   .map-image {
     width: 80vw;
+  }
+
+  .react-tabs__tab {
+    width: calc(20vw - 5px);
+    font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 970px) {
+@media screen and (min-width: 970px) {
   .react-tabs__tab {
-    width: calc(65vw / 4);
+    width: 16vw;
   }
 
   .react-tabs {
-    width: 65vw;
-    left: auto;
+    width: 64vw;
   }
 
   .map-image {
-    width: 65vw;
+    width: 64vw;
   }
 }
