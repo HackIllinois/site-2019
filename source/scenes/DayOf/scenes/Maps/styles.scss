@@ -39,12 +39,14 @@
 }
 
 .react-tabs__tab--selected {
-  --border-style-bottom: solid;
   padding-bottom: 13px;
 }
 
+.react-tabs__tab--selected > .tab-underline {
+  border-bottom: #fd6f6d 5px solid;
+}
+
 .tab-underline {
-  border-bottom: #fd6f6d 5px var(--border-style-bottom);
   padding-bottom: 5px;
   width: fit-content;
   margin: auto;
