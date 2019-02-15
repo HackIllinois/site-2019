@@ -1,7 +1,7 @@
 {
-  "root": "mentorship",
-  "schedule": false,
-  "maps": false,
+  "root": "schedule",
+  "schedule": true,
+  "maps": true,
   "prizes": false,
   "travel": false,
   "mentorship": true

@@ -3,16 +3,12 @@
     {
       "time": "4:00 PM",
       "events": [
-        { "title": "Company Expo", "locations": ["Atrium"] },
+        { "title": "Company Expo", "locations": ["Siebel: Atrium", "ECEB: Lobby"] },
         { "title": "Check In", "locations": ["DCL"] }
       ]
     },
     {
-      "time": "7:30 PM",
-      "events": [{ "title": "Opening", "locations": ["Kenney Gym Annex"] }]
-    },
-    {
-      "time": "9:00 PM",
+      "time": "6:00 PM",
       "events": [
         {
           "title": "Dinner",
@@ -21,23 +17,35 @@
       ]
     },
     {
-      "time": "10:00 PM",
-      "events": [{ "title": "Mentor Expo", "locations": [""] }]
+      "time": "8:00 PM",
+      "events": [{ "title": "Opening", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
+      "time": "10:30 PM",
+      "events": [{ "title": "Mentor Expo", "locations": ["DCL"] }]
     }
   ],
   "Saturday": [
     {
-      "time": "1:00 AM",
+      "time": "12:00 AM",
       "events": [
         {
-          "title": "Late-Night Meal",
+          "title": "Midnight Meal",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        },
+        {
+          "title": "Git Gud @ Git Workshop",
+          "locations": ["Siebel 2405"]
         }
       ]
     },
     {
+      "time": "1:00 AM",
+      "events": [{ "title": "Dodgeball sponsored by Fulcrum", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
       "time": "2:00 AM",
-      "events": [{ "title": "Lightning Talks", "locations": ["ECEB 1015"] }]
+      "events": [{ "title": "Boating School", "locations": ["ECEB 1013"] }]
     },
     {
       "time": "8:00 AM",
@@ -49,22 +57,11 @@
       ]
     },
     {
-      "time": "9:00 AM",
+      "time": "12:00 PM",
       "events": [
-        {
-          "title": "Submission Office Hours",
-          "locations": ["Siebel: Basement & 2nd Floor", "ECEB 1015"]
-        },
-        { "title": "Google Workshop", "locations": ["Siebel"] }
+        { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] },
+        { "title": "Bubble Soccer sponsored by Catepillar", "locations": ["Kenney Gym Annex"] }
       ]
-    },
-    {
-      "time": "10:00 AM",
-      "events": [{ "title": "Submission Office Hours", "locations": ["Siebel 1302"] }]
-    },
-    {
-      "time": "11:00 AM",
-      "events": [{ "title": "Fulcrum Workshop", "locations": ["Siebel"] }]
     },
     {
       "time": "12:30 PM",
@@ -73,23 +70,28 @@
       ]
     },
     {
-      "time": "1:30 PM",
-      "events": [{ "title": "Rubrik Workshop", "locations": ["Siebel"] }]
+      "time": "2:00 PM",
+      "events": [{ "title": "Boba Run sponsored by IMC", "locations": ["ECEB 2015"] }]
     },
     {
-      "time": "2:30 PM",
-      "events": [{ "title": "Makerlab Workshop", "locations": ["ECEB"] }]
+      "time": "3:00 PM",
+      "events": [{ "title": "Unfurl", "locations": ["Siebel"] }]
     },
     {
-      "time": "3:30 PM",
-      "events": [{ "title": "Microsoft Workshop", "locations": ["Siebel"] }]
+      "time": "4:00 PM",
+      "events": [{ "title": "Nerf Tournament", "locations": ["Kenney Gym Annex"] }]
     },
     {
-      "time": "4:30 PM",
-      "events": [{ "title": "IMO Workshop", "locations": ["ECEB"] }]
+      "time": "5:00 PM",
+      "events": [
+        {
+          "title": "Open Source Etiquette Workshop sponsored by Facebook",
+          "locations": ["ECEB 1013"]
+        }
+      ]
     },
     {
-      "time": "6:30 PM",
+      "time": "6:00 PM",
       "events": [
         {
           "title": "Dinner",
@@ -98,12 +100,24 @@
       ]
     },
     {
-      "time": "7:30 PM",
-      "events": [{ "title": "Keynote - Katie Huff", "locations": ["ECEB"] }]
+      "time": "7:00 PM",
+      "events": [{ "title": "Bruce Perens \"Open Source in Space\"", "locations": ["ECEB 1002"] }]
     },
     {
-      "time": "8:30 PM",
-      "events": [{ "title": "Keynote - Vijay Pai", "locations": ["Siebel"] }]
+      "time": "8:00 PM",
+      "events": [{ "title": "Mobile Trivia sponsored by Optum", "locations": ["Siebel 1304"] }]
+    },
+    {
+      "time": "10:00 PM",
+      "events": [
+        { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] }
+      ]
+    },
+    {
+      "time": "11:00 PM",
+      "events": [
+        { "title": "Super Smash Tourney sponsored by Capital One", "locations": ["ECEB 1013"] }
+      ]
     }
   ],
   "Sunday": [
@@ -118,7 +132,7 @@
     },
     {
       "time": "1:00 AM",
-      "events": [{ "title": "Saurik Discussion Session", "locations": ["ECEB 1103"] }]
+      "events": [{ "title": "Mini Event sponsored by Amadeus", "locations": ["ECEB 2017"] }]
     },
     {
       "time": "3:30 AM",
@@ -139,15 +153,18 @@
       ]
     },
     {
-      "time": "8:30 AM",
-      "events": [{ "title": "Submission Office Hours", "locations": ["ECEB 1015"] }]
-    },
-    {
       "time": "11:00 AM",
       "events": [
-        { "title": "End of Hacking", "locations": [""] },
         { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
       ]
+    },
+    {
+      "time": "12:00 PM",
+      "events": [{ "title": "Project Expo", "locations": ["Siebel: Atrium", "ECEB: Lobby"] }]
+    },
+    {
+      "time": "3:00 PM",
+      "events": [{ "title": "Closing Ceremony", "locations": ["Kenney Gym Annex"] }]
     },
     {
       "time": "5:00 PM",
