@@ -11,10 +11,11 @@ import facebook from 'assets/Icons/facebook-f.svg';
 import twitter from 'assets/Icons/twitter.svg';
 import Logo from 'assets/logo.svg';
 
+import dayofConfig from '../../config.json';
 import './styles.scss';
 
 const links = [
-  { name: 'Schedule', path: '' },
+  { name: 'Schedule', path: 'schedule' },
   { name: 'Maps', path: 'maps' },
   { name: 'Prizes', path: 'prizes' },
   { name: 'Travel', path: 'travel' },
@@ -29,13 +30,19 @@ type Props = {
 const Sidebar = (props: Props) => {
   const { setSidebar, match } = props;
 
-  const linkComponents = links.map(({ name, path }) => (
-    <li key={path}>
-      <NavLink to={`${match.url}${path}`} exact onClick={() => setSidebar(false)}>
-        {name}
-      </NavLink>
-    </li>
-  ));
+  const linkComponents = links.map(({ name, path }) => {
+    if (!dayofConfig[path]) {
+      return null;
+    }
+
+    return (
+      <li key={path}>
+        <NavLink to={`${match.url}${path}`} exact onClick={() => setSidebar(false)}>
+          {name}
+        </NavLink>
+      </li>
+    );
+  });
 
   return (
     <div className="dayof-sidebar sidebar-mobile">

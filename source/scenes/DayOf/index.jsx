@@ -1,11 +1,12 @@
 // @flow
 import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 import type { Match } from 'react-router-dom';
 
 import OceanScene from 'components/OceanScene';
 
+import dayofConfig from './config.json';
 import Sidebar from './components/Sidebar';
 import Schedule from './scenes/Schedule';
 import Maps from './scenes/Maps';
@@ -43,6 +44,7 @@ class DayOf extends Component<Props, State> {
   render() {
     const { match } = this.props;
     const { open } = this.state;
+    const { root, schedule, maps, prizes, travel, mentorship } = dayofConfig;
 
     return (
       <div className="dayof-wrapper">
@@ -51,11 +53,18 @@ class DayOf extends Component<Props, State> {
           <OceanScene>
             <div className="view-upper">
               <div className="view-wrapper">
-                <Route path={`${match.url}`} exact component={Schedule} />
-                <Route path={`${match.url}maps`} exact component={Maps} />
-                <Route path={`${match.url}prizes`} exact component={Prizes} />
-                <Route path={`${match.url}travel`} exact component={Travel} />
-                <Route path={`${match.url}mentorship`} exact component={Mentorship} />
+                <Route
+                  path={`${match.url}`}
+                  exact
+                  component={() => <Redirect to={`${match.url}${root}`} />}
+                />
+                {schedule && <Route path={`${match.url}schedule`} exact component={Schedule} />}
+                {maps && <Route path={`${match.url}maps`} exact component={Maps} />}
+                {prizes && <Route path={`${match.url}prizes`} exact component={Prizes} />}
+                {travel && <Route path={`${match.url}travel`} exact component={Travel} />}
+                {mentorship && (
+                  <Route path={`${match.url}mentorship`} exact component={Mentorship} />
+                )}
               </div>
             </div>
           </OceanScene>
