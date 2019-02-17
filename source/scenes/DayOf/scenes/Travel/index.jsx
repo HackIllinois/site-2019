@@ -18,21 +18,23 @@ const TravelPlan = (props: TravelPlanProps) => {
   const { itineraryType, settings } = props;
 
   return (
-    <Fragment>
+    <div>
       <div className="itinerary">
         <div className="itinerary-type">
           <p>{itineraryType}</p>
         </div>
         {settings.map(setting => (
-          <div className="itinerary-details">
+          <div key={setting.time} className="itinerary-details">
             <p className="itinerary-time">{setting.time}</p>
             {setting.locations.map(location => (
-              <p className="itinerary-location">{location}</p>
+              <p key={location} className="itinerary-location">
+                {location}
+              </p>
             ))}
           </div>
         ))}
       </div>
-    </Fragment>
+    </div>
   );
 };
 
@@ -42,7 +44,7 @@ const TravelPlans = (props: TravelProps) => {
   const { pickupsAfter, arrivalsAfter } = afterEvent;
 
   return (
-    <Fragment>
+    <div>
       <h2>{university}</h2>
 
       <div className="travel-plan">
@@ -56,7 +58,7 @@ const TravelPlans = (props: TravelProps) => {
         <TravelPlan itineraryType="Pickup" settings={pickupsAfter} />
         <TravelPlan itineraryType="Arrival" settings={arrivalsAfter} />
       </div>
-    </Fragment>
+    </div>
   );
 };
 
