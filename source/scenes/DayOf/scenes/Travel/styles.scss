@@ -10,6 +10,18 @@ $GRID_SPACING_M: 30px;
   padding: 40px 70px;
   width: 100%;
 
+  @media (max-width: 650px) {
+    padding: 40px 50px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 25px 30px;
+  }
+
+  @media (max-width: 350px) {
+    padding: 25px 20px;
+  }
+
   h2 {
     border-bottom: 5px solid $header-red;
     box-sizing: border-box;
@@ -20,6 +32,15 @@ $GRID_SPACING_M: 30px;
     padding-bottom: 5px;
     margin-bottom: 40px;
     text-align: left;
+
+    @media (max-width: 450px) {
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+
+    @media (max-width: 350px) {
+      font-size: 21px;
+    }
   }
 
   .travel-plan {
@@ -31,6 +52,10 @@ $GRID_SPACING_M: 30px;
       padding-bottom: 20px;
       font-weight: bold;
       text-align: left;
+
+      @media (max-width: 450px) {
+        font-size: 15px;
+      }
     }
 
     .itinerary {
@@ -40,6 +65,15 @@ $GRID_SPACING_M: 30px;
       grid-template-columns: (80px + $GRID_SPACING_L) 1fr;
       font-size: 15px;
       margin-bottom: 40px;
+
+      @media (max-width: 500px) {
+        grid-template-columns: 80px;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 12px;
+        margin-bottom: 30px;
+      }
 
       p {
         color: $p-dark-blue;
@@ -57,6 +91,10 @@ $GRID_SPACING_M: 30px;
       .itinerary-time {
         font-size: 18px;
         padding-bottom: 10px;
+
+        @media (max-width: 450px) {
+          font-size: 15px;
+        }
       }
 
       .itinerary-location {
