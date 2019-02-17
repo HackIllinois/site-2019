@@ -36,8 +36,9 @@ const mentors = [
   {
     name: 'Shelby Switzer',
     image: require('assets/Mentors/switzersc.jpeg'),
-    project: 'API-in-a-box',
-    description: '',
+    project: 'Open Referral Transformer',
+    description:
+      'The Open Referral Transformer is a tool to help organizations convert their health and human services data into an Open Referral Human Services Data Spec compliant datapackage. We will work with data provided by Illinois Legal Aid Online (ILAO) as our foundation.',
     github: 'switzersc',
   },
   {
@@ -123,7 +124,7 @@ const mentors = [
     name: 'Brett Koonce',
     image: require('assets/Mentors/asparagui.png'),
     project: 'Homebrew',
-    description: '',
+    description: 'A unix package manager for mac/linux.',
     github: 'asparagui',
   },
   {
@@ -206,7 +207,7 @@ const mentors = [
   {
     name: 'Brian Jesse',
     image: require('assets/Mentors/BrainBacon.jpeg'),
-    project: 'NodeSchool',
+    project: 'Vue-BabylonJS',
     description: '3D Graphics plugin for Vue.js in the browser',
     github: 'BrainBacon',
   },
@@ -260,7 +261,7 @@ const mentors = [
   {
     name: 'Matthew Turk',
     image: require('assets/Mentors/MatthewTurk.jpeg'),
-    project: 'PrairieLearn',
+    project: 'Miscellaneous',
     description:
       'Analyze and visualize data from lots of different sources -- astronomy, brain scans, materials science, and so on!',
     github: 'MatthewTurk',
@@ -287,18 +288,11 @@ const mentors = [
     github: 'nwalters512',
   },
   {
-    name: 'David Mussulman',
-    image: require('assets/Mentors/trombonekenny.png'),
+    name: 'Craig Zilles',
+    image: require('assets/Mentors/zillesc.png'),
     project: 'PrairieLearn',
     description: '',
-    github: 'trombonekenny',
-  },
-  {
-    name: 'Genna Hensel',
-    image: '',
-    project: 'Queue',
-    description: '',
-    github: '',
+    github: 'zillesc',
   },
   {
     name: 'Alex Chrichton',
@@ -347,15 +341,16 @@ const mentors = [
   {
     name: 'Pranay Prakash',
     image: require('assets/Mentors/pranaygp.jpeg'),
-    project: 'Windsor/Sync Engine',
-    description: '',
+    project: 'CSS Peek',
+    description: 'A VS Plugin that makes working with CSS a breeze',
     github: 'pranaygp',
   },
   {
     name: 'Andrew Faust',
     image: '',
-    project: 'Windsor/Sync Engine',
-    description: '',
+    project: 'CSS Peek',
+    description:
+      'Extends HTML and ejs code editing with Go To Definition and Go To Symbol in Workspace support for css/scss/less (classes and IDs) found in strings within the source code. Supports all the normal capabilities of symbol definition tracking, but does it for css selectors (classes, IDs and HTML tags). ',
     github: '',
   },
   {

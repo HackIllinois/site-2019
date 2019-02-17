@@ -1,5 +1,5 @@
 .map-image {
-  width: 80vw;
+  width: 100%;
   height: auto;
   padding-bottom: 20px;
 }
@@ -23,15 +23,7 @@
 }
 
 .react-tabs {
-  overflow: scroll;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  width: 80vw;
-}
-::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
+  width: 100%;
 }
 
 .react-tabs__tab-panel--selected {
@@ -47,6 +39,7 @@
 }
 
 .tab-underline {
+  cursor: pointer;
   padding-bottom: 5px;
   width: fit-content;
   margin: auto;
@@ -57,7 +50,7 @@
   float: left;
   list-style: none;
   box-sizing: border-box;
-  width: 20vw;
+  width: 25%;
   padding: 28px 0 18px 0;
   text-align: center;
 }
@@ -70,33 +63,19 @@
 
 @media screen and (max-width: 650px) {
   .react-tabs__tab-list {
-    width: 80vw;
+    width: 100%;
   }
 
   .react-tabs {
-    width: 80vw;
+    width: 100%;
   }
 
   .map-image {
-    width: 80vw;
+    width: 100%;
   }
 
   .react-tabs__tab {
-    width: calc(20vw - 5px);
+    width: calc(25% - 5px);
     font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 970px) {
-  .react-tabs__tab {
-    width: 16vw;
-  }
-
-  .react-tabs {
-    width: 64vw;
-  }
-
-  .map-image {
-    width: 64vw;
   }
 }

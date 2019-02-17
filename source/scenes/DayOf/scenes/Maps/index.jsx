@@ -20,7 +20,7 @@ const Maps = () => (
           <p className="tab-underline">SIEBEL</p>
         </Tab>
         <Tab>
-          <p className="tab-underline">KENNY</p>
+          <p className="tab-underline">KENNEY</p>
         </Tab>
         <Tab>
           <p className="tab-underline">DCL</p>
