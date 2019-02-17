@@ -3,6 +3,6 @@
   "schedule": true,
   "maps": true,
   "prizes": false,
-  "travel": false,
+  "travel": true,
   "mentorship": true
 }
