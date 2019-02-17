@@ -1,0 +1,132 @@
+@import '../../../../styles/variables.scss';
+
+$PROFILE_SIDE: 180px;
+
+.mentors {
+  background-color: white;
+  margin: 30px 0;
+  width: 100%;
+
+  .mentor-profile {
+    align-items: center;
+    display: grid;
+    grid-column-gap: 90px;
+    grid-template-rows: 1fr 20px;
+    grid-template-columns: ($PROFILE_SIDE) 1fr;
+    padding: 48px 48px 12px 48px;
+
+    .img-name {
+      grid-column: 1;
+      grid-row: 1;
+
+      .profile-picture {
+        align-items: center;
+        background-color: $rocks-blue;
+        border: 9px solid $rocks-blue;
+        border-radius: $PROFILE_SIDE / 2;
+        box-sizing: border-box;
+        display: flex;
+        height: $PROFILE_SIDE;
+        justify-content: center;
+        overflow: hidden;
+        width: $PROFILE_SIDE;
+
+        img {
+          width: $PROFILE_SIDE;
+        }
+      }
+
+      h5 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 12px;
+        text-align: center;
+      }
+    }
+
+    .description {
+      h5 {
+        border-bottom: 3px solid $rocks-blue;
+        color: $rocks-blue;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding-bottom: 3px;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 600;
+        grid-column: 2;
+        grid-row: 1;
+        line-height: 2;
+        padding-bottom: 22px;
+      }
+    }
+
+    .line {
+      border-bottom: 1px solid $header-red;
+      grid-column: 2;
+      grid-row: 2;
+      padding-top: 20px;
+      width: 100%;
+    }
+
+    &:last-child {
+      .line {
+        border: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mentors {
+    .mentor-profile {
+      grid-column-gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mentors {
+    .mentor-profile {
+      display: flex;
+      flex-direction: column;
+
+      .description {
+        padding-top: 20px;
+        width: 100%;
+
+        h5 {
+          margin: auto;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .mentors .mentor-profile {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+
+    p {
+      line-height: 1.7;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .mentors .mentor-profile {
+    padding-left: 17px;
+    padding-right: 17px;
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}

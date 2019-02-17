@@ -1,0 +1,116 @@
+@import '../../../../styles/variables.scss';
+
+$GRID_SPACING_L: 40px;
+$GRID_SPACING_M: 30px;
+$GRID_SPACING_S: 20px;
+
+.day {
+  background-color: white;
+  box-sizing: border-box;
+  margin: 30px 0;
+  padding: 40px 70px;
+  width: 100%;
+
+  h2 {
+    border-bottom: 5px solid $header-red;
+    box-sizing: border-box;
+    color: $header-red;
+    display: inline-block;
+    font-size: 27px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    text-align: left;
+  }
+
+  .events {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-row-gap: 0;
+    grid-template-columns: (80px + $GRID_SPACING_L) 1fr;
+    margin: 44px 0;
+
+    p {
+      color: $p-dark-blue;
+    }
+
+    .time {
+      border-right: 1px solid $header-red;
+      grid-column: 1;
+      padding-bottom: 24px;
+      padding-right: $GRID_SPACING_L;
+
+      p {
+        font-size: 15px;
+        text-align: right;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: row;
+      grid-column: 2;
+
+      p.name {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      p.location {
+        font-size: 15px;
+        line-height: 18px;
+      }
+
+      & > div {
+        box-sizing: border-box;
+        max-width: 50%;
+        padding-left: $GRID_SPACING_L;
+        padding-right: $GRID_SPACING_L;
+        padding-bottom: 24px;
+        width: 50%;
+      }
+    }
+    .details-a {
+      border-right: 1px solid $header-red;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .day {
+    padding: 20px 30px;
+
+    .events {
+      grid-template-columns: (80px + $GRID_SPACING_M) 1fr;
+      margin: 22px 0;
+
+      .time {
+        padding-right: $GRID_SPACING_M;
+      }
+      .details > div {
+        padding-left: $GRID_SPACING_M;
+        padding-right: $GRID_SPACING_M;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .day {
+    .events {
+      grid-template-columns: 90px 1fr;
+      .time {
+        padding-right: $GRID_SPACING_S;
+      }
+      .details {
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > div {
+          border: none;
+          max-width: 100%;
+          padding-left: $GRID_SPACING_S;
+          padding-right: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

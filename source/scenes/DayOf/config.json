@@ -1,0 +1,8 @@
+{
+  "root": "schedule",
+  "schedule": true,
+  "maps": true,
+  "prizes": false,
+  "travel": true,
+  "mentorship": true
+}

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
 import Auth from 'scenes/Auth';
@@ -9,6 +9,8 @@ import Home from 'scenes/Home';
 import PDFView from 'scenes/PDFView';
 import Registration from 'scenes/Registration';
 import Rsvp from 'scenes/Rsvp';
+import DayOf from 'scenes/DayOf';
+import Mentors from 'scenes/Mentors';
 
 import { RouteTracker } from './services/GoogleAnalytics';
 import './styles/reset.css';
@@ -25,6 +27,9 @@ const App = () => (
         <Route exact path="/auth" component={Auth} />
         <Route exact path="/apply" component={Registration} />
         <Route exact path="/rsvp" component={Rsvp} />
+        <Route path="/dayof" strict exact component={() => <Redirect to="/dayof/" />} />
+        <Route path="/dayof/" strict component={DayOf} />
+        <Route path="/mentors" exact component={Mentors} />
         <Route exact path="/sponsor" component={PDFView('/assets/sponsorship-2019.pdf')} />
         <Route exact path="/mentor" component={PDFView('/assets/mentorship-2019.pdf')} />
         <Route component={() => <Error message="404 Not Found" />} />

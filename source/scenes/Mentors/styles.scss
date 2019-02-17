@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.mentors-page {
+  overflow: hidden;
+
+  .view-upper {
+    display: block;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 82%;
+    z-index: 1;
+
+    .view-wrapper {
+      box-sizing: content-box;
+      height: 100%;
+      overflow-y: scroll;
+      padding-right: 17px;
+      width: 100%;
+
+      h1 {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mentors-page .rocks {
+    display: none;
+  }
+}

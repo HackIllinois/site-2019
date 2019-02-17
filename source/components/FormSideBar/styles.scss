@@ -1,11 +1,10 @@
 @import '../../styles/variables.scss';
 
 $link-height: 20px;
-$link-yellow: #fcca88;
 $yellow-faded: rgba(252, 202, 136, 0.3);
 
 .sidebar {
-  background-color: #00242c;
+  background-color: $rocks-blue;
   display: flex;
   align-items: center;
   justify-content: center;

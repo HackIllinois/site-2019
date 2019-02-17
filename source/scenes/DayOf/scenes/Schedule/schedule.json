@@ -1,0 +1,174 @@
+{
+  "Friday": [
+    {
+      "time": "4:00 PM",
+      "events": [
+        { "title": "Company Expo", "locations": ["Siebel: Atrium", "ECEB: Lobby"] },
+        { "title": "Check In", "locations": ["DCL"] }
+      ]
+    },
+    {
+      "time": "6:00 PM",
+      "events": [
+        {
+          "title": "Dinner",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "8:00 PM",
+      "events": [{ "title": "Opening", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
+      "time": "10:30 PM",
+      "events": [{ "title": "Mentor Expo", "locations": ["DCL"] }]
+    }
+  ],
+  "Saturday": [
+    {
+      "time": "12:00 AM",
+      "events": [
+        {
+          "title": "Midnight Meal",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        },
+        {
+          "title": "Git Gud @ Git Workshop",
+          "locations": ["Siebel 2405"]
+        }
+      ]
+    },
+    {
+      "time": "1:00 AM",
+      "events": [{ "title": "Dodgeball sponsored by Fulcrum", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
+      "time": "2:00 AM",
+      "events": [{ "title": "Boating School", "locations": ["ECEB 1013"] }]
+    },
+    {
+      "time": "8:00 AM",
+      "events": [
+        {
+          "title": "Breakfast",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor Sunday"]
+        }
+      ]
+    },
+    {
+      "time": "12:00 PM",
+      "events": [
+        { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] },
+        { "title": "Bubble Soccer sponsored by Catepillar", "locations": ["Kenney Gym Annex"] }
+      ]
+    },
+    {
+      "time": "12:30 PM",
+      "events": [
+        { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
+      ]
+    },
+    {
+      "time": "2:00 PM",
+      "events": [{ "title": "Boba Run sponsored by IMC", "locations": ["ECEB 2015"] }]
+    },
+    {
+      "time": "3:00 PM",
+      "events": [{ "title": "Unfurl", "locations": ["Siebel 2405"] }]
+    },
+    {
+      "time": "4:00 PM",
+      "events": [{ "title": "Nerf Tournament", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
+      "time": "5:00 PM",
+      "events": [
+        {
+          "title": "Open Source Etiquette Workshop sponsored by Facebook",
+          "locations": ["ECEB 1013"]
+        }
+      ]
+    },
+    {
+      "time": "6:00 PM",
+      "events": [
+        {
+          "title": "Dinner",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "7:00 PM",
+      "events": [{ "title": "Bruce Perens \"Open Source in Space\"", "locations": ["ECEB 1002"] }]
+    },
+    {
+      "time": "8:00 PM",
+      "events": [{ "title": "Mobile Trivia sponsored by Optum", "locations": ["Siebel 1304"] }]
+    },
+    {
+      "time": "10:00 PM",
+      "events": [
+        { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] }
+      ]
+    },
+    {
+      "time": "11:00 PM",
+      "events": [
+        { "title": "Super Smash Tourney sponsored by Capital One", "locations": ["ECEB 1013"] }
+      ]
+    }
+  ],
+  "Sunday": [
+    {
+      "time": "12:00 AM",
+      "events": [
+        {
+          "title": "Midnight Meal",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "1:00 AM",
+      "events": [{ "title": "Mini Event sponsored by Amadeus", "locations": ["ECEB 2017"] }]
+    },
+    {
+      "time": "3:30 AM",
+      "events": [
+        {
+          "title": "Mini Meal",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor Sunday"]
+        }
+      ]
+    },
+    {
+      "time": "8:00 AM",
+      "events": [
+        {
+          "title": "Breakfast",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB 1st & 3rd Floor"]
+        }
+      ]
+    },
+    {
+      "time": "11:00 AM",
+      "events": [
+        { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
+      ]
+    },
+    {
+      "time": "12:00 PM",
+      "events": [{ "title": "Project Expo", "locations": ["Siebel: Atrium", "ECEB: Lobby"] }]
+    },
+    {
+      "time": "3:00 PM",
+      "events": [{ "title": "Closing Ceremony", "locations": ["Kenney Gym Annex"] }]
+    },
+    {
+      "time": "5:00 PM",
+      "events": [{ "title": "Bus Departure", "locations": ["Siebel"] }]
+    }
+  ]
+}
