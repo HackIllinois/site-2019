@@ -53,11 +53,10 @@ const Home = () => (
       </div>
 
       <div className="buttons">
-        <Link className="button-blue" to="/apply">
-          Apply
+        <Link className="button-blue" to="/dayof">
+          Day Of
         </Link>
       </div>
-      <p className="close-message">Applications Close February 17th</p>
 
       <img className="fish-1" src={fish} alt="fish" />
       <img className="fish-2" src={fish} alt="fish" />

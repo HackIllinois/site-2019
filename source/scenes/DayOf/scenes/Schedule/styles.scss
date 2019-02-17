@@ -95,6 +95,10 @@ $GRID_SPACING_S: 20px;
 @media (max-width: 768px) {
   .day {
     .events {
+      grid-template-columns: 90px 1fr;
+      .time {
+        padding-right: $GRID_SPACING_S;
+      }
       .details {
         flex-direction: column;
         justify-content: space-between;
@@ -102,6 +106,8 @@ $GRID_SPACING_S: 20px;
         & > div {
           border: none;
           max-width: 100%;
+          padding-left: $GRID_SPACING_S;
+          padding-right: 0;
           width: 100%;
         }
       }
