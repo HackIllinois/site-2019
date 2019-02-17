@@ -41,7 +41,7 @@ const travels = [
         {
           time: '2/22/2019 at 9:00AM EST',
           locations: [
-            'University of Michigan Electrical Engineering and Computer Science Building, 1301 Beal Ave, Ann Arbor, MI 48109',
+            'UMichigan Electrical Engineering and Computer Science Building, 1301 Beal Ave, Ann Arbor, MI 48109',
           ],
         },
         {
@@ -75,7 +75,7 @@ const travels = [
         {
           time: 'University of Michigan: 11:45PM EST',
           locations: [
-            'University of Michigan Electrical Engineering and Computer Science Building, 1301 Beal Ave, Ann Arbor, MI 48109',
+            'UMichigan Electrical Engineering and Computer Science Building, 1301 Beal Ave, Ann Arbor, MI 48109',
           ],
         },
       ],
@@ -124,23 +124,23 @@ const travels = [
       ],
       arrivalsAfter: [
         {
-          time: '8:00PM CST',
+          time: 'UChicago: 8:00PM CST',
           locations: [
             'University of Chicago Computation Institute, 5735 S Ellis Ave, Chicago, IL 60637',
           ],
         },
         {
-          time: '9:00PM CST',
+          time: 'UIC: 9:00PM CST',
           locations: [
             'University of Illinois at Chicago Computer Science Department, 851 S Morgan St, Chicago, IL 60607',
           ],
         },
         {
-          time: '9:45PM CST',
+          time: 'DePaul University: 9:45PM CST',
           locations: ['DePaul University, 243 S Wabash Ave, Chicago, IL 60604'],
         },
         {
-          time: '10:30PM CST',
+          time: 'Northwestern University: 10:30PM CST',
           locations: [
             'Northwestern University Technological University, 2145 Sheridan Rd, Evanston, IL 60208',
           ],
