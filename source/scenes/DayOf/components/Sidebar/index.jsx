@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 
 import type { Match } from 'react-router-dom';
 
@@ -54,7 +54,9 @@ const Sidebar = (props: Props) => {
         <button type="button" className="close" onClick={() => setSidebar(false)}>
           <img src={CloseIcon} alt="Close Icon" />
         </button>
-        <img className="logo" src={Logo} alt="HackIllinois Logo" />
+        <Link to="/">
+          <img className="logo" src={Logo} alt="HackIllinois Logo" />
+        </Link>
 
         <ul className="links">{linkComponents}</ul>
 
