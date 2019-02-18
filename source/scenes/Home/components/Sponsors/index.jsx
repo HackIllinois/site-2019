@@ -16,6 +16,7 @@ import Schlum from 'assets/Logos/Schlum.png';
 import Google from 'assets/Logos/Google.png';
 import C1 from 'assets/Logos/C1.png';
 import SNL from 'assets/Logos/SNL.png';
+import MirusResearch from 'assets/Logos/MirusResearch.png';
 import TwoSigma from 'assets/Logos/TwoSigma.png';
 import Citadel from 'assets/Logos/Citadel.png';
 import RC from 'assets/Logos/RC.png';
@@ -70,6 +71,9 @@ const Sponsors = () => (
         </a>
         <a href="https://www.sandia.gov/">
           <img src={SNL} className="logo logo-m" alt="Sandia National Labs Logo" />
+        </a>
+        <a href="https://mirusresearch.com/">
+          <img src={MirusResearch} className="logo logo-m" alt="Mirus Research Logo" />
         </a>
       </div>
       <img src={PlanktonIcon} className="icon" alt="Plankton Icon" />
