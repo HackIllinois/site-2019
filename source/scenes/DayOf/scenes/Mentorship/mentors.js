@@ -368,6 +368,13 @@ const mentors = [
     description: '',
     github: '',
   },
+  {
+    name: 'Juan Campa',
+    image: require('assets/Mentors/juancampa.jpeg'),
+    project: 'Project ZEIT',
+    description: '',
+    github: 'juancampa',
+  },
 ];
 
 export default mentors;
