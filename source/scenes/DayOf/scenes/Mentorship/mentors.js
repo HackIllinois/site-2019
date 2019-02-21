@@ -11,6 +11,7 @@ const mentors = [
       'over 100 devices, and contains several enhancements not found in stock Android, ' +
       'such as customized UI elements, privacy enhancements, and more.',
     github: 'mathur',
+    room: 'ECEB 3013',
   },
   {
     name: 'Michael Tamillow',
@@ -18,6 +19,7 @@ const mentors = [
     image: require('assets/Mentors/mtamillow.jpeg'),
     description: '',
     github: 'mtamillow',
+    room: 'Siebel 1103',
   },
   {
     name: 'Zac Codiamat',
@@ -25,6 +27,7 @@ const mentors = [
     project: 'AirOnTime',
     description: 'Flight on-time reliability search engine',
     github: '',
+    room: 'Siebel 1103',
   },
   {
     name: 'Amber Sahdev',
@@ -32,6 +35,7 @@ const mentors = [
     project: 'AirOnTime',
     description: 'Flight on-time reliability search engine',
     github: '',
+    room: 'Siebel 1103',
   },
   {
     name: 'Shelby Switzer',
@@ -40,6 +44,7 @@ const mentors = [
     description:
       'The Open Referral Transformer is a tool to help organizations convert their health and human services data into an Open Referral Human Services Data Spec compliant datapackage. We will work with data provided by Illinois Legal Aid Online (ILAO) as our foundation.',
     github: 'switzersc',
+    room: 'Siebel 1131',
   },
   {
     name: 'Jonathan Helmus',
@@ -48,6 +53,7 @@ const mentors = [
     description:
       'Conda is an open source package management system and environment management system that runs on Windows, macOS and Linux. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.',
     github: 'jjhelmus',
+    room: 'Siebel 1302',
   },
   {
     name: 'Tom Fischer',
@@ -55,6 +61,7 @@ const mentors = [
     project: 'Confbase',
     description: 'Tool for managing configuration files',
     github: '',
+    room: 'ECEB 3015',
   },
   {
     name: 'Ish Shah',
@@ -62,6 +69,7 @@ const mentors = [
     project: 'Confbase',
     description: 'Tool for managing configuration files',
     github: '',
+    room: 'ECEB 3015',
   },
   {
     name: 'Drake Eidukas',
@@ -69,13 +77,16 @@ const mentors = [
     project: 'Confbase',
     description: 'Tool for managing configuration files',
     github: '',
+    room: 'ECEB 3015',
   },
   {
     name: 'Paul Ganssle',
     image: require('assets/Mentors/pganssle.jpeg'),
     project: 'dateutil',
-    description: '',
+    description:
+      'A widely used library providing useful datetime functions and classes such as time zones, recurrence rules and a parser.',
     github: 'pganssle',
+    room: 'Siebel 1302',
   },
   {
     name: 'Evan Hazlett',
@@ -83,13 +94,16 @@ const mentors = [
     project: 'Docker',
     description: '',
     github: 'ehazlett',
+    room: 'ECEB 2015',
   },
   {
     name: 'Michael Crosby',
     image: require('assets/Mentors/crosbymichael.jpeg'),
-    project: 'Docker',
-    description: '',
+    project: 'containerd',
+    description:
+      'containerd industry-standard container runtime with an emphasis on simplicity, robustness and portability.  It has been written in Go and provides an API built on gRPC.  It handles content, overlay filesystems, distribution of images, and the execution and lifecycle of Linux and Windows containers for platforms like Docker and Kubernetes.',
     github: 'crosbymichael',
+    room: 'ECEB 3015',
   },
   {
     name: 'Phil Mesnier',
@@ -98,6 +112,7 @@ const mentors = [
     description:
       'Blockchain event notifier service. Help build a new plugin module and some representative front-end usage examples.',
     github: 'pmesnier',
+    room: 'ECEB 3013',
   },
   {
     name: 'Douglas Wilson',
@@ -105,13 +120,16 @@ const mentors = [
     project: 'Express',
     description: 'Express.js is a HTTP server framework for Node.js',
     github: 'dougwilson',
+    room: 'Siebel 1302',
   },
   {
     name: 'David Dias',
     image: require('assets/Mentors/thedaviddias.jpeg'),
-    project: 'Front-End-Checklist',
-    description: '',
+    project: 'HTMLHint',
+    description:
+      'HTMLHint is a static code analysis tool that analyses your HTML to find possible issues.',
     github: 'thedaviddias',
+    room: 'Siebel 1131',
   },
   {
     name: 'Tony Crisci',
@@ -119,6 +137,7 @@ const mentors = [
     project: 'Git',
     description: '',
     github: 'acrisci',
+    room: 'ECEB 3013',
   },
   {
     name: 'Brett Koonce',
@@ -126,6 +145,7 @@ const mentors = [
     project: 'Homebrew',
     description: 'A unix package manager for mac/linux.',
     github: 'asparagui',
+    room: 'ECEB 3017',
   },
   {
     name: 'Lewis McGibbney',
@@ -133,27 +153,32 @@ const mentors = [
     project: 'HTrace',
     description: '',
     github: '',
+    room: 'ECEB 2015',
   },
   {
     name: 'Zac Delventhal',
     image: '',
-    project: 'HyperLedger',
-    description: '',
+    project: 'Hyperledger Sawtooth (and Grid)',
+    description:
+      'An enterprise solution for building, deploying, and running custom blockchains. It provides an extremely modular and flexible platform for sharing cryptographically protected data between untrusted parties.',
     github: '',
+    room: 'ECEB 3015',
   },
   {
     name: 'Matt Mariutto',
     image: '',
     project: 'HyperLedger',
-    description: '',
+    description: 'Open Source Blockchain Technologies',
     github: '',
+    room: 'ECEB 3015',
   },
   {
     name: 'Rob Miroballi',
     image: '',
     project: 'HyperLedger',
-    description: '',
+    description: 'Open Source Blockchain Technologies',
     github: '',
+    room: 'ECEB 3015',
   },
   {
     name: 'Katharine Hyatt',
@@ -161,6 +186,7 @@ const mentors = [
     project: 'Julia',
     description: '',
     github: 'kshyatt',
+    room: 'Siebel 1111',
   },
   {
     name: 'Shaoyu',
@@ -168,13 +194,15 @@ const mentors = [
     project: 'Lifefoundry',
     description: '',
     github: '',
+    room: '',
   },
   {
     name: 'Cody Sherman',
     image: '',
-    project: 'NodeSchool',
-    description: '',
+    project: 'Vue-BabylonJS',
+    description: 'A ready-to-go 3d environment for Vue.js using Babylon.js',
     github: '',
+    room: 'Siebel 1131',
   },
   {
     name: 'Richard Kim',
@@ -182,6 +210,7 @@ const mentors = [
     project: 'NodeSchool',
     description: '',
     github: '',
+    room: 'Siebel 1131',
   },
   {
     name: 'Johnmark Beaty',
@@ -189,13 +218,15 @@ const mentors = [
     project: 'NodeSchool',
     description: '',
     github: '',
+    room: 'Siebel 1131',
   },
   {
     name: 'Sam Moore',
     image: '',
-    project: 'NodeSchool',
-    description: '',
+    project: 'Vue-BabylonJS',
+    description: 'A ready-to-go 3d environment for Vue.js using Babylon.js',
     github: '',
+    room: 'Siebel 1131',
   },
   {
     name: 'Brandon Frisch',
@@ -203,6 +234,7 @@ const mentors = [
     project: 'NodeSchool',
     description: '',
     github: '',
+    room: 'Siebel 1131',
   },
   {
     name: 'Brian Jesse',
@@ -210,6 +242,7 @@ const mentors = [
     project: 'Vue-BabylonJS',
     description: '3D Graphics plugin for Vue.js in the browser',
     github: 'BrainBacon',
+    room: 'Siebel 1131',
   },
   {
     name: 'Benjamin Coe',
@@ -218,6 +251,7 @@ const mentors = [
     description:
       'npm is the open source package manager that help JavaScript developers easily share packaged modules of code. Behind is the the npm Registry, a public collection of packages of open-source code for Node.js, front-end web apps, mobile apps, robots, and countless other. npm is also the command line interface client that allows developers to install and publish those packages.',
     github: 'bcoe',
+    room: 'Siebel 1304',
   },
   {
     name: 'Frederic Harper',
@@ -226,6 +260,7 @@ const mentors = [
     description:
       'npm is the open source package manager that help JavaScript developers easily share packaged modules of code. Behind is the the npm Registry, a public collection of packages of open-source code for Node.js, front-end web apps, mobile apps, robots, and countless other. npm is also the command line interface client that allows developers to install and publish those packages.',
     github: '',
+    room: 'Siebel 1304',
   },
   {
     name: 'Tyler Leonhardt',
@@ -234,6 +269,7 @@ const mentors = [
     description:
       "PowerShell Core is an object-oriented command-line shell and scripting language built on .NET. PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems (Linux, macOS, and Windows) and processes.\nPowerShell is designed to improve the command-line and scripting environment by putting discoverability, consistency, and objects first.\n\nOh, and it's open source and free.",
     github: '',
+    room: 'ECEB 3002',
   },
   {
     name: 'Andrew Schwartzmeyer',
@@ -242,6 +278,7 @@ const mentors = [
     description:
       'Open Enclave is an SDK for building enclave applications in C and C++. An enclave application partitions itself into two components (1) An untrusted component (called the host) and (2) A trusted component (called the enclave). An enclave is a secure container whose memory is protected from entities outside the enclave. These protections allow enclaves to perform secure computations with assurances that secrets will not be compromised.',
     github: 'andschwa',
+    room: 'ECEB 3002',
   },
   {
     name: 'Akash Gupta',
@@ -250,6 +287,7 @@ const mentors = [
     description:
       'OpenEnclave is an C/C++ SDK for writing enclave applications. Enclave applications are segmented into a trusted "enclave" portion and an untrusted "host" portion. The memory in the enclave portion is protected from the outside world through the use of processor specific isolation technology like Intel SGX or ARM TrustZone. This ensures that contents in the enclave are secure even if the host is compromised.',
     github: '',
+    room: 'ECEB 3002',
   },
   {
     name: 'Robert Holt',
@@ -257,14 +295,16 @@ const mentors = [
     project: 'Powershell',
     description: '',
     github: 'rjmholt',
+    room: 'ECEB 3002',
   },
   {
     name: 'Matthew Turk',
     image: require('assets/Mentors/MatthewTurk.jpeg'),
-    project: 'Miscellaneous',
+    project: 'yt',
     description:
       'Analyze and visualize data from lots of different sources -- astronomy, brain scans, materials science, and so on!',
     github: 'MatthewTurk',
+    room: 'Siebel 1103',
   },
   {
     name: 'Timothy Bretl',
@@ -272,20 +312,25 @@ const mentors = [
     project: 'PrairieLearn',
     description: '',
     github: 'tbretl',
+    room: 'Siebel 1109',
   },
   {
     name: 'Matthew West',
     image: require('assets/Mentors/mwest1066.jpeg'),
-    project: 'PrairieLearn',
-    description: '',
+    project: 'Illinois Open Source',
+    description:
+      'A collection of open-source projects that are used throughout UIUC. PrairieLearn (https://github.com/PrairieLearn/PrairieLearn) is used to offer customizable and powerful questions on homework and exams. The Queue (https://github.com/illinois/queue) is used to power open office hours, academic advising, lectures, and more. Come help shape the future of education at Illinois!',
     github: 'mwest1066',
+    room: 'Siebel 1109',
   },
   {
     name: 'Nathan Walters',
     image: require('assets/Mentors/nwalters512.jpeg'),
-    project: 'PrairieLearn',
-    description: '',
+    project: 'Illinois Open Source',
+    description:
+      'A collection of open-source projects that are used throughout UIUC. PrairieLearn (https://github.com/PrairieLearn/PrairieLearn) is used to offer customizable and powerful questions on homework and exams. The Queue (https://github.com/illinois/queue) is used to power open office hours, academic advising, lectures, and more. Come help shape the future of education at Illinois!',
     github: 'nwalters512',
+    room: 'Siebel 1109',
   },
   {
     name: 'Craig Zilles',
@@ -293,6 +338,7 @@ const mentors = [
     project: 'PrairieLearn',
     description: '',
     github: 'zillesc',
+    room: 'Siebel 1109',
   },
   {
     name: 'Alex Chrichton',
@@ -301,13 +347,16 @@ const mentors = [
     description:
       "Rust is a new blazingly fast and safe programming language and WebAssembly is a new blazingly fast and safe VM for the web, a perfect match! The Rust and WebAssembly Working Group is working to make Rust and WebAssembly a dream come true, and we're always looking for more to help out!",
     github: 'alexcrichton',
+    room: 'ECEB 3002',
   },
   {
     name: 'Trent Spice',
     image: require('assets/Mentors/trentspi.jpeg'),
     project: 'Rust Cookbook',
-    description: '',
+    description:
+      'This Rust Cookbook is a collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.',
     github: 'trentspi',
+    room: 'ECEB 3002',
   },
   {
     name: 'Brock Mendel',
@@ -315,13 +364,16 @@ const mentors = [
     project: 'statsmodels',
     description: '',
     github: 'ChadFulton',
+    room: 'Siebel 1111',
   },
   {
     name: 'Pablo Aguiar',
     image: '',
-    project: 'thefuck',
-    description: '',
+    project: 'Mort and OpenCV',
+    description:
+      'Project consists of adding face recognition and feature detection support to Mort with OpenCV. Mort is a MIT-licensed storage and image processing server written in Go. Check its features: https://github.com/aldor007/mort#features. OpenCV (Open Source Computer Vision Library) is an open-source BSD-licensed library that includes several hundreds of computer vision algorithms. Check https://www.opencv.org and https://gocv.io',
     github: '',
+    room: 'ECEB 2017',
   },
   {
     name: 'Vladyslav Shcherbyna',
@@ -330,6 +382,7 @@ const mentors = [
     description:
       'Development environment for magento2 development aimed to make close to production environment. Current DevBox aims to support multi-service deployment in one click. It is optimized for development scenarios using local environment.',
     github: 'valdislav',
+    room: 'ECEB 3002',
   },
   {
     name: 'Divya Sasidharan',
@@ -337,6 +390,7 @@ const mentors = [
     project: 'Vue',
     description: '',
     github: 'shortdiv',
+    room: 'Siebel 1103',
   },
   {
     name: 'Pranay Prakash',
@@ -344,6 +398,7 @@ const mentors = [
     project: 'CSS Peek',
     description: 'A VS Plugin that makes working with CSS a breeze',
     github: 'pranaygp',
+    room: 'Siebel 1104',
   },
   {
     name: 'Andrew Faust',
@@ -352,6 +407,7 @@ const mentors = [
     description:
       'Extends HTML and ejs code editing with Go To Definition and Go To Symbol in Workspace support for css/scss/less (classes and IDs) found in strings within the source code. Supports all the normal capabilities of symbol definition tracking, but does it for css selectors (classes, IDs and HTML tags). ',
     github: '',
+    room: 'Siebel 1104',
   },
   {
     name: 'Jason Coombs',
@@ -360,6 +416,7 @@ const mentors = [
     description:
       'importlib_metadata is the draft project slated to become importlib.metadata in Python 3.8',
     github: 'jaraco',
+    room: 'Siebel 1302',
   },
   {
     name: 'Tejas Kumar',
@@ -367,6 +424,7 @@ const mentors = [
     project: 'ZEIT',
     description: '',
     github: '',
+    room: 'Siebel 1104',
   },
   {
     name: 'Juan Campa',
@@ -374,6 +432,7 @@ const mentors = [
     project: 'Project ZEIT',
     description: '',
     github: 'juancampa',
+    room: 'Siebel 1104',
   },
 ];
 
