@@ -89,5 +89,11 @@ module.exports = {
         minifyURLs: true,
       },
     }),
+    new HtmlWebpackPlugin({
+      filename: 'privacy_policy.html',
+      template: path.resolve(PUBLIC_DIR, 'privacy_policy.html'),
+      inject: false,
+      favicon: path.resolve(PUBLIC_DIR, 'favicon.ico'),
+    }),
   ],
 };
