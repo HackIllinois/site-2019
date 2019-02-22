@@ -1,17 +1,17 @@
 [
   {
-    "name": "The Big Fish",
+    "name": "Ocean Source Software",
     "blurb": "Best Open Source Contribution with Commercial Viability",
     "company": "Fulcrum"
   },
   {
-    "name": "Smart Healthcare",
+    "name": "Dive Into Healthcare",
     "blurb": "Leverage open source technology to help people live healthier lives.",
     "company": "Optum"
   },
   {
-    "name": "Change the Markets",
-    "blurb": "Develop or expand upon an open source project that helps businesses or customers manage their finances.",
+    "name": "The Cleanest Catch",
+    "blurb": "Best contribution or work on a developer tools, especially those focused around code review and code refinement.",
     "company": "IMC"
   },
   {
@@ -25,13 +25,13 @@
     "company": "Amadeus"
   },
   {
-    "name": "Accelerator",
+    "name": "H2Open Source",
     "blurb": "Best IoT Project using a Particle board or contribution to Particle open source project.",
     "company": "Particle"
   },
   {
-    "name": "On the Rise",
-    "blurb": "Develop or expand upon an open source project that manages or processes investment data.",
+    "name": "The Fish Market",
+    "blurb": "Develop or expand upon an open source project in the field of finance.",
     "company": "Capital One"
   }
 ]
