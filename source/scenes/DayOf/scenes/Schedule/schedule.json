@@ -166,7 +166,7 @@
     },
     {
       "time": "12:00 PM",
-      "events": [{ "title": "Project Expo", "locations": ["Siebel: Atrium", "ECEB: Lobby"] }]
+      "events": [{ "title": "Project Expo", "locations": ["Siebel: Atrium"] }]
     },
     {
       "time": "3:00 PM",
