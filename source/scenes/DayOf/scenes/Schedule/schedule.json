@@ -57,6 +57,12 @@
       ]
     },
     {
+      "time": "11:30 AM",
+      "events": [
+        { "title": "Speaker: Jay 'Saurik' Freeman, Cydia Creator", "locations": ["ECEB 1002"] }
+      ]
+    },
+    {
       "time": "12:00 PM",
       "events": [
         { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] },
