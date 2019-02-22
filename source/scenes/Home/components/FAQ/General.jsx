@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const General = () => (
   <section className="faq-pane">
     <div className="faq-container faq-column-container">
@@ -27,7 +29,7 @@ const General = () => (
           You should arrive before 8 pm on Friday, February 22 for an opening ceremony and other
           activities. The contribution period will begin at 11 pm and will last until 11 am on
           Sunday, February 24. A more detailed schedule is available on{' '}
-          <a href={schedule}>the Day Of site</a>.
+          <Link to="/dayof/schedule">the Day Of site</Link>.
         </p>
       </section>
       <section className="faq-column">
