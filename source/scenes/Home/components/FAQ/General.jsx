@@ -24,10 +24,10 @@ const General = () => (
       <section className="faq-column">
         <h4>When</h4>
         <p>
-          You should arrive by 5 pm on Friday, February 22 for an opening ceremony and other
-          activities. The contribution period will begin at 10 pm and will last until 10 am on
-          Sunday, February 24. A more detailed schedule will be released closer to the event here on
-          our website.
+          You should arrive before 8 pm on Friday, February 22 for an opening ceremony and other
+          activities. The contribution period will begin at 11 pm and will last until 11 am on
+          Sunday, February 24. A more detailed schedule is available on{' '}
+          <a href={schedule}>the Day Of site</a>.
         </p>
       </section>
       <section className="faq-column">
