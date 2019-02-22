@@ -1,0 +1,35 @@
+.prizes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .prize {
+    box-sizing: border-box;
+    padding: 28px 20px;
+    width: 50%;
+
+    @media (max-width: 725px) {
+      width: 100%;
+    }
+
+    @media (max-width: 425px) {
+      padding: 28px 0;
+    }
+
+    h2 {
+      border-bottom-width: 3px;
+      font-size: 24px;
+    }
+
+    p {
+      color: #00242c;
+      font-size: 16px;
+      line-height: 19px;
+      margin-top: 12px;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}

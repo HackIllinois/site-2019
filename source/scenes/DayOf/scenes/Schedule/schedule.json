@@ -11,7 +11,7 @@
       "time": "6:00 PM",
       "events": [
         {
-          "title": "Dinner",
+          "title": "Dinner sponsored by Amadeus",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
         }
       ]
@@ -30,7 +30,7 @@
       "time": "12:00 AM",
       "events": [
         {
-          "title": "Midnight Meal",
+          "title": "Midnight Meal sponsored by Fulcrum",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
         },
         {
@@ -51,7 +51,7 @@
       "time": "8:00 AM",
       "events": [
         {
-          "title": "Breakfast",
+          "title": "Breakfast sponsored by Google",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor Sunday"]
         }
       ]
@@ -66,7 +66,10 @@
     {
       "time": "12:30 PM",
       "events": [
-        { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
+        {
+          "title": "Lunch sponsored by IMC",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
       ]
     },
     {
@@ -75,7 +78,7 @@
     },
     {
       "time": "3:00 PM",
-      "events": [{ "title": "Unfurl", "locations": ["Siebel 2405"] }]
+      "events": [{ "title": "Unfurl sponsored by TEC", "locations": ["Siebel 2405"] }]
     },
     {
       "time": "4:00 PM",
@@ -94,7 +97,7 @@
       "time": "6:00 PM",
       "events": [
         {
-          "title": "Dinner",
+          "title": "Dinner sponsored by Caterpillar",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
         }
       ]
@@ -105,12 +108,12 @@
     },
     {
       "time": "8:00 PM",
-      "events": [{ "title": "Mobile Trivia sponsored by Optum", "locations": ["Siebel 1304"] }]
+      "events": [{ "title": "Mobile Trivia sponsored by Optum", "locations": ["Siebel 1214"] }]
     },
     {
       "time": "10:00 PM",
       "events": [
-        { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] }
+        { "title": "Fireside Chats With Women in Open Source", "locations": ["Siebel 2405"] }
       ]
     },
     {
@@ -125,7 +128,7 @@
       "time": "12:00 AM",
       "events": [
         {
-          "title": "Midnight Meal",
+          "title": "Midnight Meal sponsored by Optum",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
         }
       ]
@@ -138,7 +141,7 @@
       "time": "3:30 AM",
       "events": [
         {
-          "title": "Mini Meal",
+          "title": "Mini Meal sponsored by Jackson",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor Sunday"]
         }
       ]
@@ -147,7 +150,7 @@
       "time": "8:00 AM",
       "events": [
         {
-          "title": "Breakfast",
+          "title": "Breakfast sponsored by Facebook",
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB 1st & 3rd Floor"]
         }
       ]
@@ -155,7 +158,10 @@
     {
       "time": "11:00 AM",
       "events": [
-        { "title": "Lunch", "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"] }
+        {
+          "title": "Lunch sponsored by Schlumberger",
+          "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
+        }
       ]
     },
     {
