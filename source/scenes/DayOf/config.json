@@ -2,7 +2,7 @@
   "root": "schedule",
   "schedule": true,
   "maps": true,
-  "prizes": false,
+  "prizes": true,
   "travel": true,
   "mentorship": true
 }

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "The Big Fish",
+    "blurb": "Best Open Source Contribution with Commercial Viability",
+    "company": "Fulcrum"
+  },
+  {
+    "name": "Dive Into Healthcare",
+    "blurb": "Leverage open source technology to help people live healthier lives.",
+    "company": "Optum"
+  },
+  {
+    "name": "The Cleanest Catch",
+    "blurb": "Best contribution or work on a developer tools, especially those focused around code review and code refinement.",
+    "company": "IMC"
+  },
+  {
+    "name": "The Very Hungry Caterpillar",
+    "blurb": "Work on an open source project that will help those specifically in need.",
+    "company": "Caterpillar"
+  },
+  {
+    "name": "A Deep Sea Journey",
+    "blurb": "Best contribution to an Amadeus Open Source project.",
+    "company": "Amadeus"
+  },
+  {
+    "name": "Ocean Source Software",
+    "blurb": "Best IoT Project using a Particle board or contribution to Particle open source project.",
+    "company": "Particle"
+  },
+  {
+    "name": "The Fish Market",
+    "blurb": "Develop or expand upon an open source project in the field of finance.",
+    "company": "Capital One"
+  }
+]

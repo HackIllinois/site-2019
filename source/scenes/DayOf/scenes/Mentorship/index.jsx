@@ -11,10 +11,11 @@ type MentorProps = {
   project: string,
   description: string,
   github: string,
+  room: string,
 };
 
 const Mentor = (props: MentorProps) => {
-  const { image, name, project, description, github } = props;
+  const { image, name, project, description, github, room } = props;
 
   return (
     <div className="mentor-profile">
@@ -29,6 +30,7 @@ const Mentor = (props: MentorProps) => {
           )}
         </div>
         <h5>{name}</h5>
+        {room !== '' ? <h6>{room}</h6> : null}
       </div>
       <div className="description">
         <h5>{project}</h5>
