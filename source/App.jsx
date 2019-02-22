@@ -32,6 +32,23 @@ const App = () => (
         <Route path="/mentors" exact component={Mentors} />
         <Route exact path="/sponsor" component={PDFView('/assets/sponsorship-2019.pdf')} />
         <Route exact path="/mentor" component={PDFView('/assets/mentorship-2019.pdf')} />
+        <Route exact path="/rooms" component={PDFView('/assets/mentor-rooms-2019.pdf')} />
+        <Route path="/coc" strict exact component={() => <Redirect to="/code" />} />
+        <Route exact path="/code" component={PDFView('/assets/code-of-conduct.pdf')} />
+        <Route
+          path="/slack"
+          component={() => {
+            window.location = 'http://go.hackillinois.org/slack';
+            return null;
+          }}
+        />
+        <Route
+          path="/devpost"
+          component={() => {
+            window.location = 'http://go.hackillinois.org/devpost2019';
+            return null;
+          }}
+        />
         <Route component={() => <Error message="404 Not Found" />} />
       </Switch>
     </div>

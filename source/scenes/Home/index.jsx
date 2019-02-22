@@ -71,9 +71,9 @@ const Home = () => (
           </p>
           <h2>The Event</h2>
           <p>
-            This year, only groups who work with a mentor on an open source contribution and add a
-            license will be eligible to win prizes. Contribute to a useful open source tool that you
-            use, an open source project of your own, or join a team led by an open source mentor.
+            This year, only groups who work on an open source contribution and add a license will be
+            eligible to win prizes. Contribute to a useful open source tool that you use, an open
+            source project of your own, or join a team led by an open source mentor!
           </p>
           <h2>Join Us</h2>
           <p>
