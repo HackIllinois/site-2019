@@ -424,7 +424,7 @@ const mentors = [
     project: 'ZEIT',
     description: '',
     github: '',
-    room: 'Siebel 1104',
+    room: 'Siebel 1103',
   },
   {
     name: 'Juan Campa',
@@ -432,7 +432,15 @@ const mentors = [
     project: 'Project ZEIT',
     description: '',
     github: 'juancampa',
-    room: 'Siebel 1104',
+    room: 'Siebel 1103',
+  },
+  {
+    name: 'Christos Bacharakis',
+    image: require('assets/Mentors/bacharakis.png'),
+    project: 'Mozilla',
+    description: '',
+    github: 'bacharakis',
+    room: 'ECEB 3013',
   },
 ];
 
