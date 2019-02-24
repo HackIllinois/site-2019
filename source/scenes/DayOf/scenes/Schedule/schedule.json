@@ -158,6 +158,15 @@
       ]
     },
     {
+      "time": "8:30 AM",
+      "events": [
+        {
+          "title": "Submission Office Hours",
+          "locations": ["Siebel 2405"]
+        }
+      ]
+    },
+    {
       "time": "11:00 AM",
       "events": [
         {
