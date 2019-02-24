@@ -57,6 +57,12 @@
       ]
     },
     {
+      "time": "11:30 AM",
+      "events": [
+        { "title": "Speaker: Jay 'Saurik' Freeman, Cydia Creator", "locations": ["ECEB 1002"] }
+      ]
+    },
+    {
       "time": "12:00 PM",
       "events": [
         { "title": "Fireside Chats With HackIllinois Mentors", "locations": ["Siebel 2405"] },
@@ -108,7 +114,7 @@
     },
     {
       "time": "8:00 PM",
-      "events": [{ "title": "Mobile Trivia sponsored by Optum", "locations": ["Siebel 1214"] }]
+      "events": [{ "title": "Mobile Trivia sponsored by Optum", "locations": ["Siebel 2405"] }]
     },
     {
       "time": "10:00 PM",
@@ -132,10 +138,6 @@
           "locations": ["Siebel: Basement & 2nd Floor", "ECEB: 1st & 3rd Floor"]
         }
       ]
-    },
-    {
-      "time": "1:00 AM",
-      "events": [{ "title": "Mini Event sponsored by Amadeus", "locations": ["ECEB 2017"] }]
     },
     {
       "time": "3:30 AM",
@@ -175,7 +177,7 @@
     },
     {
       "time": "12:00 PM",
-      "events": [{ "title": "Project Expo", "locations": ["Siebel: Atrium", "ECEB: Lobby"] }]
+      "events": [{ "title": "Project Expo", "locations": ["Siebel: Atrium"] }]
     },
     {
       "time": "3:00 PM",

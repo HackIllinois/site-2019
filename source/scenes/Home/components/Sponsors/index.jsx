@@ -22,6 +22,7 @@ import Citadel from 'assets/Logos/Citadel.png';
 import RC from 'assets/Logos/RC.png';
 import Mozilla from 'assets/Logos/Mozilla.png';
 import BP from 'assets/Logos/BP.png';
+import Checkbook from 'assets/Logos/Checkbook.svg';
 import npmLogo from 'assets/Logos/npm.svg';
 import Zeit from 'assets/Logos/Zeit.svg';
 import Particle from 'assets/Logos/Particle.png';
@@ -93,6 +94,9 @@ const Sponsors = () => (
         </a>
         <a href="https://www.bp.com/">
           <img src={BP} className="logo logo-cat" alt="BP Logo" />
+        </a>
+        <a href="https://checkbook.io/">
+          <img src={Checkbook} className="logo logo-s" alt="BP Logo" />
         </a>
       </div>
       <img src={ClamIcon} className="icon" alt="Clam Icon" />
