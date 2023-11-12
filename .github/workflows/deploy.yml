@@ -2,9 +2,9 @@ name: Hack-Illinois Challenge Pipeline
 
 on:
     push:
-        branches: [github-pages]
+        branches: [pages]
     pull_request:
-        branches: [github-pages]
+        branches: [pages]
 
 jobs:
     build:
