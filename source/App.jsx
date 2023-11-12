@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
 import Auth from 'scenes/Auth';
 import Error from 'scenes/Error';
@@ -16,7 +16,7 @@ import { RouteTracker } from './services/GoogleAnalytics';
 import './styles/reset.css';
 import './styles/base.scss';
 
-ReactGA.initialize('UA-46010489-4');
+// ReactGA.initialize('UA-46010489-4');
 
 const App = () => (
   <BrowserRouter>

@@ -1,0 +1,49 @@
+name: Hack-Illinois Challenge Pipeline
+
+on:
+    push:
+        branches: [github-pages]
+    pull_request:
+        branches: [github-pages]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [11.x]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: npm i
+            - run: npm run build
+
+
+
+    deploy:
+        name: Deploy
+        needs: [build]
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [11.x]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: yarn
+            - run: yarn build
+            - name: Deploy to gh-pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./build

@@ -71,7 +71,7 @@ module.exports = {
     new Dotenv({
       systemvars: true,
     }),
-    new FlowWebpackPlugin(),
+    // new FlowWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       favicon: path.resolve(PUBLIC_DIR, 'favicon.ico'),
