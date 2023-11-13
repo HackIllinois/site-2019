@@ -23,6 +23,8 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - run: npm i
             - run: npm run build
+            - run: mv public/favicon.ico build/favicon.ico
+            - run: mv public/manifest.json build/manifest.json
             - name: Deploy to gh-pages
               uses: peaceiris/actions-gh-pages@v3
               with:
