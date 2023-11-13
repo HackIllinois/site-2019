@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/HackIllinois/site-2019/issues"
   },
-  "homepage": "https://github.com/HackIllinois/site-2019#readme",
+  "homepage": "https://hackillinois.github.io/site-2019",
   "dependencies": {
     "animejs": "^2.2.0",
     "jwt-decode": "^2.2.0",
